@@ -55,8 +55,7 @@ Paste the applicable command below into your terminal to run the automated maste
 *these scripts automatically install the daemon and a bootstrap; therefore, they will take some time to run. Please be patient.*
 
 #### Linux Dependencies
-apt-get install curl -y
-apt-get install net-tools
+apt-get install net-tools curl -y
 
 Ubuntu 16.04 VPS:
 
