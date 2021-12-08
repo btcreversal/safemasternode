@@ -94,7 +94,7 @@ Paste your masternode genkey when prompted
 
 #### VPS Masternode Troubleshooting
 
-*Get the status code to identify issues:'./buntu masternode status'* 
+*Get the status code to identify issues:'./buntud masternode status'* 
 
 The "status" of your masternode will be one of the following:
 
