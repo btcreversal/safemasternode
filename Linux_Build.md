@@ -50,6 +50,11 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     strip buntud
 
 ##### Edit the config file  
+    
+    sudo ufw allow 32821/tcp
+    sudo ufw allow 32822/tcp
+    sudo ufw allow 22/tcp
+
     nano ~/.buntu/buntu.conf  
 
 		rpcuser=username(Configure your own)  
