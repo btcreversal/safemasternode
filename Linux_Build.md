@@ -45,8 +45,9 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo git clone https://github.com/CRYPT0BUNTU/Buntu.git
 
 ### Compiling  
-    cd Buntu
-    sudo make -f makefile.unix  
+    cd Buntu/src
+    sudo make -f makefile.unix
+    strip buntud
 
 ##### Edit the config file  
     nano ~/.buntu/buntu.conf  
