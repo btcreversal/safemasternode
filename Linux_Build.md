@@ -54,7 +54,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
 		rpcuser=username(Configure your own)  
 		rpcpassword=password(Configure your own)  
 		rpcallowip=127.0.0.1  
-		rpcport=32821  
+		rpcport=32822
 		daemon=1  
 		server=1  
 		listen=1  
