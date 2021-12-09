@@ -85,15 +85,16 @@ To install, first follow the instructions to install dependencies 18.04 then fol
 #### Usage  
 Start daemon
 
-	./buntud  
+	./buntud
+	systemctl start buntu.service
 
 Stop daemon
 
-	./buntud stop  
+	./buntud stop
+	systemctl stop buntu.service
 
 Display information  
 
-	systemctl start buntu.service
 	./buntud help
 	./buntud getinfo  
 	./buntud getmininginfo  
