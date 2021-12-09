@@ -64,7 +64,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo ufw allow 32822/tcp
     sudo ufw allow 22/tcp
 
-    nano ~/.buntu/buntu.conf  
+    sudo nano /root/.buntu/buntu.conf
 
 		rpcuser=username(Configure your own)  
 		rpcpassword=password(Configure your own)  
