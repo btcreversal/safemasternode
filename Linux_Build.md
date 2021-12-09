@@ -93,6 +93,7 @@ Stop daemon
 
 Display information  
 
+	systemctl start buntu.service
 	./buntud help
 	./buntud getinfo  
 	./buntud getmininginfo  
