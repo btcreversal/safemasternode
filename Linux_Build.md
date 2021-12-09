@@ -32,6 +32,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo make install
       
 #### Swapfile
+    swapoff
     fallocate -l 4G /swapfile  
     chown root:root /swapfile  
     chmod 0600 /swapfile  
