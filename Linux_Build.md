@@ -50,6 +50,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo reboot
 
 #####  Download Source code
+    cd ~
     sudo git clone https://github.com/CRYPT0BUNTU/Buntu.git
 
 ### Compiling  
