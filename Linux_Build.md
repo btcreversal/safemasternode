@@ -30,6 +30,8 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     ./config --prefix=/usr/
     make
     sudo make install
+    
+    openssl version
       
 #### Swapfile
     swapoff -a
