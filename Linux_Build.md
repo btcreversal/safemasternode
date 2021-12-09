@@ -20,16 +20,16 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo apt-get update  
     sudo apt-get install libdb4.8-dev libdb4.8++-dev  -y  
     sudo apt-get install libgmp3-dev -y
-  	sudo apt-get install libdb5.3++ unzip libzmq5 -y
-
-##### Special instructions for openssl-1.0.2n on Ubuntu 18.04:
-cd ~
-wget http://www.openssl.org/source/openssl-1.0.2n.tar.gz
-tar -xvzf openssl-1.0.2n.tar.gz
-cd openssl-1.0.2n
-./config --prefix=/usr/
-make
-sudo make install
+    sudo apt-get install libdb5.3++ unzip libzmq5 -y
+    
+    ##### Special instructions for openssl-1.0.2n on Ubuntu 18.04:
+    cd ~
+    wget http://www.openssl.org/source/openssl-1.0.2n.tar.gz
+    tar -xvzf openssl-1.0.2n.tar.gz
+    cd openssl-1.0.2n
+    ./config --prefix=/usr/
+    make
+    sudo make install
       
 #### Swapfile
     fallocate -l 4G /swapfile  
