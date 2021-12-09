@@ -11,7 +11,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
 
     sudo apt-get update && apt-get upgrade  
     sudo apt-get dist-upgrade
-    sudo apt-get install git screen net-tools
+    sudo apt-get install git screen net-tools -y
     sudo apt-get install libzmq3-dev libminiupnpc-dev libevent-dev -y  
     sudo apt-get install build-essential libtool autotools-dev automake pkg-config -y  
     sudo apt-get install libevent-dev bsdmainutils software-properties-common -y  
