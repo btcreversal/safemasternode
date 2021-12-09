@@ -10,10 +10,11 @@ To install, first follow the instructions to install dependencies 18.04 then fol
   ## Dependencies (Ubuntu 18.04)
 
     sudo apt-get update && apt-get upgrade  
-    sudo apt-get dist-upgrade  
+    sudo apt-get dist-upgrade
+    sudo apt-get install git screen net-tools
     sudo apt-get install libzmq3-dev libminiupnpc-dev libevent-dev -y  
     sudo apt-get install build-essential libtool autotools-dev automake pkg-config -y  
-    sudo apt-get install libevent-dev bsdmainutils   software-properties-common -y  
+    sudo apt-get install libevent-dev bsdmainutils software-properties-common -y  
     sudo apt-get install libboost-all-dev -y  
     sudo add-apt-repository ppa:bitcoin/bitcoin  
     sudo apt-get update  
