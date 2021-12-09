@@ -8,7 +8,6 @@ Buntu requires
 To install, first follow the instructions to install dependencies 18.04 then follow the compilation instructions.
 
   ## Dependencies (Ubuntu 18.04)
-
     sudo apt-get update && apt-get upgrade  
     sudo apt-get dist-upgrade
     sudo apt-get install git screen net-tools -y
@@ -32,7 +31,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo make install
       
 #### Swapfile
-    swapoff
+    swapoff -a
     fallocate -l 4G /swapfile  
     chown root:root /swapfile  
     chmod 0600 /swapfile  
