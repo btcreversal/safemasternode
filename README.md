@@ -1,17 +1,17 @@
-# Welcome to Buntu!
-Buntu (BNTU) is a Proof-of-Stake based cryptocurrency featuring masternodes
+# Welcome to Safemine Masternode !
+SafeMasterNode (SMTN) is a Proof-of-Stake (PoS) cryptocurrency featuring masternodes
 
 * Algorithm: Scrypt
 * Max Supply: 18,000,000
 * Spacing: 2.5 Minutes
 * 10 Block Confirmation Time
-* Port: 32821
-* RPCport: 32822
+* Port: 22021
+* RPCport: 22022
 * Block Rewards
-	* PoW: 1 BTNU per block for 600 blocks (to kickstart PoS)
-	* PoS: 2.25 BNTU per block
-	* Masternodes: .25 BNTU per Block
-* Masternode collateral: 5 BNTU
+	* PoW: 1 SMTN per block for 600 blocks (to kickstart PoS)
+	* PoS: 2.25 SMTN per block
+	* Masternodes: .25 SMTN per Block
+* Masternode collateral: 5 SMTN
 * Minimum Stake Age: 2 hours
 
 ***
@@ -21,6 +21,4 @@ Buntu (BNTU) is a Proof-of-Stake based cryptocurrency featuring masternodes
 #### [Masternode Setup Guide](https://github.com/alfariqicrypto/Buntu/blob/master/Masternode_Setup_Guide.md)
 
 ***
-
-#### Join us on [Telegram](https://t.me/buntucryptocurrency) and [Discord](https://discord.gg/UbU2f9HFXH). Visit our [Website](http://buntucryptocurrency.com/)  or you can find us on [Twitter](https://twitter.com/buntu_crypto)
 
