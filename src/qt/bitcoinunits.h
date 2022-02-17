@@ -1,5 +1,5 @@
-#ifndef BITCOINUNITS_H
-#define BITCOINUNITS_H
+#ifndef BUNTUUNITS_H
+#define BUNTUUNITS_H
 
 #include "util.h"
 
@@ -37,18 +37,18 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** Bitcoin unit definitions. Encapsulates parsing and formatting
+/** Buntu unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class BitcoinUnits: public QAbstractListModel
+class BuntuUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit BitcoinUnits(QObject *parent);
+    explicit BuntuUnits(QObject *parent);
 
-    /** Bitcoin units.
-      @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
+    /** Buntu units.
+      @note Source: https://en.buntu.it/wiki/Units . Please add only sensible ones
      */
     enum Unit
     {
@@ -121,8 +121,8 @@ public:
     static CAmount maxMoney();
 
 private:
-    QList<BitcoinUnits::Unit> unitlist;
+    QList<BuntuUnits::Unit> unitlist;
 };
-typedef BitcoinUnits::Unit BitcoinUnit;
+typedef BuntuUnits::Unit BuntuUnit;
 
-#endif // BITCOINUNITS_H
+#endif // BUNTUUNITS_H

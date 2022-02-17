@@ -13,10 +13,10 @@
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
+        <source>Copyright © 2009-2014 The Buntu developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2015-2017 The buntu developers</source>
-        <translation>Copyright © 2009-2014 De Bitcoin ontwikkelaars
+        <translation>Copyright © 2009-2014 De Buntu ontwikkelaars
 Copyright © 2012-2014 De NovaCoin ontwikkelaars
 Copyright © 2015-2017 De buntu ontwikkelaars</translation>
     </message>
@@ -304,9 +304,9 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>BuntuGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+297"/>
+        <location filename="../buntugui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>&amp;Onderteken bericht...</translation>
     </message>
@@ -722,7 +722,7 @@ Adres: %4
         <translation>Niet aan het staken.</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+104"/>
+        <location filename="../buntu.cpp" line="+104"/>
         <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
         <translation>Een fatale fout . buntu kan niet langer veilig doorgaan en sluit af.</translation>
     </message>
@@ -2680,9 +2680,9 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
 </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>buntu-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+172"/>
+        <location filename="../buntustrings.cpp" line="+172"/>
         <source>buntu version</source>
         <translation>buntu versie</translation>
     </message>
@@ -2923,8 +2923,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+40"/>
-        <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>SSL-opties: (zie de Bitcoin wiki voor SSL-instructies)</translation>
+        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
+        <translation>SSL-opties: (zie de Buntu wiki voor SSL-instructies)</translation>
     </message>
     <message>
         <location line="-80"/>

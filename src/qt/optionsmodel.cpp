@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2011-2014 The Buntu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "optionsmodel.h"
 
-#include "bitcoinunits.h"
+#include "buntuunits.h"
 #include "guiutil.h"
 
 #include "init.h"
@@ -53,7 +53,7 @@ void OptionsModel::Init()
 
     // Display
     if (!settings.contains("nDisplayUnit"))
-        settings.setValue("nDisplayUnit", BitcoinUnits::BTC);
+        settings.setValue("nDisplayUnit", BuntuUnits::BTC);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
     
     fUseBlackTheme = settings.value("fUseBlackTheme", false).toBool();

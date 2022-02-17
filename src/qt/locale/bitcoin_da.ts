@@ -13,10 +13,10 @@
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
+        <source>Copyright © 2009-2014 The Buntu developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014 The buntu developers</source>
-        <translation>Copyright © 2009-2014 The Bitcoin developers
+        <translation>Copyright © 2009-2014 The Buntu developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014 The buntu developers</translation>
     </message>
@@ -304,9 +304,9 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>BuntuGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+297"/>
+        <location filename="../buntugui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>Underskriv besked...</translation>
     </message>
@@ -722,7 +722,7 @@ Adresse: %4
         <translation>Ingen rente</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+104"/>
+        <location filename="../buntu.cpp" line="+104"/>
         <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
         <translation>Der opstod en fejl under forsøg på at gemme dataene i tegnebogen til den nye placering.</translation>
     </message>
@@ -1260,7 +1260,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Vælg den standard underopdelingsenhed, som skal vises i brugergrænsefladen og ved afsendelse af bitcoins.</translation>
+        <translation>Vælg den standard underopdelingsenhed, som skal vises i brugergrænsefladen og ved afsendelse af buntus.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1683,7 +1683,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
         <location line="+5"/>
         <location line="+5"/>
         <source>Send Coins</source>
-        <translation>Send bitcoins</translation>
+        <translation>Send buntus</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -1867,7 +1867,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="+5"/>
         <source>Confirm send coins</source>
-        <translation>Bekræft afsendelse af bitcoins</translation>
+        <translation>Bekræft afsendelse af buntus</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2010,7 +2010,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="-118"/>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Du kan underskrive beskeder med dine Bitcoin-adresser for at bevise, at de tilhører dig. Pas på ikke at underskrive noget vagt, da phisingangreb kan narre dig til at overdrage din identitet. Underskriv kun fuldt detaljerede udsagn, du er enig i.</translation>
+        <translation>Du kan underskrive beskeder med dine Buntu-adresser for at bevise, at de tilhører dig. Pas på ikke at underskrive noget vagt, da phisingangreb kan narre dig til at overdrage din identitet. Underskriv kun fuldt detaljerede udsagn, du er enig i.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -2680,9 +2680,9 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
 </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>buntu-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+173"/>
+        <location filename="../buntustrings.cpp" line="+173"/>
         <source>buntu version</source>
         <translation>buntu version</translation>
     </message>
@@ -2923,8 +2923,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+41"/>
-        <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>SSL-indstillinger: (se Bitcoin Wiki for SSL-opsætningsinstruktioner)</translation>
+        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
+        <translation>SSL-indstillinger: (se Buntu Wiki for SSL-opsætningsinstruktioner)</translation>
     </message>
     <message>
         <location line="-81"/>

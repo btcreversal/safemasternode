@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2012 The Buntu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -66,7 +66,7 @@ public:
         nRPCPort = 22022;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 24);
 
-        const char* pszTimestamp = "Bitcoin Could Break Out and Rise With Altcoins Next Week";
+        const char* pszTimestamp = "Buntu Could Break Out and Rise With Altcoins Next Week";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));

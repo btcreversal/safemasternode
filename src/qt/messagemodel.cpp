@@ -1,6 +1,6 @@
 #include "guiutil.h"
 #include "guiconstants.h"
-#include "bitcoinunits.h"
+#include "buntuunits.h"
 #include "optionsmodel.h"
 #include "walletmodel.h"
 #include "messagemodel.h"

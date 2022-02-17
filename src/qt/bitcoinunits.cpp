@@ -1,30 +1,30 @@
-// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2011-2014 The Buntu developers
 // Copyright (c) 2014-2015 The Dash developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "bitcoinunits.h"
+#include "buntuunits.h"
 #include "main.h"
 
 #include <QSettings>
 #include <QStringList>
 
-BitcoinUnits::BitcoinUnits(QObject *parent):
+BuntuUnits::BuntuUnits(QObject *parent):
         QAbstractListModel(parent),
         unitlist(availableUnits())
 {
 }
 
-QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
+QList<BuntuUnits::Unit> BuntuUnits::availableUnits()
 {
-    QList<BitcoinUnits::Unit> unitlist;
+    QList<BuntuUnits::Unit> unitlist;
     unitlist.append(BTC);
     unitlist.append(mBTC);
     unitlist.append(uBTC);
     return unitlist;
 }
 
-bool BitcoinUnits::valid(int unit)
+bool BuntuUnits::valid(int unit)
 {
     switch(unit)
     {
@@ -37,7 +37,7 @@ bool BitcoinUnits::valid(int unit)
     }
 }
 
-QString BitcoinUnits::name(int unit)
+QString BuntuUnits::name(int unit)
 {
     switch(unit)
     {
@@ -48,7 +48,7 @@ QString BitcoinUnits::name(int unit)
     }
 }
 
-QString BitcoinUnits::description(int unit)
+QString BuntuUnits::description(int unit)
 {
     switch(unit)
     {
@@ -59,7 +59,7 @@ QString BitcoinUnits::description(int unit)
     }
 }
 
-qint64 BitcoinUnits::factor(int unit)
+qint64 BuntuUnits::factor(int unit)
 {
     switch(unit)
     {
@@ -70,7 +70,7 @@ qint64 BitcoinUnits::factor(int unit)
     }
 }
 
-int BitcoinUnits::amountDigits(int unit)
+int BuntuUnits::amountDigits(int unit)
 {
     switch(unit)
     {
@@ -81,7 +81,7 @@ int BitcoinUnits::amountDigits(int unit)
     }
 }
 
-int BitcoinUnits::decimals(int unit)
+int BuntuUnits::decimals(int unit)
 {
     switch(unit)
     {
@@ -92,7 +92,7 @@ int BitcoinUnits::decimals(int unit)
     }
 }
 
-QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
+QString BuntuUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
@@ -120,7 +120,7 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
     return quotient_str + QString(".") + remainder_str;
 }
 
-// TODO: Review all remaining calls to BitcoinUnits::formatWithUnit to
+// TODO: Review all remaining calls to BuntuUnits::formatWithUnit to
 // TODO: determine whether the output is used in a plain text context
 // TODO: or an HTML context (and replace with
 // TODO: BtcoinUnits::formatHtmlWithUnit in the latter case). Hopefully
@@ -135,19 +135,19 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
 // Please take care to use formatHtmlWithUnit instead, when
 // appropriate.
 
-QString BitcoinUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString BuntuUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     return format(unit, amount, plussign, separators) + QString(" ") + name(unit);
 }
 
-QString BitcoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString BuntuUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(formatWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
     return QString("<span style='white-space: nowrap;'>%1</span>").arg(str);
 }
 
-QString BitcoinUnits::floorWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString BuntuUnits::floorWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QSettings settings;
     int digits = settings.value("digits").toInt();
@@ -158,14 +158,14 @@ QString BitcoinUnits::floorWithUnit(int unit, const CAmount& amount, bool plussi
     return result + QString(" ") + name(unit);
 }
 
-QString BitcoinUnits::floorHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString BuntuUnits::floorHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(floorWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
     return QString("<span style='white-space: nowrap;'>%1</span>").arg(str);
 }
 
-bool BitcoinUnits::parse(int unit, const QString &value, CAmount *val_out)
+bool BuntuUnits::parse(int unit, const QString &value, CAmount *val_out)
 {
     if(!valid(unit) || value.isEmpty())
         return false; // Refuse to parse invalid unit or empty string
@@ -204,23 +204,23 @@ bool BitcoinUnits::parse(int unit, const QString &value, CAmount *val_out)
     return ok;
 }
 
-QString BitcoinUnits::getAmountColumnTitle(int unit)
+QString BuntuUnits::getAmountColumnTitle(int unit)
 {
     QString amountTitle = QObject::tr("Amount");
-    if (BitcoinUnits::valid(unit))
+    if (BuntuUnits::valid(unit))
     {
-        amountTitle += " ("+BitcoinUnits::name(unit) + ")";
+        amountTitle += " ("+BuntuUnits::name(unit) + ")";
     }
     return amountTitle;
 }
 
-int BitcoinUnits::rowCount(const QModelIndex &parent) const
+int BuntuUnits::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return unitlist.size();
 }
 
-QVariant BitcoinUnits::data(const QModelIndex &index, int role) const
+QVariant BuntuUnits::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if(row >= 0 && row < unitlist.size())
@@ -240,7 +240,7 @@ QVariant BitcoinUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CAmount BitcoinUnits::maxMoney()
+CAmount BuntuUnits::maxMoney()
 {
     return MAX_MONEY;
 }

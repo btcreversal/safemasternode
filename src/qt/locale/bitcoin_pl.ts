@@ -13,7 +13,7 @@
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
+        <source>Copyright © 2009-2014 The Buntu developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2015-2017 The buntu developers</source>
         <translation type="unfinished"/>
@@ -303,9 +303,9 @@ Możesz dodać kolejny adres dla każdego wysyłającego aby określić od kogo 
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>BuntuGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+297"/>
+        <location filename="../buntugui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>Podpisz wiado&amp;mość...</translation>
     </message>
@@ -721,7 +721,7 @@ Adres: %4
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+104"/>
+        <location filename="../buntu.cpp" line="+104"/>
         <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
@@ -2665,9 +2665,9 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
 </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>buntu-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+173"/>
+        <location filename="../buntustrings.cpp" line="+173"/>
         <source>buntu version</source>
         <translation type="unfinished"/>
     </message>
@@ -2908,8 +2908,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+41"/>
-        <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>Opcje SSL: (odwiedź Bitcoin Wiki w celu uzyskania instrukcji)</translation>
+        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
+        <translation>Opcje SSL: (odwiedź Buntu Wiki w celu uzyskania instrukcji)</translation>
     </message>
     <message>
         <location line="-81"/>

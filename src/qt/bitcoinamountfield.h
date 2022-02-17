@@ -1,5 +1,5 @@
-#ifndef BITCOINAMOUNTFIELD_H
-#define BITCOINAMOUNTFIELD_H
+#ifndef BUNTUAMOUNTFIELD_H
+#define BUNTUAMOUNTFIELD_H
 
 #include <QWidget>
 #include "util.h"
@@ -9,18 +9,18 @@ class QDoubleSpinBox;
 class QValueComboBox;
 QT_END_NAMESPACE
 
-/** Widget for entering bitcoin amounts.
+/** Widget for entering buntu amounts.
   */
-class BitcoinAmountField: public QWidget
+class BuntuAmountField: public QWidget
 {
     Q_OBJECT
 
     // ugly hack: for some unknown reason CAmount (instead of qint64) does not work here as expected
-    // discussion: https://github.com/bitcoin/bitcoin/pull/5117
+    // discussion: https://github.com/buntu/buntu/pull/5117
     Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY textChanged USER true)
 
 public:
-    explicit BitcoinAmountField(QWidget *parent = 0);
+    explicit BuntuAmountField(QWidget *parent = 0);
 
     CAmount value(bool *valid=0) const;
     void setValue(const CAmount& value);
@@ -61,4 +61,4 @@ private slots:
 
 };
 
-#endif // BITCOINAMOUNTFIELD_H
+#endif // BUNTUAMOUNTFIELD_H

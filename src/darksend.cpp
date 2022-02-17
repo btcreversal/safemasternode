@@ -554,7 +554,7 @@ void CDarksendPool::Check()
             }
 
             // use BIP69 implementation for improved anonymity
-            // https://github.com/bitcoin/bips/blob/master/bip-0069.mediawiki
+            // https://github.com/buntu/bips/blob/master/bip-0069.mediawiki
             sort(txNew.vin.begin(), txNew.vin.end(),  CompareInputBIP69());
             sort(txNew.vout.begin(), txNew.vout.end(), CompareOutputBIP69());
 

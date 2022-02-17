@@ -16,7 +16,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo apt-get install build-essential libtool autotools-dev automake pkg-config -y  
     sudo apt-get install libevent-dev bsdmainutils software-properties-common -y  
     sudo apt-get install libboost-all-dev -y  
-    sudo add-apt-repository ppa:bitcoin/bitcoin  
+    sudo add-apt-repository ppa:buntu/buntu  
     sudo apt-get update
     sudo apt-get install libdb4.8-dev libdb4.8++-dev  -y  
     sudo apt-get install libgmp3-dev -y
@@ -52,12 +52,12 @@ To install, first follow the instructions to install dependencies 18.04 then fol
 
 #####  Download Source code
     cd ~
-    sudo git clone https://github.com/CRYPT0BUNTU/Buntu.git
+    sudo git clone https://github.com/safeminecoin/safemasternode.git
 
 ##### Install libdb6.2 (Berkeley DB)
     cd Buntu
-    BITCOIN_ROOT=$(pwd)
-    BDB_PREFIX="${BITCOIN_ROOT}/build"
+    BUNTU_ROOT=$(pwd)
+    BDB_PREFIX="${BUNTU_ROOT}/build"
     mkdir -p $BDB_PREFIX
     wget 'http://download.oracle.com/berkeley-db/db-6.2.32.tar.gz'
     tar -xzvf db-6.2.32.tar.gz
@@ -96,7 +96,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
 
 		masternode=1  
 		masternodeprivkey=your private key
-		masternodeaddr=your VPS IP:32822
+		masternodeaddr=your VPS IP:22022
 
 #### Usage  
 Start daemon

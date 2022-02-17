@@ -1,10 +1,10 @@
-// Copyright (c) 2009-2012 The Bitcoin Developers.
+// Copyright (c) 2009-2012 The Buntu Developers.
 // Authored by Google, Inc.
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_LEVELDB_H
-#define BITCOIN_LEVELDB_H
+#ifndef BUNTU_LEVELDB_H
+#define BUNTU_LEVELDB_H
 
 #include "main.h"
 
@@ -205,4 +205,4 @@ private:
 };
 
 
-#endif // BITCOIN_DB_H
+#endif // BUNTU_DB_H

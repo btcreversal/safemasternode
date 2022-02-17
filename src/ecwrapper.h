@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2009-2014 The Buntu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_EC_WRAPPER_H
-#define BITCOIN_EC_WRAPPER_H
+#ifndef BUNTU_EC_WRAPPER_H
+#define BUNTU_EC_WRAPPER_H
 
 #include <cstddef>
 #include <vector>

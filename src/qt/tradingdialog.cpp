@@ -608,7 +608,7 @@ void tradingDialog::ActionsOnSwitch(int index = -1){
                 case 5://show balance tab
                     Response = GetBalance("BTC");
                     if(Response.size() > 0 && Response != "Error"){
-                        DisplayBalance(*ui->BitcoinBalanceLabel,*ui->BitcoinAvailableLabel,*ui->BitcoinPendingLabel, QString::fromUtf8("BTC"),Response);
+                        DisplayBalance(*ui->BuntuBalanceLabel,*ui->BuntuAvailableLabel,*ui->BuntuPendingLabel, QString::fromUtf8("BTC"),Response);
                     }
 
                     Response = GetBalance("BNTU");
@@ -713,7 +713,7 @@ void tradingDialog::CalculateSellCostLabel(){
 
 void tradingDialog::CalculateCSReceiveLabel(){
 
-    //calculate amount of currency than can be transferred to bitcoin
+    //calculate amount of currency than can be transferred to buntu
     QString balance = GetBalance("BNTU");
     QString buyorders = GetOrderBook();
 

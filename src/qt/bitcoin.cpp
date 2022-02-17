@@ -4,7 +4,7 @@
 
 #include <QApplication>
 
-#include "bitcoingui.h"
+#include "buntugui.h"
 #include "clientmodel.h"
 #include "walletmodel.h"
 #include "optionsmodel.h"
@@ -28,8 +28,8 @@
 #include <QSplashScreen>
 #include <QLibraryInfo>
 
-#if defined(BITCOIN_NEED_QT_PLUGINS) && !defined(_BITCOIN_QT_PLUGINS_INCLUDED)
-#define _BITCOIN_QT_PLUGINS_INCLUDED
+#if defined(BUNTU_NEED_QT_PLUGINS) && !defined(_BUNTU_QT_PLUGINS_INCLUDED)
+#define _BUNTU_QT_PLUGINS_INCLUDED
 #define __INSURE__
 #include <QtPlugin>
 Q_IMPORT_PLUGIN(qcncodecs)
@@ -40,7 +40,7 @@ Q_IMPORT_PLUGIN(qtaccessiblewidgets)
 #endif
 
 // Need a global reference for the notifications to find the GUI
-static BitcoinGUI *guiref;
+static BuntuGUI *guiref;
 static QSplashScreen *splashref;
 
 static void ThreadSafeMessageBox(const std::string& message, const std::string& caption, unsigned int style)
@@ -94,7 +94,7 @@ static void InitMessage(const std::string &message)
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("bitcoin-core", psz).toStdString();
+    return QCoreApplication::translate("buntu-core", psz).toStdString();
 }
 
 /* Handle runaway exceptions. Shows a message box with the problem and quits the program.
@@ -102,7 +102,7 @@ static std::string Translate(const char* psz)
 static void handleRunawayException(std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. buntu can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+    QMessageBox::critical(0, "Runaway exception", BuntuGUI::tr("A fatal error occurred. buntu can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
     exit(1);
 }
 
@@ -121,7 +121,7 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 }
 #endif
 
-#ifndef BITCOIN_QT_TEST
+#ifndef BUNTU_QT_TEST
 int main(int argc, char *argv[])
 {
 	fHaveGUI = true;
@@ -134,7 +134,7 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(bitcoin);
+    Q_INIT_RESOURCE(buntu);
     QApplication app(argc, argv);
 
     // Do this early as we don't want to bother initializing if we are just calling IPC
@@ -155,11 +155,11 @@ int main(int argc, char *argv[])
     // Command-line options take precedence:
     ParseParameters(argc, argv);
 
-    // ... then bitcoin.conf:
+    // ... then buntu.conf:
     if (!boost::filesystem::is_directory(GetDataDir(false)))
     {
         // This message can not be translated, as translation is not initialized yet
-        // (which not yet possible because lang=XX can be overridden in bitcoin.conf in the data directory)
+        // (which not yet possible because lang=XX can be overridden in buntu.conf in the data directory)
         QMessageBox::critical(0, "buntu",
                               QString("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
         return 1;
@@ -197,11 +197,11 @@ int main(int argc, char *argv[])
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         app.installTranslator(&qtTranslator);
 
-    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in bitcoin.qrc)
+    // Load e.g. buntu_de.qm (shortcut "de" needs to be defined in buntu.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         app.installTranslator(&translatorBase);
 
-    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in bitcoin.qrc)
+    // Load e.g. buntu_de_DE.qm (shortcut "de_DE" needs to be defined in buntu.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         app.installTranslator(&translator);
 
@@ -224,7 +224,7 @@ int main(int argc, char *argv[])
     // on mac, also change the icon now because it would look strange to have a testnet splash (green) and a std app icon (orange)
     if(GetBoolArg("-testnet", false))
     {
-        MacDockIconHandler::instance()->setIcon(QIcon(":icons/bitcoin_testnet"));
+        MacDockIconHandler::instance()->setIcon(QIcon(":icons/buntu_testnet"));
     }
 #endif
 
@@ -250,7 +250,7 @@ int main(int argc, char *argv[])
 
         boost::thread_group threadGroup;
 
-        BitcoinGUI window;
+        BuntuGUI window;
         guiref = &window;
 
         QTimer* pollShutdownTimer = new QTimer(guiref);
@@ -287,7 +287,7 @@ int main(int argc, char *argv[])
                 }
 
                 // Now that initialization/startup is done, process any command-line
-                // bitcoin: URIs
+                // buntu: URIs
                 QObject::connect(paymentServer, SIGNAL(receivedURI(QString)), &window, SLOT(handleURI(QString)));
                 QTimer::singleShot(100, paymentServer, SLOT(uiReady()));
 
@@ -299,7 +299,7 @@ int main(int argc, char *argv[])
 		window.setMessageModel(0);
                 guiref = 0;
             }
-            // Shutdown the core and its threads, but don't exit Bitcoin-Qt here
+            // Shutdown the core and its threads, but don't exit Buntu-Qt here
             threadGroup.interrupt_all();
             threadGroup.join_all();
             Shutdown();
@@ -318,4 +318,4 @@ int main(int argc, char *argv[])
     }
     return 0;
 }
-#endif // BITCOIN_QT_TEST
+#endif // BUNTU_QT_TEST

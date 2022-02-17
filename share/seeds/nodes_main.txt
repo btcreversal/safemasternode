@@ -71,4 +71,4 @@
 [2610:1c0:0:6:21e:c9ff:fedd:ea1b]
 
 # Onion nodes
-# bitcoinostk4e4re.onion:8333
+# buntuostk4e4re.onion:8333

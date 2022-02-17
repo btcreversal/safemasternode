@@ -1,13 +1,13 @@
 /*
- * Qt4 bitcoin GUI.
+ * Qt4 buntu GUI.
  *
  * W.J. van der Laan 2011-2012
- * The Bitcoin Developers 2011-2012
+ * The Buntu Developers 2011-2012
  */
 
 #include <QApplication>
 
-#include "bitcoingui.h"
+#include "buntugui.h"
 
 #include "transactiontablemodel.h"
 #include "addressbookpage.h"
@@ -23,7 +23,7 @@
 #include "addresstablemodel.h"
 #include "transactionview.h"
 #include "overviewpage.h"
-#include "bitcoinunits.h"
+#include "buntuunits.h"
 #include "guiconstants.h"
 #include "askpassphrasedialog.h"
 #include "notificator.h"
@@ -76,7 +76,7 @@ extern CWallet* pwalletMain;
 extern int64_t nLastCoinStakeSearchInterval;
 double GetPoSKernelPS();
 
-BitcoinGUI::BitcoinGUI(QWidget *parent):
+BuntuGUI::BuntuGUI(QWidget *parent):
     QMainWindow(parent),
     clientModel(0),
     walletModel(0),
@@ -98,8 +98,8 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     resize(900, 520);
     setWindowTitle(tr("buntu") + " - " + tr("Wallet"));
 #ifndef Q_OS_MAC
-    qApp->setWindowIcon(QIcon(":icons/bitcoin"));
-    setWindowIcon(QIcon(":icons/bitcoin"));
+    qApp->setWindowIcon(QIcon(":icons/buntu"));
+    setWindowIcon(QIcon(":icons/buntu"));
 #else
     //setUnifiedTitleAndToolBarOnMac(true);
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
@@ -260,7 +260,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     gotoOverviewPage();
 }
 
-BitcoinGUI::~BitcoinGUI()
+BuntuGUI::~BuntuGUI()
 {
     if(trayIcon) // Hide tray icon, as deleting will let it linger until quit (on Ubuntu)
         trayIcon->hide();
@@ -271,7 +271,7 @@ BitcoinGUI::~BitcoinGUI()
     delete rpcConsole;
 }
 
-void BitcoinGUI::createActions()
+void BuntuGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
 
@@ -361,7 +361,7 @@ void BitcoinGUI::createActions()
     optionsAction = new QAction(tr("&Options..."), this);
     optionsAction->setToolTip(tr("Modify configuration options for buntu"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
-    toggleHideAction = new QAction(QIcon(":/icons/bitcoin"), tr("&Show / Hide"), this);
+    toggleHideAction = new QAction(QIcon(":/icons/buntu"), tr("&Show / Hide"), this);
     encryptWalletAction = new QAction(tr("&Encrypt Wallet..."), this);
     encryptWalletAction->setToolTip(tr("Encrypt or decrypt wallet"));
     backupWalletAction = new QAction(tr("&Backup Wallet..."), this);
@@ -394,7 +394,7 @@ void BitcoinGUI::createActions()
     connect(verifyMessageAction, SIGNAL(triggered()), this, SLOT(gotoVerifyMessageTab()));
 }
 
-void BitcoinGUI::createMenuBar()
+void BuntuGUI::createMenuBar()
 {
 #ifdef Q_OS_MAC
     appMenuBar = new QMenuBar();
@@ -435,7 +435,7 @@ static QWidget* makeToolBarSpacer()
     return spacer;
 }
 
-void BitcoinGUI::createToolBars()
+void BuntuGUI::createToolBars()
 {
     fLiteMode = GetBoolArg("-litemode", false);
 
@@ -487,7 +487,7 @@ void BitcoinGUI::createToolBars()
     }
 }
 
-void BitcoinGUI::setClientModel(ClientModel *clientModel)
+void BuntuGUI::setClientModel(ClientModel *clientModel)
 {
     if(!fOnlyTor)
     netLabel->setText("CLEARNET");
@@ -507,10 +507,10 @@ void BitcoinGUI::setClientModel(ClientModel *clientModel)
         {
             setWindowTitle(windowTitle() + QString(" ") + tr("[testnet]"));
 #ifndef Q_OS_MAC
-            qApp->setWindowIcon(QIcon(":icons/bitcoin_testnet"));
-            setWindowIcon(QIcon(":icons/bitcoin_testnet"));
+            qApp->setWindowIcon(QIcon(":icons/buntu_testnet"));
+            setWindowIcon(QIcon(":icons/buntu_testnet"));
 #else
-            MacDockIconHandler::instance()->setIcon(QIcon(":icons/bitcoin_testnet"));
+            MacDockIconHandler::instance()->setIcon(QIcon(":icons/buntu_testnet"));
 #endif
             if(trayIcon)
             {
@@ -541,7 +541,7 @@ void BitcoinGUI::setClientModel(ClientModel *clientModel)
     }
 }
 
-void BitcoinGUI::setWalletModel(WalletModel *walletModel)
+void BuntuGUI::setWalletModel(WalletModel *walletModel)
 {
     this->walletModel = walletModel;
     if(walletModel)
@@ -572,7 +572,7 @@ void BitcoinGUI::setWalletModel(WalletModel *walletModel)
     }
 }
 
-void BitcoinGUI::setMessageModel(MessageModel *messageModel)
+void BuntuGUI::setMessageModel(MessageModel *messageModel)
 {
     this->messageModel = messageModel;
     if(messageModel)
@@ -589,7 +589,7 @@ void BitcoinGUI::setMessageModel(MessageModel *messageModel)
     }
 }
 
-void BitcoinGUI::createTrayIcon()
+void BuntuGUI::createTrayIcon()
 {
     QMenu *trayIconMenu;
 #ifndef Q_OS_MAC
@@ -629,7 +629,7 @@ void BitcoinGUI::createTrayIcon()
 }
 
 #ifndef Q_OS_MAC
-void BitcoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
+void BuntuGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     if(reason == QSystemTrayIcon::Trigger)
     {
@@ -639,7 +639,7 @@ void BitcoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 }
 #endif
 
-void BitcoinGUI::optionsClicked()
+void BuntuGUI::optionsClicked()
 {
     if(!clientModel || !clientModel->getOptionsModel())
         return;
@@ -648,14 +648,14 @@ void BitcoinGUI::optionsClicked()
     dlg.exec();
 }
 
-void BitcoinGUI::aboutClicked()
+void BuntuGUI::aboutClicked()
 {
     AboutDialog dlg;
     dlg.setModel(clientModel);
     dlg.exec();
 }
 
-void BitcoinGUI::setNumConnections(int count)
+void BuntuGUI::setNumConnections(int count)
 {
     QString icon;
     switch(count)
@@ -670,7 +670,7 @@ void BitcoinGUI::setNumConnections(int count)
     labelConnectionsIcon->setToolTip(tr("%n active connection(s) to buntu network", "", count));
 }
 
-void BitcoinGUI::setNumBlocks(int count)
+void BuntuGUI::setNumBlocks(int count)
 {
     QString tooltip;
 
@@ -751,7 +751,7 @@ void BitcoinGUI::setNumBlocks(int count)
     statusBar()->setVisible(true);
 }
 
-void BitcoinGUI::message(const QString &title, const QString &message, bool modal, unsigned int style)
+void BuntuGUI::message(const QString &title, const QString &message, bool modal, unsigned int style)
 {
     QString strTitle = tr("buntu") + " - ";
     // Default to information icon
@@ -797,7 +797,7 @@ void BitcoinGUI::message(const QString &title, const QString &message, bool moda
         notificator->notify((Notificator::Class)nNotifyIcon, strTitle, message);
 }
 
-void BitcoinGUI::error(const QString &title, const QString &message, bool modal)
+void BuntuGUI::error(const QString &title, const QString &message, bool modal)
 {
     // Report errors from network/worker thread
     if(modal)
@@ -808,7 +808,7 @@ void BitcoinGUI::error(const QString &title, const QString &message, bool modal)
     }
 }
 
-void BitcoinGUI::changeEvent(QEvent *e)
+void BuntuGUI::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
 #ifndef Q_OS_MAC // Ignored on Mac
@@ -827,7 +827,7 @@ void BitcoinGUI::changeEvent(QEvent *e)
 #endif
 }
 
-void BitcoinGUI::closeEvent(QCloseEvent *event)
+void BuntuGUI::closeEvent(QCloseEvent *event)
 {
     if(clientModel)
     {
@@ -845,21 +845,21 @@ void BitcoinGUI::closeEvent(QCloseEvent *event)
     QMainWindow::closeEvent(event);
 }
 
-void BitcoinGUI::askFee(qint64 nFeeRequired, bool *payFee)
+void BuntuGUI::askFee(qint64 nFeeRequired, bool *payFee)
 {
     if (!clientModel || !clientModel->getOptionsModel())
         return;
 
     QString strMessage = tr("This transaction is over the size limit. You can still send it for a fee of %1, "
         "which goes to the nodes that process your transaction and helps to support the network. "
-        "Do you want to pay the fee?").arg(BitcoinUnits::formatWithUnit(clientModel->getOptionsModel()->getDisplayUnit(), nFeeRequired));
+        "Do you want to pay the fee?").arg(BuntuUnits::formatWithUnit(clientModel->getOptionsModel()->getDisplayUnit(), nFeeRequired));
     QMessageBox::StandardButton retval = QMessageBox::question(
           this, tr("Confirm transaction fee"), strMessage,
           QMessageBox::Yes|QMessageBox::Cancel, QMessageBox::Yes);
     *payFee = (retval == QMessageBox::Yes);
 }
 
-void BitcoinGUI::incomingTransaction(const QModelIndex & parent, int start, int end)
+void BuntuGUI::incomingTransaction(const QModelIndex & parent, int start, int end)
 {
 	// Prevent balloon-spam when initial block download is in progress
     if(!walletModel || !clientModel || clientModel->inInitialBlockDownload() || walletModel->processingQueuedTransactions())
@@ -887,12 +887,12 @@ void BitcoinGUI::incomingTransaction(const QModelIndex & parent, int start, int 
                              "Type: %3\n"
                              "Address: %4\n")
                           .arg(date)
-                          .arg(BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), amount, true))
+                          .arg(BuntuUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), amount, true))
                           .arg(type)
                           .arg(address), icon);
 }
 
-void BitcoinGUI::incomingMessage(const QModelIndex & parent, int start, int end)
+void BuntuGUI::incomingMessage(const QModelIndex & parent, int start, int end)
 {
     if(!messageModel)
         return;
@@ -921,7 +921,7 @@ void BitcoinGUI::incomingMessage(const QModelIndex & parent, int start, int end)
     };
 }
 
-void BitcoinGUI::clearWidgets()
+void BuntuGUI::clearWidgets()
 {
     centralStackedWidget->setCurrentWidget(centralStackedWidget->widget(0));
     for(int i = centralStackedWidget->count(); i>0; i--){
@@ -931,7 +931,7 @@ void BitcoinGUI::clearWidgets()
     }
 }
 
-void BitcoinGUI::gotoMasternodeManagerPage()
+void BuntuGUI::gotoMasternodeManagerPage()
 {
     masternodeManagerAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(masternodeManagerPage);
@@ -940,7 +940,7 @@ void BitcoinGUI::gotoMasternodeManagerPage()
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BitcoinGUI::gotoBlockBrowser()
+void BuntuGUI::gotoBlockBrowser()
 {
     blockAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(blockBrowser);
@@ -949,7 +949,7 @@ void BitcoinGUI::gotoBlockBrowser()
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BitcoinGUI::gotoOverviewPage()
+void BuntuGUI::gotoOverviewPage()
 {
     overviewAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(overviewPage);
@@ -958,7 +958,7 @@ void BitcoinGUI::gotoOverviewPage()
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BitcoinGUI::gotoHistoryPage()
+void BuntuGUI::gotoHistoryPage()
 {
     historyAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(transactionsPage);
@@ -968,7 +968,7 @@ void BitcoinGUI::gotoHistoryPage()
     connect(exportAction, SIGNAL(triggered()), transactionView, SLOT(exportClicked()));
 }
 
-void BitcoinGUI::gotoAddressBookPage()
+void BuntuGUI::gotoAddressBookPage()
 {
     addressBookAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(addressBookPage);
@@ -978,7 +978,7 @@ void BitcoinGUI::gotoAddressBookPage()
     connect(exportAction, SIGNAL(triggered()), addressBookPage, SLOT(exportClicked()));
 }
 
-void BitcoinGUI::gotoTradingPage()
+void BuntuGUI::gotoTradingPage()
 {
 
      //TradingAction->setChecked(true);
@@ -988,7 +988,7 @@ void BitcoinGUI::gotoTradingPage()
   //  disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BitcoinGUI::gotoReceiveCoinsPage()
+void BuntuGUI::gotoReceiveCoinsPage()
 {
     receiveCoinsAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(receiveCoinsPage);
@@ -998,7 +998,7 @@ void BitcoinGUI::gotoReceiveCoinsPage()
     connect(exportAction, SIGNAL(triggered()), receiveCoinsPage, SLOT(exportClicked()));
 }
 
-void BitcoinGUI::gotoSendCoinsPage()
+void BuntuGUI::gotoSendCoinsPage()
 {
     sendCoinsAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(sendCoinsPage);
@@ -1007,7 +1007,7 @@ void BitcoinGUI::gotoSendCoinsPage()
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BitcoinGUI::gotoSignMessageTab(QString addr)
+void BuntuGUI::gotoSignMessageTab(QString addr)
 {
     // call show() in showTab_SM()
     signVerifyMessageDialog->showTab_SM(true);
@@ -1016,7 +1016,7 @@ void BitcoinGUI::gotoSignMessageTab(QString addr)
         signVerifyMessageDialog->setAddress_SM(addr);
 }
 
-void BitcoinGUI::gotoVerifyMessageTab(QString addr)
+void BuntuGUI::gotoVerifyMessageTab(QString addr)
 {
     // call show() in showTab_VM()
     signVerifyMessageDialog->showTab_VM(true);
@@ -1025,7 +1025,7 @@ void BitcoinGUI::gotoVerifyMessageTab(QString addr)
         signVerifyMessageDialog->setAddress_VM(addr);
 }
 
-void BitcoinGUI::gotoMessagePage()
+void BuntuGUI::gotoMessagePage()
 {
     messageAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(messagePage);
@@ -1035,14 +1035,14 @@ void BitcoinGUI::gotoMessagePage()
     connect(exportAction, SIGNAL(triggered()), messagePage, SLOT(exportClicked()));
 }
 
-void BitcoinGUI::dragEnterEvent(QDragEnterEvent *event)
+void BuntuGUI::dragEnterEvent(QDragEnterEvent *event)
 {
     // Accept only URIs
     if(event->mimeData()->hasUrls())
         event->acceptProposedAction();
 }
 
-void BitcoinGUI::dropEvent(QDropEvent *event)
+void BuntuGUI::dropEvent(QDropEvent *event)
 {
     if(event->mimeData()->hasUrls())
     {
@@ -1064,7 +1064,7 @@ void BitcoinGUI::dropEvent(QDropEvent *event)
     event->acceptProposedAction();
 }
 
-void BitcoinGUI::handleURI(QString strURI)
+void BuntuGUI::handleURI(QString strURI)
 {
     // URI has to be valid
     if (sendCoinsPage->handleURI(strURI))
@@ -1076,7 +1076,7 @@ void BitcoinGUI::handleURI(QString strURI)
         notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid buntu address or malformed URI parameters."));
 }
 
-void BitcoinGUI::setEncryptionStatus(int status)
+void BuntuGUI::setEncryptionStatus(int status)
 {
     if(fWalletUnlockStakingOnly)
     {
@@ -1122,7 +1122,7 @@ void BitcoinGUI::setEncryptionStatus(int status)
     }
 }
 
-void BitcoinGUI::encryptWallet()
+void BuntuGUI::encryptWallet()
 {
     if(!walletModel)
         return;
@@ -1134,7 +1134,7 @@ void BitcoinGUI::encryptWallet()
     setEncryptionStatus(walletModel->getEncryptionStatus());
 }
 
-void BitcoinGUI::backupWallet()
+void BuntuGUI::backupWallet()
 {
     QString saveDir = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
     QString filename = QFileDialog::getSaveFileName(this, tr("Backup Wallet"), saveDir, tr("Wallet Data (*.dat)"));
@@ -1145,14 +1145,14 @@ void BitcoinGUI::backupWallet()
     }
 }
 
-void BitcoinGUI::changePassphrase()
+void BuntuGUI::changePassphrase()
 {
     AskPassphraseDialog dlg(AskPassphraseDialog::ChangePass, this);
     dlg.setModel(walletModel);
     dlg.exec();
 }
 
-void BitcoinGUI::unlockWallet()
+void BuntuGUI::unlockWallet()
 {
     if(!walletModel)
         return;
@@ -1167,7 +1167,7 @@ void BitcoinGUI::unlockWallet()
     }
 }
 
-void BitcoinGUI::lockWallet()
+void BuntuGUI::lockWallet()
 {
     if(!walletModel)
         return;
@@ -1175,7 +1175,7 @@ void BitcoinGUI::lockWallet()
     walletModel->setWalletLocked(true);
 }
 
-void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
+void BuntuGUI::showNormalIfMinimized(bool fToggleHidden)
 {
     // activateWindow() (sometimes) helps with keyboard focus on Windows
     if (isHidden())
@@ -1197,12 +1197,12 @@ void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
         hide();
 }
 
-void BitcoinGUI::toggleHidden()
+void BuntuGUI::toggleHidden()
 {
     showNormalIfMinimized(true);
 }
 
-void BitcoinGUI::updateWeight()
+void BuntuGUI::updateWeight()
 {
     if (!pwalletMain)
         return;
@@ -1218,7 +1218,7 @@ void BitcoinGUI::updateWeight()
     nWeight = pwalletMain->GetStakeWeight();
 }
 
-void BitcoinGUI::updateStakingIcon()
+void BuntuGUI::updateStakingIcon()
 {
     updateWeight();
 
@@ -1269,13 +1269,13 @@ void BitcoinGUI::updateStakingIcon()
     }
 }
 
-void BitcoinGUI::detectShutdown()
+void BuntuGUI::detectShutdown()
 {
     if (ShutdownRequested())
         QMetaObject::invokeMethod(QCoreApplication::instance(), "quit", Qt::QueuedConnection);
 }
 
-void BitcoinGUI::showProgress(const QString &title, int nProgress)
+void BuntuGUI::showProgress(const QString &title, int nProgress)
 {
     if (nProgress == 0)
     {

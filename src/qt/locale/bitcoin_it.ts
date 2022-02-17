@@ -13,7 +13,7 @@
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
+        <source>Copyright © 2009-2014 The Buntu developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2015-2017 The buntu developers</source>
         <translation type="unfinished"/>
@@ -302,9 +302,9 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>BuntuGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+297"/>
+        <location filename="../buntugui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>Firma il &amp;messaggio...</translation>
     </message>
@@ -721,7 +721,7 @@ Indirizzo: %4
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+104"/>
+        <location filename="../buntu.cpp" line="+104"/>
         <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
@@ -1668,7 +1668,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="+5"/>
         <location line="+5"/>
         <source>Send Coins</source>
-        <translation>Spedisci Bitcoin</translation>
+        <translation>Spedisci Buntu</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -1852,7 +1852,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+5"/>
         <source>Confirm send coins</source>
-        <translation>Conferma la spedizione di bitcoin</translation>
+        <translation>Conferma la spedizione di buntu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2110,7 +2110,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="-81"/>
         <location line="+81"/>
         <source>The entered address does not refer to a key.</source>
-        <translation>L&apos;indirizzo bitcoin inserito non è associato a nessuna chiave.</translation>
+        <translation>L&apos;indirizzo buntu inserito non è associato a nessuna chiave.</translation>
     </message>
     <message>
         <location line="-73"/>
@@ -2665,9 +2665,9 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
 </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>buntu-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+173"/>
+        <location filename="../buntustrings.cpp" line="+173"/>
         <source>buntu version</source>
         <translation type="unfinished"/>
     </message>
@@ -2915,8 +2915,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+41"/>
-        <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>Opzioni SSL: (vedi il wiki di Bitcoin per le istruzioni di configurazione SSL)</translation>
+        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
+        <translation>Opzioni SSL: (vedi il wiki di Buntu per le istruzioni di configurazione SSL)</translation>
     </message>
     <message>
         <location line="-81"/>

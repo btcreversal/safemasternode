@@ -13,10 +13,10 @@
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
+        <source>Copyright © 2009-2014 The Buntu developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2015-2017 The buntu developers</source>
-        <translation>版权所有 © 2009-2014 比特币Bitcoin开发组
+        <translation>版权所有 © 2009-2014 比特币Buntu开发组
 版权所有 © 2012-2014 新星币Novacoin开发组
 版权所有 © 2015-2017 黑币buntu开发组</translation>
     </message>
@@ -309,9 +309,9 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>BuntuGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+297"/>
+        <location filename="../buntugui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>消息签名(&amp;M)...</translation>
     </message>
@@ -727,7 +727,7 @@ Address: %4
         <translation>未进行权益增值</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+104"/>
+        <location filename="../buntu.cpp" line="+104"/>
         <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
         <translation>发生严重错误，黑币客户端即将关闭。</translation>
     </message>
@@ -2678,9 +2678,9 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
 </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>buntu-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+173"/>
+        <location filename="../buntustrings.cpp" line="+173"/>
         <source>buntu version</source>
         <translation>黑币客户端 版本</translation>
     </message>
@@ -2939,8 +2939,8 @@ alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+41"/>
-        <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>SSL选项：(参见Bitcoin Wiki关于SSL设置栏目)</translation>
+        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
+        <translation>SSL选项：(参见Buntu Wiki关于SSL设置栏目)</translation>
     </message>
     <message>
         <location line="-81"/>

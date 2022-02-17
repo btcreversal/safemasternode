@@ -13,10 +13,10 @@
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
+        <source>Copyright © 2009-2014 The Buntu developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2015-2017 The buntu developers</source>
-        <translation>Copyright © 2009-2014 The Bitcoin developers
+        <translation>Copyright © 2009-2014 The Buntu developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2015-2017 The buntu developers</translation>
     </message>
@@ -304,9 +304,9 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>BuntuGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+297"/>
+        <location filename="../buntugui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>Semnează &amp;mesaj...</translation>
     </message>
@@ -722,7 +722,7 @@ Adresa: %4
         <translation>Not staking</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+104"/>
+        <location filename="../buntu.cpp" line="+104"/>
         <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
         <translation>A apărut o eroare fatală. buntu nu mai poate continua în condiții de siguranță și va iesi.</translation>
     </message>
@@ -1260,7 +1260,7 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Alege subdiviziunea folosită la afişarea interfeţei şi la trimiterea de bitcoin.</translation>
+        <translation>Alege subdiviziunea folosită la afişarea interfeţei şi la trimiterea de buntu.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1322,7 +1322,7 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     <message>
         <location line="+29"/>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adresa bitcoin pe care a-ti specificat-o este invalida</translation>
+        <translation>Adresa buntu pe care a-ti specificat-o este invalida</translation>
     </message>
 </context>
 <context>
@@ -2680,9 +2680,9 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
 </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>buntu-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+173"/>
+        <location filename="../buntustrings.cpp" line="+173"/>
         <source>buntu version</source>
         <translation>Versiune buntu</translation>
     </message>
@@ -2923,8 +2923,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+41"/>
-        <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>Optiuni SSl (vezi Bitcoin wiki pentru intructiunile de instalare)</translation>
+        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
+        <translation>Optiuni SSl (vezi Buntu wiki pentru intructiunile de instalare)</translation>
     </message>
     <message>
         <location line="-81"/>

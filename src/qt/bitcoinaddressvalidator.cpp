@@ -1,4 +1,4 @@
-#include "bitcoinaddressvalidator.h"
+#include "buntuaddressvalidator.h"
 
 /* Base58 characters are:
      "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
@@ -13,12 +13,12 @@
   - '0' and 'O' to 'o'
 */
 
-BitcoinAddressValidator::BitcoinAddressValidator(QObject *parent) :
+BuntuAddressValidator::BuntuAddressValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State BitcoinAddressValidator::validate(QString &input, int &pos) const
+QValidator::State BuntuAddressValidator::validate(QString &input, int &pos) const
 {
     // Correction
     for(int idx=0; idx<input.size();)

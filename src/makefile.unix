@@ -121,7 +121,7 @@ OBJS= \
     obj/pubkey.o \
     obj/ecwrapper.o \
     obj/init.o \
-    obj/bitcoind.o \
+    obj/buntud.o \
     obj/keystore.o \
     obj/core.o \
     obj/main.o \

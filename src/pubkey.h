@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2013 The Bitcoin developers
+// Copyright (c) 2009-2013 The Buntu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_PUBKEY_H
-#define BITCOIN_PUBKEY_H
+#ifndef BUNTU_PUBKEY_H
+#define BUNTU_PUBKEY_H
 
 #include "hash.h"
 #include "serialize.h"
@@ -212,4 +212,4 @@ struct ECCryptoClosure
     ECCVerifyHandle handle;
 };
 
-#endif // BITCOIN_PUBKEY_H
+#endif // BUNTU_PUBKEY_H

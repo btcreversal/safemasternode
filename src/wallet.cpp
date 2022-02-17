@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2012 The Buntu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -3060,7 +3060,7 @@ bool CWallet::SendStealthMoneyToDestination(CStealthAddress& sxAddress, int64_t 
         };
     };
 
-    // -- Parse Bitcoin address
+    // -- Parse Buntu address
     CScript scriptPubKey;
     scriptPubKey.SetDestination(addrTo.Get());
 
@@ -3810,7 +3810,7 @@ string CWallet::SendMoneyToDestination(const CTxDestination& address, int64_t nV
     if (nValue + nTransactionFee > GetBalance())
         return _("Insufficient funds");
 
-    // Parse Bitcoin address
+    // Parse Buntu address
     CScript scriptPubKey;
     scriptPubKey.SetDestination(address);
 

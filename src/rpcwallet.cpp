@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2012 The Buntu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -104,7 +104,7 @@ CScript _createmultisig(const Array& params)
     {
         const std::string& ks = keys[i].get_str();
 #ifdef ENABLE_WALLET
-        // Case 1: Bitcoin address and we have full public key:
+        // Case 1: Buntu address and we have full public key:
         CbuntucoinAddress address(ks);
         if (pwalletMain && address.IsValid())
         {
@@ -151,9 +151,9 @@ Value createmultisig(const Array& params, bool fHelp)
 
             "\nArguments:\n"
             "1. nrequired (numeric, required) The number of required signatures out of the n keys or addresses.\n"
-            "2. \"keys\" (string, required) A json array of keys which are bitcoin addresses or hex-encoded public keys\n"
+            "2. \"keys\" (string, required) A json array of keys which are buntu addresses or hex-encoded public keys\n"
             " [\n"
-            " \"key\" (string) bitcoin address or hex-encoded public key\n"
+            " \"key\" (string) buntu address or hex-encoded public key\n"
             " ,...\n"
             " ]\n"
 
@@ -595,7 +595,7 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
             + HelpExampleRpc("getreceivedbyaddress", "\"TfFxcTN7BJQp88cPJYRvFpUAAKefTib9uh\", 10")
        );
 
-    // Bitcoin address
+    // Buntu address
     CbuntucoinAddress address = CbuntucoinAddress(params[0].get_str());
     CScript scriptPubKey;
     if (!address.IsValid())
@@ -1079,7 +1079,7 @@ Value addmultisigaddress(const Array& params, bool fHelp)
     {
         const std::string& ks = keys[i].get_str();
 
-        // Case 1: Bitcoin address and we have full public key:
+        // Case 1: Buntu address and we have full public key:
         CbuntucoinAddress address(ks);
         if (pwalletMain && address.IsValid())
         {
