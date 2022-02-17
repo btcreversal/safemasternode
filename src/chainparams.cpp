@@ -62,8 +62,8 @@ public:
         pchMessageStart[2] = 0xa4;
         pchMessageStart[3] = 0xc8;
         vAlertPubKey = ParseHex("043d8e0f7214bd3c40b7d11707deb16c547b6dd9a36c3b59e45cb9255ef15d2fdfc260d79658677aa9f7af4ca549cf300b427ce4d1efa1ea474e5bf9642e016c97");
-        nDefaultPort = 32821;
-        nRPCPort = 32822;
+        nDefaultPort = 22021;
+        nRPCPort = 22022;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 24);
 
         const char* pszTimestamp = "Bitcoin Could Break Out and Rise With Altcoins Next Week";
@@ -93,7 +93,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        vSeeds.push_back(CDNSSeedData("seed1.buntucryptocurrency.com", "seed1.buntucryptocurrency.com"));
+        vSeeds.push_back(CDNSSeedData("seed.safeminecoin.org", "seed.safeminecoin.org"));
 
         convertSeeds(vFixedSeeds, pnSeed, ARRAYLEN(pnSeed), nDefaultPort);
 
@@ -132,8 +132,8 @@ public:
         pchMessageStart[3] = 0xdc;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
         vAlertPubKey = ParseHex("04c74c50a0a5a32dfc1a003f3d9ffac805ea12c7d6f7134e7a92b9a8d0acdffd90e0bd2a05a932d853133ac0fb98bdc16d08f6cffa870e7fbec5b040ca9e922583");
-        nDefaultPort = 32823;
-        nRPCPort = 32824;
+        nDefaultPort = 22023;
+        nRPCPort = 22024;
         strDataDir = "testnet";
 
         const char* pszTimestamp = "House Sends Infrastructure Bill With Crypto Tax Provision to US President";
