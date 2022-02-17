@@ -57,6 +57,9 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     cd Buntu/src
     sudo make -f makefile.unix
     strip buntud
+    
+    example :
+    sudo make -f makefile.unix USE_UPNP=1 BDB_INCLUDE_PATH='/usr/include/db4.8 
 
 ##### Edit the config file  
     
