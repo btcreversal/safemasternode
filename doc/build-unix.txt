@@ -59,7 +59,7 @@ Versions used in this release:
  Boost         1.55.0
  miniupnpc     1.9.20140401
 
-Dependency Build Instructions: Usafemasternode & Debian
+Dependency Build Instructions: Ubuntu & Debian
 ----------------------------------------------
 sudo apt-get install build-essential
 sudo apt-get install libssl-dev

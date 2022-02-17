@@ -13,7 +13,7 @@ Download latest wallet: [GitHub](https://github.com/safeminecoin/safemasternode/
 
 Open the wallet
 
- *Note: If you're setting up using an Usafemasternode desktop wallet and you do not see the File, Settings, or Help wallet menu options then you must uninstall apppmenu-qt5 from your system (Terminal> sudo apt-get remove appmenu-qt5)*
+ *Note: If you're setting up using an Ubuntu desktop wallet and you do not see the File, Settings, or Help wallet menu options then you must uninstall apppmenu-qt5 from your system (Terminal> sudo apt-get remove appmenu-qt5)*
 
 Go to the `Receive` tab
 
@@ -57,7 +57,7 @@ Paste the applicable command below into your terminal to run the automated maste
 #### Linux Dependencies
 apt-get install net-tools curl -y
 
-Usafemasternode 16.04 VPS:
+Ubuntu 16.04 VPS:
 
 Install dos2unix:
 ```
@@ -74,7 +74,7 @@ bash masternode1604.sh
 
 ```  
 
-Usafemasternode 18.04 VPS:
+Ubuntu 18.04 VPS:
 
 Install dos2unix:
 ```

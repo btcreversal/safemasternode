@@ -8,7 +8,7 @@ Debian
 -------
 
 First, make sure that the required packages for Qt5 development of your
-distribution are installed, for Debian and Usafemasternode these are:
+distribution are installed, for Debian and Ubuntu these are:
 
 ::
 
@@ -130,10 +130,10 @@ significant hassle!
 
 .. _`this Debian issue`: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=621425
 
-Usafemasternode 11.10 warning
+Ubuntu 11.10 warning
 ====================
 
-Usafemasternode 11.10 has a package called 'qt-at-spi' installed by default.  At the time of writing, having that package
+Ubuntu 11.10 has a package called 'qt-at-spi' installed by default.  At the time of writing, having that package
 installed causes safemasternode-qt to crash intermittently.  The issue has been reported as `launchpad bug 857790`_, but
 isn't yet fixed.
 

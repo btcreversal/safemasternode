@@ -7,7 +7,7 @@ safemasternode requires
 
 To install, first follow the instructions to install dependencies 18.04 then follow the compilation instructions.
 
-  ## Dependencies (Usafemasternode 18.04)
+  ## Dependencies (Ubuntu 18.04)
     sudo -i
     sudo apt-get update && apt-get upgrade  
     sudo apt-get dist-upgrade
@@ -23,7 +23,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo apt-get install libdb5.3++ unzip libzmq5 -y
     sudo apt-get install libminiupnpc-dev -y
     
-    ##### Special instructions for openssl-1.0.2n on Usafemasternode 18.04:
+    ##### Special instructions for openssl-1.0.2n on Ubuntu 18.04:
     cd ~
     wget http://www.openssl.org/source/openssl-1.0.2n.tar.gz
     tar -xvzf openssl-1.0.2n.tar.gz

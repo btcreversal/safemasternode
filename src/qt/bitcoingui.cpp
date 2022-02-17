@@ -262,7 +262,7 @@ safemasternodeGUI::safemasternodeGUI(QWidget *parent):
 
 safemasternodeGUI::~safemasternodeGUI()
 {
-    if(trayIcon) // Hide tray icon, as deleting will let it linger until quit (on Usafemasternode)
+    if(trayIcon) // Hide tray icon, as deleting will let it linger until quit (on Ubuntu)
         trayIcon->hide();
 #ifdef Q_OS_MAC
     delete appMenuBar;
