@@ -53,6 +53,17 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     cd ~
     sudo git clone https://github.com/CRYPT0BUNTU/Buntu.git
 
+##### Install libdb6.2 (Berkeley DB)
+    cd Buntu
+    BITCOIN_ROOT=$(pwd)
+    BDB_PREFIX="${BITCOIN_ROOT}/build"
+    mkdir -p $BDB_PREFIX
+    wget 'http://download.oracle.com/berkeley-db/db-6.2.32.tar.gz'
+    tar -xzvf db-6.2.32.tar.gz
+    cd db-6.2.32/build_unix/
+    ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX --without-gui --enable-upnp-default
+    make install
+
 ### Compiling  
     cd Buntu/src
     sudo make -f makefile.unix
