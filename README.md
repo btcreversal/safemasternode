@@ -16,9 +16,9 @@ SafeMasterNode (SMTN) is a Proof-of-Stake (PoS) cryptocurrency featuring mastern
 
 ***
 
-#### [Linux Build Instructions](https://github.com/alfariqicrypto/safemasternode/blob/master/Linux_Build.md)
+#### [Linux Build Instructions](https://github.com/safeminecoin/safemasternode/blob/master/Linux_Build.md)
 
-#### [Masternode Setup Guide](https://github.com/alfariqicrypto/safemasternode/blob/master/Masternode_Setup_Guide.md)
+#### [Masternode Setup Guide](https://github.com/safeminecoin/safemasternode/blob/master/Masternode_Setup_Guide.md)
 
 ***
 
