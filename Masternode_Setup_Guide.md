@@ -9,7 +9,7 @@
 * Text Editor (e.g. Notepad)
 ___
 ### 2. Local wallet setup part 1 of 2  
-Download latest wallet: [GitHub](https://github.com/CRYPT0safemasternode/safemasternode/releases)  
+Download latest wallet: [GitHub](https://github.com/safeminecoin/safemasternode/releases)  
 
 Open the wallet
 
@@ -67,7 +67,7 @@ sudo apt-get install dos2unix -y
 Run the setup commands:
 
 ```
-wget -q https://github.com/CRYPT0safemasternode/safemasternode/releases/download/1.0/masternode1604.sh
+wget -q https://github.com/safeminecoin/safemasternode/releases/download/1.0/masternode1604.sh
 chmod +x masternode1604.sh
 dos2unix masternode1804.sh
 bash masternode1604.sh
@@ -84,7 +84,7 @@ sudo apt-get install dos2unix -y
 Run the setup commands:
 
 ```
-wget -q https://github.com/CRYPT0safemasternode/safemasternode/releases/download/1.0/masternode1804.sh
+wget -q https://github.com/safeminecoin/safemasternode/releases/download/1.0/masternode1804.sh
 chmod +x masternode1804.sh
 dos2unix masternode1804.sh
 bash masternode1804.sh
