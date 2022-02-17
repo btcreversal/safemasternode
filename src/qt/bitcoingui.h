@@ -1,5 +1,5 @@
-#ifndef BUNTUGUI_H
-#define BUNTUGUI_H
+#ifndef SAFEMASTERNODEGUI_H
+#define SAFEMASTERNODEGUI_H
 
 #include <QMainWindow>
 #include <QSystemTrayIcon>
@@ -32,23 +32,23 @@ class QScrollArea;
 QT_END_NAMESPACE
 
 /**
-  Buntu GUI main class. This class represents the main window of the Buntu UI. It communicates with both the client and
+  safemasternode GUI main class. This class represents the main window of the safemasternode UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class BuntuGUI : public QMainWindow
+class safemasternodeGUI : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit BuntuGUI(QWidget *parent = 0);
-    ~BuntuGUI();
+    explicit safemasternodeGUI(QWidget *parent = 0);
+    ~safemasternodeGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
     */
     void setClientModel(ClientModel *clientModel);
     /** Set the wallet model.
-        The wallet model represents a buntu wallet, and offers access to the list of transactions, address book and sending
+        The wallet model represents a safemasternode wallet, and offers access to the list of transactions, address book and sending
         functionality.
     */
     void setWalletModel(WalletModel *walletModel);
@@ -233,4 +233,4 @@ private slots:
     void showProgress(const QString &title, int nProgress);
 };
 
-#endif // BUNTUGUI_H
+#endif // SAFEMASTERNODEGUI_H

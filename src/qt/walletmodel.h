@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2014 The Buntu developers
+// Copyright (c) 2011-2014 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -87,7 +87,7 @@ public:
     }
 };
 
-/** Interface to Buntu wallet from Qt view code. */
+/** Interface to safemasternode wallet from Qt view code. */
 class WalletModel : public QObject
 {
     Q_OBJECT
@@ -200,7 +200,7 @@ public:
 private:
     CWallet *wallet;
     bool fHaveWatchOnly;
-    bool fbuntuCheckBalanceChanged;
+    bool fsafemasternodeCheckBalanceChanged;
     bool fProcessingQueuedTransactions;
 
     // Wallet has an options model for wallet-specific options

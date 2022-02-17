@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2013 The Buntu developers
+// Copyright (c) 2011-2013 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,7 +25,7 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-/** Dialog for sending buntus */
+/** Dialog for sending safemasternodes */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT

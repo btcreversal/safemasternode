@@ -53,9 +53,9 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 sub.involvesWatchAddress = mine == ISMINE_WATCH_ONLY;
                 if (ExtractDestination(txout.scriptPubKey, address) && IsMine(*wallet, address))
                 {
-                    // Received by Buntu Address
+                    // Received by safemasternode Address
                     sub.type = TransactionRecord::RecvWithAddress;
-                    sub.address = CbuntucoinAddress(address).ToString();
+                    sub.address = CsafemasternodecoinAddress(address).ToString();
                 }
                 else
                 {
@@ -144,7 +144,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 if (ExtractDestination(wtx.vout[0].scriptPubKey, address))
                 {
                     // Sent to Dash Address
-                    sub.address = CbuntucoinAddress(address).ToString();
+                    sub.address = CsafemasternodecoinAddress(address).ToString();
                 }
                 else
                 {
@@ -197,9 +197,9 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 CTxDestination address;
                 if (ExtractDestination(txout.scriptPubKey, address))
                 {
-                    // Sent to Buntu Address
+                    // Sent to safemasternode Address
                     sub.type = TransactionRecord::SendToAddress;
-                    sub.address = CbuntucoinAddress(address).ToString();
+                    sub.address = CsafemasternodecoinAddress(address).ToString();
                 }
                 else
                 {

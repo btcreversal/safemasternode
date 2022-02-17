@@ -15,7 +15,7 @@ class QDateTime;
 class QTimer;
 QT_END_NAMESPACE
 
-/** Model for Buntu network client. */
+/** Model for safemasternode network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT

@@ -1,13 +1,13 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Buntu Core developers
+// Copyright (c) 2009-2015 The safemasternode Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 /**
  * Utilities for converting data from/to strings.
  */
-#ifndef BUNTU_UTILSTRENCODINGS_H
-#define BUNTU_UTILSTRENCODINGS_H
+#ifndef safemasternode_UTILSTRENCODINGS_H
+#define safemasternode_UTILSTRENCODINGS_H
 
 #include <stdint.h>
 #include <string>
@@ -107,4 +107,4 @@ bool TimingResistantEqual(const T& a, const T& b)
     return accumulator == 0;
 }
 
-#endif // BUNTU_UTILSTRENCODINGS_H
+#endif // safemasternode_UTILSTRENCODINGS_H

@@ -407,7 +407,7 @@ void CDarksendPool::SetNull(){
 }
 
 bool CDarksendPool::SetCollateralAddress(std::string strAddress){
-    CbuntucoinAddress address;
+    CsafemasternodecoinAddress address;
     if (!address.SetString(strAddress))
     {
         LogPrintf("CDarksendPool::SetCollateralAddress - Invalid DarkSend collateral address\n");
@@ -554,7 +554,7 @@ void CDarksendPool::Check()
             }
 
             // use BIP69 implementation for improved anonymity
-            // https://github.com/buntu/bips/blob/master/bip-0069.mediawiki
+            // https://github.com/safemasternode/bips/blob/master/bip-0069.mediawiki
             sort(txNew.vin.begin(), txNew.vin.end(),  CompareInputBIP69());
             sort(txNew.vout.begin(), txNew.vout.end(), CompareOutputBIP69());
 
@@ -790,9 +790,9 @@ void CDarksendPool::ChargeRandomFees(){
 
                 Being that DarkSend has "no fees" we need to have some kind of cost associated
                 with using it to stop abuse. Otherwise it could serve as an attack vector and
-                allow endless transaction that would bloat buntu and make it unusable. To
+                allow endless transaction that would bloat safemasternode and make it unusable. To
                 stop these kinds of attacks 1 in 50 successful transactions are charged. This
-                adds up to a cost of 0.002BNTU per transaction on average.
+                adds up to a cost of 0.002SMTN per transaction on average.
             */
             if(r <= 10)
             {
@@ -1440,7 +1440,7 @@ bool CDarksendPool::DoAutomaticDenominating(bool fDryRun)
         // should have some additional amount for them
         nLowestDenom += DARKSEND_COLLATERAL*4;
 
-    CAmount nBalanceNeedsAnonymized = nAnonymizebuntuAmount*COIN - pwalletMain->GetAnonymizedBalance();
+    CAmount nBalanceNeedsAnonymized = nAnonymizesafemasternodeAmount*COIN - pwalletMain->GetAnonymizedBalance();
 
     // if balanceNeedsAnonymized is more than pool max, take the pool max
     if(nBalanceNeedsAnonymized > DARKSEND_POOL_MAX) nBalanceNeedsAnonymized = DARKSEND_POOL_MAX;
@@ -1933,10 +1933,10 @@ bool CDarksendPool::IsCompatibleWithSession(int64_t nDenom, CTransaction txColla
 void CDarksendPool::GetDenominationsToString(int nDenom, std::string& strDenom){
     // Function returns as follows:
     //
-    // bit 0 - 100BNTU+1 ( bit on if present )
-    // bit 1 - 10BNTU+1
-    // bit 2 - 1BNTU+1
-    // bit 3 - .1BNTU+1
+    // bit 0 - 100SMTN+1 ( bit on if present )
+    // bit 1 - 10SMTN+1
+    // bit 2 - 1SMTN+1
+    // bit 3 - .1SMTN+1
     // bit 3 - non-denom
 
 
@@ -2009,10 +2009,10 @@ int CDarksendPool::GetDenominations(const std::vector<CTxOut>& vout, bool fSingl
 
     // Function returns as follows:
     //
-    // bit 0 - 100BNTU+1 ( bit on if present )
-    // bit 1 - 10BNTU+1
-    // bit 2 - 1BNTU+1
-    // bit 3 - .1BNTU+1
+    // bit 0 - 100SMTN+1 ( bit on if present )
+    // bit 1 - 10SMTN+1
+    // bit 2 - 1SMTN+1
+    // bit 3 - .1SMTN+1
 
     return denom;
 }
@@ -2113,7 +2113,7 @@ bool CDarkSendSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey){
 }
 
 bool CDarkSendSigner::SetKey(std::string strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey){
-    CbuntucoinSecret vchSecret;
+    CsafemasternodecoinSecret vchSecret;
     bool fGood = vchSecret.SetString(strSecret);
 
     if (!fGood) {
@@ -2273,7 +2273,7 @@ void ThreadCheckDarkSendPool()
     if(fLiteMode) return; //disable all Darksend/Masternode related functionality
 
     // Make this thread recognisable as the wallet flushing thread
-    RenameThread("buntu-darksend");
+    RenameThread("safemasternode-darksend");
 
     unsigned int c = 0;
 

@@ -6,7 +6,7 @@ they can be picked up by Qt linguist.
 from subprocess import Popen, PIPE
 import glob
 
-OUT_CPP="src/qt/buntustrings.cpp"
+OUT_CPP="src/qt/safemasternodestrings.cpp"
 EMPTY=['""']
 
 def parse_po(text):
@@ -62,9 +62,9 @@ f.write("""#include <QtGlobal>
 #define UNUSED
 #endif
 """)
-f.write('static const char UNUSED *buntu_strings[] = {')
+f.write('static const char UNUSED *safemasternode_strings[] = {')
 for (msgid, msgstr) in messages:
     if msgid != EMPTY:
-        f.write('QT_TRANSLATE_NOOP("buntu-core", %s),\n' % ('\n'.join(msgid)))
+        f.write('QT_TRANSLATE_NOOP("safemasternode-core", %s),\n' % ('\n'.join(msgid)))
 f.write('};')
 f.close()

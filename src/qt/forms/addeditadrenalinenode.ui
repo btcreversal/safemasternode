@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add/Edit buntu Node</string>
+   <string>Add/Edit safemasternode Node</string>
   </property>
   <property name="modal">
    <bool>true</bool>

@@ -1,5 +1,5 @@
 # Linux Build Instructions
-Buntu requires
+safemasternode requires
 * openssl-1.0.2n
 * berkeley 4.8 db
 * boost 1.57
@@ -7,7 +7,7 @@ Buntu requires
 
 To install, first follow the instructions to install dependencies 18.04 then follow the compilation instructions.
 
-  ## Dependencies (Ubuntu 18.04)
+  ## Dependencies (Usafemasternode 18.04)
     sudo -i
     sudo apt-get update && apt-get upgrade  
     sudo apt-get dist-upgrade
@@ -16,14 +16,14 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo apt-get install build-essential libtool autotools-dev automake pkg-config -y  
     sudo apt-get install libevent-dev bsdmainutils software-properties-common -y  
     sudo apt-get install libboost-all-dev -y  
-    sudo add-apt-repository ppa:buntu/buntu  
+    sudo add-apt-repository ppa:safemasternode/safemasternode  
     sudo apt-get update
     sudo apt-get install libdb4.8-dev libdb4.8++-dev  -y  
     sudo apt-get install libgmp3-dev -y
     sudo apt-get install libdb5.3++ unzip libzmq5 -y
     sudo apt-get install libminiupnpc-dev -y
     
-    ##### Special instructions for openssl-1.0.2n on Ubuntu 18.04:
+    ##### Special instructions for openssl-1.0.2n on Usafemasternode 18.04:
     cd ~
     wget http://www.openssl.org/source/openssl-1.0.2n.tar.gz
     tar -xvzf openssl-1.0.2n.tar.gz
@@ -55,9 +55,9 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo git clone https://github.com/safeminecoin/safemasternode.git
 
 ##### Install libdb6.2 (Berkeley DB)
-    cd Buntu
-    BUNTU_ROOT=$(pwd)
-    BDB_PREFIX="${BUNTU_ROOT}/build"
+    cd safemasternode
+    safemasternode_ROOT=$(pwd)
+    BDB_PREFIX="${safemasternode_ROOT}/build"
     mkdir -p $BDB_PREFIX
     wget 'http://download.oracle.com/berkeley-db/db-6.2.32.tar.gz'
     tar -xzvf db-6.2.32.tar.gz
@@ -66,9 +66,9 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     make install
 
 ### Compiling  
-    cd Buntu/src
+    cd safemasternode/src
     sudo make -f makefile.unix
-    strip buntud
+    strip safemasternoded
     
     example :
     sudo make -f makefile.unix USE_UPNP=1 BDB_INCLUDE_PATH='/usr/include/db4.8 
@@ -79,7 +79,7 @@ To install, first follow the instructions to install dependencies 18.04 then fol
     sudo ufw allow 32822/tcp
     sudo ufw allow 22/tcp
 
-    sudo nano /root/.buntu/buntu.conf
+    sudo nano /root/.safemasternode/safemasternode.conf
 
 		rpcuser=username(Configure your own)  
 		rpcpassword=password(Configure your own)  
@@ -101,20 +101,20 @@ To install, first follow the instructions to install dependencies 18.04 then fol
 #### Usage  
 Start daemon
 
-	./buntud
-	systemctl start buntu.service
+	./safemasternoded
+	systemctl start safemasternode.service
 
 Stop daemon
 
-	./buntud stop
-	systemctl stop buntu.service
+	./safemasternoded stop
+	systemctl stop safemasternode.service
 
 Display information  
 
-	./buntud help
-	./buntud getinfo  
-	./buntud getmininginfo  
-	./buntud getblockcount  
-	./buntud masternode status  
-	./buntud masternode list  
+	./safemasternoded help
+	./safemasternoded getinfo  
+	./safemasternoded getmininginfo  
+	./safemasternoded getblockcount  
+	./safemasternoded masternode status  
+	./safemasternoded masternode list  
 ___

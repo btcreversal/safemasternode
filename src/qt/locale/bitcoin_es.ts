@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About buntu</source>
-        <translation>Acerca de buntu</translation>
+        <source>About safemasternode</source>
+        <translation>Acerca de safemasternode</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;buntu&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;buntu&lt;/b&gt; versión</translation>
+        <source>&lt;b&gt;safemasternode&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;safemasternode&lt;/b&gt; versión</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Buntu developers
+        <source>Copyright © 2009-2014 The safemasternode developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2015-2017 The buntu developers</source>
-        <translation>Copyright © 2009-2014 The Buntu developers
+Copyright © 2015-2017 The safemasternode developers</source>
+        <translation>Copyright © 2009-2014 The safemasternode developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2015-2017 The buntu developers</translation>
+Copyright © 2015-2017 The safemasternode developers</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -60,8 +60,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your buntu addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Estas son las direcciones de buntu para recibir pagos. Es posible que desee dar una diferente a cada remitente para que pueda realizar un seguimiento de quien te está pagando.</translation>
+        <source>These are your safemasternode addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Estas son las direcciones de safemasternode para recibir pagos. Es posible que desee dar una diferente a cada remitente para que pueda realizar un seguimiento de quien te está pagando.</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -75,8 +75,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a buntu address</source>
-        <translation>Firmar un mensaje para demostrar que es dueño de su dirección de buntu</translation>
+        <source>Sign a message to prove you own a safemasternode address</source>
+        <translation>Firmar un mensaje para demostrar que es dueño de su dirección de safemasternode</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -90,8 +90,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified buntu address</source>
-        <translation>Verifique el mensaje para asegurarse que fue firmado por una dirección específica de buntu</translation>
+        <source>Verify a message to ensure it was signed with a specified safemasternode address</source>
+        <translation>Verifique el mensaje para asegurarse que fue firmado por una dirección específica de safemasternode</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -258,8 +258,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+82"/>
-        <source>buntu will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>buntu cerrará para terminar el proceso de encriptación. Recuerde que la encriptación de su monedero no puede proteger completamente que sus monedas sean robadas por malware infectando su computadora.</translation>
+        <source>safemasternode will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>safemasternode cerrará para terminar el proceso de encriptación. Recuerde que la encriptación de su monedero no puede proteger completamente que sus monedas sean robadas por malware infectando su computadora.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -304,9 +304,9 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
-    <name>BuntuGUI</name>
+    <name>safemasternodeGUI</name>
     <message>
-        <location filename="../buntugui.cpp" line="+297"/>
+        <location filename="../safemasternodegui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
     </message>
@@ -352,8 +352,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about buntu</source>
-        <translation>Mostrar información sobre buntu</translation>
+        <source>Show information about safemasternode</source>
+        <translation>Mostrar información sobre safemasternode</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -392,13 +392,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a buntu address</source>
-        <translation>Enviar monedas a una dirección de buntu</translation>
+        <source>Send coins to a safemasternode address</source>
+        <translation>Enviar monedas a una dirección de safemasternode</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for buntu</source>
-        <translation>Modificar las opciones de configuración para buntu</translation>
+        <source>Modify configuration options for safemasternode</source>
+        <translation>Modificar las opciones de configuración para safemasternode</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -438,8 +438,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-214"/>
         <location line="+551"/>
-        <source>buntu</source>
-        <translation>buntu</translation>
+        <source>safemasternode</source>
+        <translation>safemasternode</translation>
     </message>
     <message>
         <location line="-551"/>
@@ -448,8 +448,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About buntu</source>
-        <translation>Acerca de buntu</translation>
+        <source>&amp;About safemasternode</source>
+        <translation>Acerca de safemasternode</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -500,13 +500,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>buntu client</source>
-        <translation>Cliente buntu</translation>
+        <source>safemasternode client</source>
+        <translation>Cliente safemasternode</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to buntu network</source>
-        <translation><numerusform>%n conexión activa a la red buntu</numerusform><numerusform>%n conexiones activas a la red buntu</numerusform></translation>
+        <source>%n active connection(s) to safemasternode network</source>
+        <translation><numerusform>%n conexión activa a la red safemasternode</numerusform><numerusform>%n conexiones activas a la red safemasternode</numerusform></translation>
     </message>
     <message>
         <location line="+488"/>
@@ -600,8 +600,8 @@ Dirección: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid buntu address or malformed URI parameters.</source>
-        <translation>URI no se puede analizar! Esto puede ser causado por una dirección de buntu no válida o parámetros de URI malformados.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid safemasternode address or malformed URI parameters.</source>
+        <translation>URI no se puede analizar! Esto puede ser causado por una dirección de safemasternode no válida o parámetros de URI malformados.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -722,9 +722,9 @@ Dirección: %4
         <translation>No estás &quot;Staking&quot;</translation>
     </message>
     <message>
-        <location filename="../buntu.cpp" line="+104"/>
-        <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
-        <translation>Se ha producido un error fatal. buntu ya no puede continuar de forma segura y cerrará.</translation>
+        <location filename="../safemasternode.cpp" line="+104"/>
+        <source>A fatal error occurred. safemasternode can no longer continue safely and will quit.</source>
+        <translation>Se ha producido un error fatal. safemasternode ya no puede continuar de forma segura y cerrará.</translation>
     </message>
 </context>
 <context>
@@ -1057,8 +1057,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid buntu address.</source>
-        <translation>La dirección introducida &quot;%1&quot; no es una dirección válida de buntu.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid safemasternode address.</source>
+        <translation>La dirección introducida &quot;%1&quot; no es una dirección válida de safemasternode.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1076,8 +1076,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>buntu-Qt</source>
-        <translation>buntu-Qt</translation>
+        <source>safemasternode-Qt</source>
+        <translation>safemasternode-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1149,13 +1149,13 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start buntu after logging in to the system.</source>
-        <translation>Iniciar buntu automáticamente después de entrar en el sistema.</translation>
+        <source>Automatically start safemasternode after logging in to the system.</source>
+        <translation>Iniciar safemasternode automáticamente después de entrar en el sistema.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start buntu on system login</source>
-        <translation>&amp;Iniciar buntu al inicio del sistema</translation>
+        <source>&amp;Start safemasternode on system login</source>
+        <translation>&amp;Iniciar safemasternode al inicio del sistema</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1164,8 +1164,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the buntu client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto de cliente buntu en el router. Esto sólo funciona cuando el router es compatible con UPnP y está habilitado.</translation>
+        <source>Automatically open the safemasternode client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto de cliente safemasternode en el router. Esto sólo funciona cuando el router es compatible con UPnP y está habilitado.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1174,8 +1174,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the buntu network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Conéctese a la red de buntu a través de un SOCKS proxy (e.g. cuando se conecta a través de Tor)</translation>
+        <source>Connect to the safemasternode network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Conéctese a la red de safemasternode a través de un SOCKS proxy (e.g. cuando se conecta a través de Tor)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1249,8 +1249,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting buntu.</source>
-        <translation>El idioma del interfaz de usuario se puede configurar aquí. Esta configuración se aplicará después de reiniciar buntu.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting safemasternode.</source>
+        <translation>El idioma del interfaz de usuario se puede configurar aquí. Esta configuración se aplicará después de reiniciar safemasternode.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1260,7 +1260,7 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Elegir la subdivisión predeterminada para mostrar cantidades en la interfaz y cuando se envían buntus.</translation>
+        <translation>Elegir la subdivisión predeterminada para mostrar cantidades en la interfaz y cuando se envían safemasternodes.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1316,8 +1316,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting buntu.</source>
-        <translation>Esta configuración se aplicará después de reiniciar buntu.</translation>
+        <source>This setting will take effect after restarting safemasternode.</source>
+        <translation>Esta configuración se aplicará después de reiniciar safemasternode.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1335,8 +1335,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the buntu network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar fuera de fecha. Su monedera se sincroniza automáticamente con la red buntu después de que se establece una conexión, pero este proceso no se ha completado todavía.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the safemasternode network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar fuera de fecha. Su monedera se sincroniza automáticamente con la red safemasternode después de que se establece una conexión, pero este proceso no se ha completado todavía.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1577,8 +1577,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the buntu-Qt help message to get a list with possible buntu command-line options.</source>
-        <translation>Mostrar el mensaje de ayuda de buntu-Qt para obtener una lista con las posibles opciones de línea de comandos para buntu.</translation>
+        <source>Show the safemasternode-Qt help message to get a list with possible safemasternode command-line options.</source>
+        <translation>Mostrar el mensaje de ayuda de safemasternode-Qt para obtener una lista con las posibles opciones de línea de comandos para safemasternode.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1597,13 +1597,13 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>buntu - Debug window</source>
-        <translation>buntu - Ventana de depuración</translation>
+        <source>safemasternode - Debug window</source>
+        <translation>safemasternode - Ventana de depuración</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>buntu Core</source>
-        <translation>Núcleo buntu</translation>
+        <source>safemasternode Core</source>
+        <translation>Núcleo safemasternode</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1612,8 +1612,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the buntu debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Abre el archivo de registro de buntu del directorio de datos actual. Esto puede tardar algunos segundos para archivos grandes.</translation>
+        <source>Open the safemasternode debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Abre el archivo de registro de safemasternode del directorio de datos actual. Esto puede tardar algunos segundos para archivos grandes.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1622,8 +1622,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="+325"/>
-        <source>Welcome to the buntu RPC console.</source>
-        <translation>Bienvenido a la consola RPC de buntu</translation>
+        <source>Welcome to the safemasternode RPC console.</source>
+        <translation>Bienvenido a la consola RPC de safemasternode</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1683,7 +1683,7 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
         <location line="+5"/>
         <location line="+5"/>
         <source>Send Coins</source>
-        <translation>Enviar buntus</translation>
+        <translation>Enviar safemasternodes</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -1731,8 +1731,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
         <location line="+86"/>
         <location line="+86"/>
         <location line="+32"/>
-        <source>0.00 BNTU</source>
-        <translation>123.456 BNTU {0.00 ?}</translation>
+        <source>0.00 SMTN</source>
+        <translation>123.456 SMTN {0.00 ?}</translation>
     </message>
     <message>
         <location line="-191"/>
@@ -1801,8 +1801,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>123.456 BNTU</source>
-        <translation>123.456 BNTU</translation>
+        <source>123.456 SMTN</source>
+        <translation>123.456 SMTN</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -1816,8 +1816,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a buntu address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Introduce una dirección buntu (p.ej. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Introduce una dirección safemasternode (p.ej. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1867,7 +1867,7 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     <message>
         <location line="+5"/>
         <source>Confirm send coins</source>
-        <translation>Confirmar el envío de buntus</translation>
+        <translation>Confirmar el envío de safemasternodes</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1916,8 +1916,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+247"/>
-        <source>WARNING: Invalid buntu address</source>
-        <translation>ADVERTENCIA: Dirección buntu inválida</translation>
+        <source>WARNING: Invalid safemasternode address</source>
+        <translation>ADVERTENCIA: Dirección safemasternode inválida</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1990,8 +1990,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a buntu address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Introduce una dirección buntu (p.ej. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Introduce una dirección safemasternode (p.ej. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -2051,8 +2051,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this buntu address</source>
-        <translation>Firma el mensaje para demostrar que posees esta dirección buntu.</translation>
+        <source>Sign the message to prove you own this safemasternode address</source>
+        <translation>Firma el mensaje para demostrar que posees esta dirección safemasternode.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2083,8 +2083,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified buntu address</source>
-        <translation>Verifique el mensaje para asegurarse de que se firmó con la dirección buntu especificada.</translation>
+        <source>Verify the message to ensure it was signed with the specified safemasternode address</source>
+        <translation>Verifique el mensaje para asegurarse de que se firmó con la dirección safemasternode especificada.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2094,8 +2094,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a buntu address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Introduce una dirección buntu (p.ej B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Introduce una dirección safemasternode (p.ej B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2104,8 +2104,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter buntu signature</source>
-        <translation>Introduce la firma buntu</translation>
+        <source>Enter safemasternode signature</source>
+        <translation>Introduce la firma safemasternode</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2680,11 +2680,11 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
 </context>
 <context>
-    <name>buntu-core</name>
+    <name>safemasternode-core</name>
     <message>
-        <location filename="../buntustrings.cpp" line="+173"/>
-        <source>buntu version</source>
-        <translation>versión buntu</translation>
+        <location filename="../safemasternodestrings.cpp" line="+173"/>
+        <source>safemasternode version</source>
+        <translation>versión safemasternode</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2693,8 +2693,8 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or buntud</source>
-        <translation>Envía un comando a -server o buntud</translation>
+        <source>Send command to -server or safemasternoded</source>
+        <translation>Envía un comando a -server o safemasternoded</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2716,13 +2716,13 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: buntu.conf)</source>
-        <translation>Especifica un archivo de configuración (por defecto: buntu.conf)</translation>
+        <source>Specify configuration file (default: safemasternode.conf)</source>
+        <translation>Especifica un archivo de configuración (por defecto: safemasternode.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: buntud.pid)</source>
-        <translation>Especifica un archivo pid (por defecto: buntud.pid)</translation>
+        <source>Specify pid file (default: safemasternoded.pid)</source>
+        <translation>Especifica un archivo pid (por defecto: safemasternoded.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2739,13 +2739,13 @@ Esto significa que se requiere una cuota de al menos %2.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=bunturpc
+rpcuser=safemasternoderpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;safemasternode Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2854,8 +2854,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="-103"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong buntu will not work properly.</source>
-        <translation>Advertencia: Verifique que la fecha y hora del equipo sean correctas! Si su reloj es erróneo buntu no funcionará correctamente.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong safemasternode will not work properly.</source>
+        <translation>Advertencia: Verifique que la fecha y hora del equipo sean correctas! Si su reloj es erróneo safemasternode no funcionará correctamente.</translation>
     </message>
     <message>
         <location line="+132"/>
@@ -2929,8 +2929,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+41"/>
-        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
-        <translation>Opciones SSL: (ver la Buntu Wiki para instrucciones de configuración SSL)</translation>
+        <source>SSL options: (see the safemasternode Wiki for SSL setup instructions)</source>
+        <translation>Opciones SSL: (ver la safemasternode Wiki para instrucciones de configuración SSL)</translation>
     </message>
     <message>
         <location line="-81"/>
@@ -3168,7 +3168,7 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+10"/>
-        <source>Initialization sanity check failed. buntu is shutting down.</source>
+        <source>Initialization sanity check failed. safemasternode is shutting down.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3234,13 +3234,13 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of buntu</source>
-        <translation>Error cargando wallet.dat: El monedero requiere una nueva versión de buntu</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of safemasternode</source>
+        <translation>Error cargando wallet.dat: El monedero requiere una nueva versión de safemasternode</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart buntu to complete</source>
-        <translation>El monedero necesita ser reescrito: reinicie buntu para completar</translation>
+        <source>Wallet needed to be rewritten: restart safemasternode to complete</source>
+        <translation>El monedero necesita ser reescrito: reinicie safemasternode para completar</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3304,8 +3304,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+125"/>
-        <source>Unable to bind to %s on this computer. buntu is probably already running.</source>
-        <translation>No se puede enlazar a %s en este equipo. buntu probablemente ya esté en funcionamiento.</translation>
+        <source>Unable to bind to %s on this computer. safemasternode is probably already running.</source>
+        <translation>No se puede enlazar a %s en este equipo. safemasternode probablemente ya esté en funcionamiento.</translation>
     </message>
     <message>
         <location line="-101"/>
@@ -3344,7 +3344,7 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. buntu is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. safemasternode is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>

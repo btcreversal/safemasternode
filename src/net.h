@@ -1,9 +1,9 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_NET_H
-#define BUNTU_NET_H
+#ifndef safemasternode_NET_H
+#define safemasternode_NET_H
 
 #include "compat.h"
 #include "core.h"
@@ -48,9 +48,9 @@ static const unsigned int MAX_SUBVERSION_LENGTH = 256;
 /** The maximum number of entries in an 'inv' protocol message */
 static const unsigned int MAX_INV_SZ = 50000;
 /** The maximum number of entries in mapAskFor */
-static const size_t MAPASKBNTU_MAX_SZ = MAX_INV_SZ;
+static const size_t MAPASKSMTN_MAX_SZ = MAX_INV_SZ;
 /** The maximum number of entries in setAskFor (larger due to getdata latency)*/
-static const size_t SETASKBNTU_MAX_SZ = 2 * MAX_INV_SZ;
+static const size_t SETASKSMTN_MAX_SZ = 2 * MAX_INV_SZ;
 /** The maximum number of new addresses to accumulate before announcing. */
 static const unsigned int MAX_ADDR_TO_SEND = 1000;
 
@@ -553,7 +553,7 @@ public:
 
     void AskFor(const CInv& inv, bool fImmediateRetry = false)
     {
-        if (mapAskFor.size() > MAPASKBNTU_MAX_SZ)
+        if (mapAskFor.size() > MAPASKSMTN_MAX_SZ)
             return;
         // a peer may not have multiple non-responded queue positions for a single inv item
         if (!setAskFor.insert(inv.hash).second)

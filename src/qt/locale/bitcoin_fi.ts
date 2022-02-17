@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About buntu</source>
-        <translation>Tietoa buntuista</translation>
+        <source>About safemasternode</source>
+        <translation>Tietoa safemasternodeista</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;buntu&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;buntu&lt;/b&gt;-asiakasohjelman versio</translation>
+        <source>&lt;b&gt;safemasternode&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;safemasternode&lt;/b&gt;-asiakasohjelman versio</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Buntu developers
+        <source>Copyright © 2009-2014 The safemasternode developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2015-2017 The buntu developers</source>
-        <translation>Copyright © 2009-2014 The Buntu developers
+Copyright © 2015-2017 The safemasternode developers</source>
+        <translation>Copyright © 2009-2014 The safemasternode developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2015-2017 The buntu developers</translation>
+Copyright © 2015-2017 The safemasternode developers</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -66,8 +66,8 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your buntu addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Nämä ovat buntu-osoitteesi rahansiirtojen vastaanottoa varten. Jos haluat, voit antaa jokaiselle lähettäjälle oman osoitteen jotta voit pitää kirjaa sinulle rahaa siirtäneistä henkilöistä.</translation>
+        <source>These are your safemasternode addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Nämä ovat safemasternode-osoitteesi rahansiirtojen vastaanottoa varten. Jos haluat, voit antaa jokaiselle lähettäjälle oman osoitteen jotta voit pitää kirjaa sinulle rahaa siirtäneistä henkilöistä.</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -81,8 +81,8 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a buntu address</source>
-        <translation>Allekirjoita viesti osoittaaksesi buntu-osoitteesi omistajuus</translation>
+        <source>Sign a message to prove you own a safemasternode address</source>
+        <translation>Allekirjoita viesti osoittaaksesi safemasternode-osoitteesi omistajuus</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -96,8 +96,8 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified buntu address</source>
-        <translation>Vahvista viesti varmistaaksesi että kyseinen buntu-osoitteesi on allekirjoittanut sen</translation>
+        <source>Verify a message to ensure it was signed with a specified safemasternode address</source>
+        <translation>Vahvista viesti varmistaaksesi että kyseinen safemasternode-osoitteesi on allekirjoittanut sen</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -233,7 +233,7 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     <message>
         <location line="+1"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
-        <translation>Varoitus: Jos salaat lompakkosi ja hukkaat salasanasi, &lt;b&gt;MENETÄT KAIKKI BNTUISI&lt;/b&gt;!</translation>
+        <translation>Varoitus: Jos salaat lompakkosi ja hukkaat salasanasi, &lt;b&gt;MENETÄT KAIKKI SMTNISI&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -264,8 +264,8 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     </message>
     <message>
         <location line="+82"/>
-        <source>buntu will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>buntu-ohjelma sulkee itsensä päättääkseen salauksen luonnin. Muista, että lompakon salaaminen ei täysin turvaa kolikoitasi haittaohjelmien aiheuttamien varkauksien uhalta.</translation>
+        <source>safemasternode will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>safemasternode-ohjelma sulkee itsensä päättääkseen salauksen luonnin. Muista, että lompakon salaaminen ei täysin turvaa kolikoitasi haittaohjelmien aiheuttamien varkauksien uhalta.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -310,9 +310,9 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     </message>
 </context>
 <context>
-    <name>BuntuGUI</name>
+    <name>safemasternodeGUI</name>
     <message>
-        <location filename="../buntugui.cpp" line="+297"/>
+        <location filename="../safemasternodegui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>Allekirjoita &amp;viesti...</translation>
     </message>
@@ -358,8 +358,8 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about buntu</source>
-        <translation>Näytä tietoja buntuista</translation>
+        <source>Show information about safemasternode</source>
+        <translation>Näytä tietoja safemasternodeista</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -398,12 +398,12 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a buntu address</source>
-        <translation>Lähetä varoja buntu-osoitteeseen</translation>
+        <source>Send coins to a safemasternode address</source>
+        <translation>Lähetä varoja safemasternode-osoitteeseen</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for buntu</source>
+        <source>Modify configuration options for safemasternode</source>
         <translation>Mukauta asiakasohjelman asetuksia</translation>
     </message>
     <message>
@@ -444,8 +444,8 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     <message>
         <location line="-214"/>
         <location line="+551"/>
-        <source>buntu</source>
-        <translation>buntu</translation>
+        <source>safemasternode</source>
+        <translation>safemasternode</translation>
     </message>
     <message>
         <location line="-551"/>
@@ -454,8 +454,8 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About buntu</source>
-        <translation>&amp;Tietoa buntuista</translation>
+        <source>&amp;About safemasternode</source>
+        <translation>&amp;Tietoa safemasternodeista</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -506,13 +506,13 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>buntu client</source>
-        <translation>buntu-asiakasohjelma</translation>
+        <source>safemasternode client</source>
+        <translation>safemasternode-asiakasohjelma</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to buntu network</source>
-        <translation><numerusform>%n aktiivinen yhteys buntu-verkkoon</numerusform><numerusform>%n aktiivista yhteyttä buntu-verkkoon</numerusform></translation>
+        <source>%n active connection(s) to safemasternode network</source>
+        <translation><numerusform>%n aktiivinen yhteys safemasternode-verkkoon</numerusform><numerusform>%n aktiivista yhteyttä safemasternode-verkkoon</numerusform></translation>
     </message>
     <message>
         <location line="+488"/>
@@ -605,8 +605,8 @@ Osoite: %4</translation>
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid buntu address or malformed URI parameters.</source>
-        <translation>URI-merkkijonoa ei voida jäsentää! Tämä voi johtua väärästä buntu-osoitteesta tai väärässä muodossa olevista URI-parametreistä.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid safemasternode address or malformed URI parameters.</source>
+        <translation>URI-merkkijonoa ei voida jäsentää! Tämä voi johtua väärästä safemasternode-osoitteesta tai väärässä muodossa olevista URI-parametreistä.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -727,9 +727,9 @@ Osoite: %4</translation>
         <translation>Ei osakkaana</translation>
     </message>
     <message>
-        <location filename="../buntu.cpp" line="+104"/>
-        <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
-        <translation>Virhe kohdattu. buntu-asiakasohjelma ei voi enää jatkaa turvallisesti ja se suljetaan.</translation>
+        <location filename="../safemasternode.cpp" line="+104"/>
+        <source>A fatal error occurred. safemasternode can no longer continue safely and will quit.</source>
+        <translation>Virhe kohdattu. safemasternode-asiakasohjelma ei voi enää jatkaa turvallisesti ja se suljetaan.</translation>
     </message>
 </context>
 <context>
@@ -1062,8 +1062,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid buntu address.</source>
-        <translation>Syöttämäsi osoite &quot;%1&quot; ei ole hyväksytty buntu-osoite.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid safemasternode address.</source>
+        <translation>Syöttämäsi osoite &quot;%1&quot; ei ole hyväksytty safemasternode-osoite.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1081,8 +1081,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>buntu-Qt</source>
-        <translation>buntu-Qt</translation>
+        <source>safemasternode-Qt</source>
+        <translation>safemasternode-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1154,13 +1154,13 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start buntu after logging in to the system.</source>
-        <translation>Käynnistä buntu-asiakasohjelma automaattisesti kun olet kirjautunut järjestelmään.</translation>
+        <source>Automatically start safemasternode after logging in to the system.</source>
+        <translation>Käynnistä safemasternode-asiakasohjelma automaattisesti kun olet kirjautunut järjestelmään.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start buntu on system login</source>
-        <translation>%Käynnistä buntu-asiakasohjelma kirjautuessasi</translation>
+        <source>&amp;Start safemasternode on system login</source>
+        <translation>%Käynnistä safemasternode-asiakasohjelma kirjautuessasi</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1169,8 +1169,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the buntu client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Avaa buntu-asiakkaalle automaattisesti portti reitittimestä. Tämä toimii vain, kun reitittimesi tukee UPnP:tä ja se on aktivoituna.</translation>
+        <source>Automatically open the safemasternode client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Avaa safemasternode-asiakkaalle automaattisesti portti reitittimestä. Tämä toimii vain, kun reitittimesi tukee UPnP:tä ja se on aktivoituna.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1179,8 +1179,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the buntu network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Yhdistä buntu-verkkoon SOCKS-välityspalvelimen lävitse. (esim. yhdistettäessä Tor:n kautta).</translation>
+        <source>Connect to the safemasternode network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Yhdistä safemasternode-verkkoon SOCKS-välityspalvelimen lävitse. (esim. yhdistettäessä Tor:n kautta).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1254,8 +1254,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting buntu.</source>
-        <translation>Käyttöliittymän kieli voidaan valita tästä. Tämä asetus tulee voimaan vasta buntu-asiakasohjelman uudelleenkäynnistyksen jälkeen.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting safemasternode.</source>
+        <translation>Käyttöliittymän kieli voidaan valita tästä. Tämä asetus tulee voimaan vasta safemasternode-asiakasohjelman uudelleenkäynnistyksen jälkeen.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1321,8 +1321,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting buntu.</source>
-        <translation>Tämä asetus tulee voimaan vasta buntu-asiakasohjelman uudelleenkäynnistyksen jälkeen.</translation>
+        <source>This setting will take effect after restarting safemasternode.</source>
+        <translation>Tämä asetus tulee voimaan vasta safemasternode-asiakasohjelman uudelleenkäynnistyksen jälkeen.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1340,8 +1340,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the buntu network after a connection is established, but this process has not completed yet.</source>
-        <translation>Näytettävät tiedot voivat olla vanhentuneet. Lompakkosi synkronoituu automaattisesti buntu-verkon kanssa kun yhteys on muodostettu, mutta tätä prosessia ei ole viety vielä päätökseen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the safemasternode network after a connection is established, but this process has not completed yet.</source>
+        <translation>Näytettävät tiedot voivat olla vanhentuneet. Lompakkosi synkronoituu automaattisesti safemasternode-verkon kanssa kun yhteys on muodostettu, mutta tätä prosessia ei ole viety vielä päätökseen.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1582,8 +1582,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the buntu-Qt help message to get a list with possible buntu command-line options.</source>
-        <translation>Näytä buntu-Qt:n avustusohje saadaksesi listan käytettävistä buntuin komentokehotteen määritteistä.</translation>
+        <source>Show the safemasternode-Qt help message to get a list with possible safemasternode command-line options.</source>
+        <translation>Näytä safemasternode-Qt:n avustusohje saadaksesi listan käytettävistä safemasternodein komentokehotteen määritteistä.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1602,13 +1602,13 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>buntu - Debug window</source>
-        <translation>buntu - Debug-ikkuna</translation>
+        <source>safemasternode - Debug window</source>
+        <translation>safemasternode - Debug-ikkuna</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>buntu Core</source>
-        <translation>buntuin ydin</translation>
+        <source>safemasternode Core</source>
+        <translation>safemasternodein ydin</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1617,8 +1617,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the buntu debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Avaa buntu-asiakasohjelman debug-lokitiedosto nykyisestä hakemistostaan. Tämä voi kestää muutaman sekunnin avattaessa suuria lokitiedostoja.</translation>
+        <source>Open the safemasternode debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Avaa safemasternode-asiakasohjelman debug-lokitiedosto nykyisestä hakemistostaan. Tämä voi kestää muutaman sekunnin avattaessa suuria lokitiedostoja.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1627,8 +1627,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="+325"/>
-        <source>Welcome to the buntu RPC console.</source>
-        <translation>Tervetuloa buntuin RPC-konsoliin.</translation>
+        <source>Welcome to the safemasternode RPC console.</source>
+        <translation>Tervetuloa safemasternodein RPC-konsoliin.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1688,7 +1688,7 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
         <location line="+5"/>
         <location line="+5"/>
         <source>Send Coins</source>
-        <translation>Lähetä buntueja</translation>
+        <translation>Lähetä safemasternodeeja</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -1736,8 +1736,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
         <location line="+86"/>
         <location line="+86"/>
         <location line="+32"/>
-        <source>0.00 BNTU</source>
-        <translation>123.456 BNTU {0.00 ?}</translation>
+        <source>0.00 SMTN</source>
+        <translation>123.456 SMTN {0.00 ?}</translation>
     </message>
     <message>
         <location line="-191"/>
@@ -1806,8 +1806,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>123.456 BNTU</source>
-        <translation>123.456 BNTU</translation>
+        <source>123.456 SMTN</source>
+        <translation>123.456 SMTN</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -1821,8 +1821,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a buntu address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Syötä buntu-osoite (esim. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Syötä safemasternode-osoite (esim. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1892,7 +1892,7 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     <message>
         <location line="+5"/>
         <source>The amount to pay must be larger than 0.</source>
-        <translation>Maksettavan summan tulee olla suurempi kuin 0 Buntuia.</translation>
+        <translation>Maksettavan summan tulee olla suurempi kuin 0 safemasternodeia.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1921,8 +1921,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+247"/>
-        <source>WARNING: Invalid buntu address</source>
-        <translation>VAROITUS: Epäkelpo buntu-osoite</translation>
+        <source>WARNING: Invalid safemasternode address</source>
+        <translation>VAROITUS: Epäkelpo safemasternode-osoite</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1995,8 +1995,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a buntu address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Syötä buntu-osoite (esim. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Syötä safemasternode-osoite (esim. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -2056,8 +2056,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this buntu address</source>
-        <translation>Allekirjoita viesti vahvistaaksesi, että omistat tämän buntu-osoitteen</translation>
+        <source>Sign the message to prove you own this safemasternode address</source>
+        <translation>Allekirjoita viesti vahvistaaksesi, että omistat tämän safemasternode-osoitteen</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2088,8 +2088,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified buntu address</source>
-        <translation>Vahvista viesti varmistaaksesi että se on allekirjoitettu kyseisellä buntu-osoitteella</translation>
+        <source>Verify the message to ensure it was signed with the specified safemasternode address</source>
+        <translation>Vahvista viesti varmistaaksesi että se on allekirjoitettu kyseisellä safemasternode-osoitteella</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2099,8 +2099,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a buntu address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Syötä buntu-osoite (esim. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Syötä safemasternode-osoite (esim. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2109,8 +2109,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter buntu signature</source>
-        <translation>Syötä buntu-allekirjoitus</translation>
+        <source>Enter safemasternode signature</source>
+        <translation>Syötä safemasternode-allekirjoitus</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2499,7 +2499,7 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     <message>
         <location line="+2"/>
         <source>Destination address of transaction.</source>
-        <translation>Rahansiirron kohteen Buntu-osoite</translation>
+        <translation>Rahansiirron kohteen safemasternode-osoite</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2685,11 +2685,11 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
 </context>
 <context>
-    <name>buntu-core</name>
+    <name>safemasternode-core</name>
     <message>
-        <location filename="../buntustrings.cpp" line="+173"/>
-        <source>buntu version</source>
-        <translation>buntuin versio</translation>
+        <location filename="../safemasternodestrings.cpp" line="+173"/>
+        <source>safemasternode version</source>
+        <translation>safemasternodein versio</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2698,8 +2698,8 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or buntud</source>
-        <translation>Syötä komento kohteeseen -server tai buntud</translation>
+        <source>Send command to -server or safemasternoded</source>
+        <translation>Syötä komento kohteeseen -server tai safemasternoded</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2718,13 +2718,13 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: buntu.conf)</source>
-        <translation>Määritä asetustiedosto (oletus: buntu.conf)</translation>
+        <source>Specify configuration file (default: safemasternode.conf)</source>
+        <translation>Määritä asetustiedosto (oletus: safemasternode.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: buntud.pid)</source>
-        <translation>Määritä prosessitiedosto (oletus: buntu.pid)</translation>
+        <source>Specify pid file (default: safemasternoded.pid)</source>
+        <translation>Määritä prosessitiedosto (oletus: safemasternode.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2741,13 +2741,13 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=bunturpc
+rpcuser=safemasternoderpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;safemasternode Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2853,8 +2853,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="-103"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong buntu will not work properly.</source>
-        <translation>Varoitus: Tarkista, että tietokoneesi aika ja päivämäärä ovat oikeassa! Jos kellosi on väärässä, buntu ei toimi oikein.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong safemasternode will not work properly.</source>
+        <translation>Varoitus: Tarkista, että tietokoneesi aika ja päivämäärä ovat oikeassa! Jos kellosi on väärässä, safemasternode ei toimi oikein.</translation>
     </message>
     <message>
         <location line="+132"/>
@@ -2928,8 +2928,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+41"/>
-        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
-        <translation>SSL asetukset (katso Buntu Wikistä tarkemmat SSL ohjeet)</translation>
+        <source>SSL options: (see the safemasternode Wiki for SSL setup instructions)</source>
+        <translation>SSL asetukset (katso safemasternode Wikistä tarkemmat SSL ohjeet)</translation>
     </message>
     <message>
         <location line="-81"/>
@@ -3160,8 +3160,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+10"/>
-        <source>Initialization sanity check failed. buntu is shutting down.</source>
-        <translation>Käyttöönottotarkistus epäonnistui. buntu-asiakasohjelma suljetaan.</translation>
+        <source>Initialization sanity check failed. safemasternode is shutting down.</source>
+        <translation>Käyttöönottotarkistus epäonnistui. safemasternode-asiakasohjelma suljetaan.</translation>
     </message>
     <message>
         <location line="+50"/>
@@ -3225,13 +3225,13 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of buntu</source>
-        <translation>Virhe ladattaessa wallet.dat-tiedostoa: Lompakko tarvitsee uudemman version buntu-asiakasohjelmasta</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of safemasternode</source>
+        <translation>Virhe ladattaessa wallet.dat-tiedostoa: Lompakko tarvitsee uudemman version safemasternode-asiakasohjelmasta</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart buntu to complete</source>
-        <translation>Lompakko on kirjoitettava uudelleen: käynnistä buntu-asiakasohjelma uudelleen päättääksesi toiminnon</translation>
+        <source>Wallet needed to be rewritten: restart safemasternode to complete</source>
+        <translation>Lompakko on kirjoitettava uudelleen: käynnistä safemasternode-asiakasohjelma uudelleen päättääksesi toiminnon</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3295,8 +3295,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+125"/>
-        <source>Unable to bind to %s on this computer. buntu is probably already running.</source>
-        <translation>Ei voitu liittää %s tällä tietokoneella. buntu-asiakasohjelma on jo ehkä päällä.</translation>
+        <source>Unable to bind to %s on this computer. safemasternode is probably already running.</source>
+        <translation>Ei voitu liittää %s tällä tietokoneella. safemasternode-asiakasohjelma on jo ehkä päällä.</translation>
     </message>
     <message>
         <location line="-101"/>
@@ -3335,7 +3335,7 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. buntu is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. safemasternode is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>

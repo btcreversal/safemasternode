@@ -1,4 +1,4 @@
-// Copyright (c) 2014 The Buntu developers
+// Copyright (c) 2014 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -226,22 +226,22 @@ int CBase58Data::CompareTo(const CBase58Data& b58) const {
 }
 
 namespace {
-    class CbuntucoinAddressVisitor : public boost::static_visitor<bool> {
+    class CsafemasternodecoinAddressVisitor : public boost::static_visitor<bool> {
     private:
-        CbuntucoinAddress *addr;
+        CsafemasternodecoinAddress *addr;
     public:
-        CbuntucoinAddressVisitor(CbuntucoinAddress *addrIn) : addr(addrIn) { }
+        CsafemasternodecoinAddressVisitor(CsafemasternodecoinAddress *addrIn) : addr(addrIn) { }
 
         bool operator()(const CKeyID &id) const { return addr->Set(id); }
         bool operator()(const CScriptID &id) const { return addr->Set(id); }
         bool operator()(const CNoDestination &no) const { return false; }
         bool operator()(const CStealthAddress &stxAddr) const { return false; }
     };
-    class CBuntuAddressVisitor : public boost::static_visitor<bool> {
+    class CsafemasternodeAddressVisitor : public boost::static_visitor<bool> {
     private:
-        CBuntuAddress *addr;
+        CsafemasternodeAddress *addr;
     public:
-        CBuntuAddressVisitor(CBuntuAddress *addrIn) : addr(addrIn) { }
+        CsafemasternodeAddressVisitor(CsafemasternodeAddress *addrIn) : addr(addrIn) { }
 
         bool operator()(const CKeyID &id) const { return addr->Set(id); }
         bool operator()(const CScriptID &id) const { return addr->Set(id); }
@@ -250,28 +250,28 @@ namespace {
     };
 };
 
-bool CbuntucoinAddress::Set(const CKeyID &id) {
+bool CsafemasternodecoinAddress::Set(const CKeyID &id) {
     SetData(Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS), &id, 20);
     return true;
 }
 
-bool CbuntucoinAddress::Set(const CScriptID &id) {
+bool CsafemasternodecoinAddress::Set(const CScriptID &id) {
     SetData(Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS), &id, 20);
     return true;
 }
 
-bool CbuntucoinAddress::Set(const CTxDestination &dest) {
-    return boost::apply_visitor(CbuntucoinAddressVisitor(this), dest);
+bool CsafemasternodecoinAddress::Set(const CTxDestination &dest) {
+    return boost::apply_visitor(CsafemasternodecoinAddressVisitor(this), dest);
 }
 
-bool CbuntucoinAddress::IsValid() const {
+bool CsafemasternodecoinAddress::IsValid() const {
     bool fCorrectSize = vchData.size() == 20;
     bool fKnownVersion = vchVersion == Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS) ||
                          vchVersion == Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS);
     return fCorrectSize && fKnownVersion;
 }
 
-CTxDestination CbuntucoinAddress::Get() const {
+CTxDestination CsafemasternodecoinAddress::Get() const {
     if (!IsValid())
         return CNoDestination();
     uint160 id;
@@ -284,7 +284,7 @@ CTxDestination CbuntucoinAddress::Get() const {
         return CNoDestination();
 }
 
-bool CbuntucoinAddress::GetKeyID(CKeyID &keyID) const {
+bool CsafemasternodecoinAddress::GetKeyID(CKeyID &keyID) const {
     if (!IsValid() || vchVersion != Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS))
         return false;
     uint160 id;
@@ -293,38 +293,38 @@ bool CbuntucoinAddress::GetKeyID(CKeyID &keyID) const {
     return true;
 }
 
-bool CbuntucoinAddress::IsScript() const {
+bool CsafemasternodecoinAddress::IsScript() const {
     return IsValid() && vchVersion == Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS);
 }
 
-void CbuntucoinSecret::SetKey(const CKey& vchSecret) {
+void CsafemasternodecoinSecret::SetKey(const CKey& vchSecret) {
     assert(vchSecret.IsValid());
     SetData(Params().Base58Prefix(CChainParams::SECRET_KEY), vchSecret.begin(), vchSecret.size());
     if (vchSecret.IsCompressed())
         vchData.push_back(1);
 }
 
-CKey CbuntucoinSecret::GetKey() {
+CKey CsafemasternodecoinSecret::GetKey() {
     CKey ret;
     ret.Set(&vchData[0], &vchData[32], vchData.size() > 32 && vchData[32] == 1);
     return ret;
 }
 
-bool CbuntucoinSecret::IsValid() const {
+bool CsafemasternodecoinSecret::IsValid() const {
     bool fExpectedFormat = vchData.size() == 32 || (vchData.size() == 33 && vchData[32] == 1);
     bool fCorrectVersion = vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY);
     return fExpectedFormat && fCorrectVersion;
 }
 
-bool CbuntucoinSecret::SetString(const char* pszSecret) {
+bool CsafemasternodecoinSecret::SetString(const char* pszSecret) {
     return CBase58Data::SetString(pszSecret) && IsValid();
 }
 
-bool CbuntucoinSecret::SetString(const std::string& strSecret) {
+bool CsafemasternodecoinSecret::SetString(const std::string& strSecret) {
     return SetString(strSecret.c_str());
 }
 
-/** base58-encoded Buntu addresses.
+/** base58-encoded safemasternode addresses.
  * Public-key-hash-addresses have version 0 (or 111 testnet).
  * The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
  * Script-hash-addresses have version 5 (or 196 testnet).
@@ -332,28 +332,28 @@ bool CbuntucoinSecret::SetString(const std::string& strSecret) {
  */
 CChainParams::Base58Type pubkey_address = (CChainParams::Base58Type)0;
 CChainParams::Base58Type script_address = (CChainParams::Base58Type)5;
-bool CBuntuAddress::Set(const CKeyID &id) {
+bool CsafemasternodeAddress::Set(const CKeyID &id) {
     SetData(Params().Base58Prefix(pubkey_address), &id, 20);
     return true;
 }
 
-bool CBuntuAddress::Set(const CScriptID &id) {
+bool CsafemasternodeAddress::Set(const CScriptID &id) {
     SetData(Params().Base58Prefix(script_address), &id, 20);
     return true;
 }
 
-bool CBuntuAddress::Set(const CTxDestination &dest) {
-    return boost::apply_visitor(CBuntuAddressVisitor(this), dest);
+bool CsafemasternodeAddress::Set(const CTxDestination &dest) {
+    return boost::apply_visitor(CsafemasternodeAddressVisitor(this), dest);
 }
 
-bool CBuntuAddress::IsValid() const {
+bool CsafemasternodeAddress::IsValid() const {
     bool fCorrectSize = vchData.size() == 20;
     bool fKnownVersion = vchVersion == Params().Base58Prefix(pubkey_address) ||
                          vchVersion == Params().Base58Prefix(script_address);
     return fCorrectSize && fKnownVersion;
 }
 
-CTxDestination CBuntuAddress::Get() const {
+CTxDestination CsafemasternodeAddress::Get() const {
     if (!IsValid())
         return CNoDestination();
     uint160 id;
@@ -366,7 +366,7 @@ CTxDestination CBuntuAddress::Get() const {
         return CNoDestination();
 }
 
-bool CBuntuAddress::GetKeyID(CKeyID &keyID) const {
+bool CsafemasternodeAddress::GetKeyID(CKeyID &keyID) const {
     if (!IsValid() || vchVersion != Params().Base58Prefix(pubkey_address))
         return false;
     uint160 id;
@@ -375,6 +375,6 @@ bool CBuntuAddress::GetKeyID(CKeyID &keyID) const {
     return true;
 }
 
-bool CBuntuAddress::IsScript() const {
+bool CsafemasternodeAddress::IsScript() const {
     return IsValid() && vchVersion == Params().Base58Prefix(script_address);
 }

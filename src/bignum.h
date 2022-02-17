@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BUNTU_BIGNUM_H
-#define BUNTU_BIGNUM_H
+#ifndef safemasternode_BIGNUM_H
+#define safemasternode_BIGNUM_H
 
 #include "serialize.h"
 #include "uint256.h"
@@ -588,7 +588,7 @@ public:
     CBigNum& operator>>=(unsigned int shift)
     {
         // Note: BN_rshift segfaults on 64-bit if 2^shift is greater than the number
-        //   if built on ubuntu 9.04 or 9.10, probably depends on version of OpenSSL
+        //   if built on usafemasternode 9.04 or 9.10, probably depends on version of OpenSSL
         CBigNum a = 1;
         a <<= shift;
         if (BN_cmp(&a, this) > 0)

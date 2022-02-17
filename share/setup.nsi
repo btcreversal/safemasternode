@@ -76,7 +76,7 @@ Section -Main SEC0000
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
-    # Remove old wxwidgets-based-buntu executable and locales:
+    # Remove old wxwidgets-based-safemasternode executable and locales:
     #Delete /REBOOTOK $INSTDIR\novacoin.exe
     #RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
@@ -98,11 +98,11 @@ Section -post SEC0001
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
 
-    # buntu: URI handling disabled for 0.6.0
-    #    WriteRegStr HKCR "buntu" "URL Protocol" ""
-    #    WriteRegStr HKCR "buntu" "" "URL:Buntu"
-    #    WriteRegStr HKCR "buntu\DefaultIcon" "" $INSTDIR\buntu-qt.exe
-    #    WriteRegStr HKCR "buntu\shell\open\command" "" '"$INSTDIR\buntu-qt.exe" "$$1"'
+    # safemasternode: URI handling disabled for 0.6.0
+    #    WriteRegStr HKCR "safemasternode" "URL Protocol" ""
+    #    WriteRegStr HKCR "safemasternode" "" "URL:safemasternode"
+    #    WriteRegStr HKCR "safemasternode\DefaultIcon" "" $INSTDIR\safemasternode-qt.exe
+    #    WriteRegStr HKCR "safemasternode\shell\open\command" "" '"$INSTDIR\safemasternode-qt.exe" "$$1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -131,8 +131,8 @@ SectionEnd
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall NovaCoin.lnk"
-    #Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Buntu.lnk"
-    #Delete /REBOOTOK "$SMSTARTUP\Buntu.lnk"
+    #Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\safemasternode.lnk"
+    #Delete /REBOOTOK "$SMSTARTUP\safemasternode.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log

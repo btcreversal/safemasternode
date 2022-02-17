@@ -1,7 +1,7 @@
-#include "buntuamountfield.h"
+#include "safemasternodeamountfield.h"
 
 #include "qvaluecombobox.h"
-#include "buntuunits.h"
+#include "safemasternodeunits.h"
 #include "guiconstants.h"
 
 #include <QHBoxLayout>
@@ -10,7 +10,7 @@
 #include <QApplication>
 #include <qmath.h> // for qPow()
 
-BuntuAmountField::BuntuAmountField(QWidget *parent):
+safemasternodeAmountField::safemasternodeAmountField(QWidget *parent):
         QWidget(parent), amount(0), currentUnit(-1)
 {
     amount = new QDoubleSpinBox(this);
@@ -23,7 +23,7 @@ BuntuAmountField::BuntuAmountField(QWidget *parent):
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(amount);
     unit = new QValueComboBox(this);
-    unit->setModel(new BuntuUnits(this));
+    unit->setModel(new safemasternodeUnits(this));
     layout->addWidget(unit);
     layout->addStretch(1);
     layout->setContentsMargins(0,0,0,0);
@@ -41,7 +41,7 @@ BuntuAmountField::BuntuAmountField(QWidget *parent):
     unitChanged(unit->currentIndex());
 }
 
-void BuntuAmountField::setText(const QString &text)
+void safemasternodeAmountField::setText(const QString &text)
 {
     if (text.isEmpty())
         amount->clear();
@@ -49,18 +49,18 @@ void BuntuAmountField::setText(const QString &text)
         amount->setValue(text.toDouble());
 }
 
-void BuntuAmountField::clear()
+void safemasternodeAmountField::clear()
 {
     amount->clear();
     unit->setCurrentIndex(0);
 }
 
-bool BuntuAmountField::validate()
+bool safemasternodeAmountField::validate()
 {
     bool valid = true;
     if (amount->value() == 0.0)
         valid = false;
-    if (valid && !BuntuUnits::parse(currentUnit, text(), 0))
+    if (valid && !safemasternodeUnits::parse(currentUnit, text(), 0))
         valid = false;
 
     setValid(valid);
@@ -68,7 +68,7 @@ bool BuntuAmountField::validate()
     return valid;
 }
 
-void BuntuAmountField::setValid(bool valid)
+void safemasternodeAmountField::setValid(bool valid)
 {
     if (valid)
         amount->setStyleSheet("");
@@ -76,7 +76,7 @@ void BuntuAmountField::setValid(bool valid)
         amount->setStyleSheet(STYLE_INVALID);
 }
 
-QString BuntuAmountField::text() const
+QString safemasternodeAmountField::text() const
 {
     if (amount->text().isEmpty())
         return QString();
@@ -84,7 +84,7 @@ QString BuntuAmountField::text() const
         return amount->text();
 }
 
-bool BuntuAmountField::eventFilter(QObject *object, QEvent *event)
+bool safemasternodeAmountField::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::FocusIn)
     {
@@ -105,16 +105,16 @@ bool BuntuAmountField::eventFilter(QObject *object, QEvent *event)
     return QWidget::eventFilter(object, event);
 }
 
-QWidget *BuntuAmountField::setupTabChain(QWidget *prev)
+QWidget *safemasternodeAmountField::setupTabChain(QWidget *prev)
 {
     QWidget::setTabOrder(prev, amount);
     return amount;
 }
 
-CAmount BuntuAmountField::value(bool *valid_out) const
+CAmount safemasternodeAmountField::value(bool *valid_out) const
 {
     CAmount val_out = 0;
-    bool valid = BuntuUnits::parse(currentUnit, text(), &val_out);
+    bool valid = safemasternodeUnits::parse(currentUnit, text(), &val_out);
     if(valid_out)
     {
         *valid_out = valid;
@@ -122,18 +122,18 @@ CAmount BuntuAmountField::value(bool *valid_out) const
     return val_out;
 }
 
-void BuntuAmountField::setValue(const CAmount& value)
+void safemasternodeAmountField::setValue(const CAmount& value)
 {
-    setText(BuntuUnits::format(currentUnit, value));
+    setText(safemasternodeUnits::format(currentUnit, value));
 }
 
-void BuntuAmountField::unitChanged(int idx)
+void safemasternodeAmountField::unitChanged(int idx)
 {
     // Use description tooltip for current unit for the combobox
     unit->setToolTip(unit->itemData(idx, Qt::ToolTipRole).toString());
 
     // Determine new unit ID
-    int newUnit = unit->itemData(idx, BuntuUnits::UnitRole).toInt();
+    int newUnit = unit->itemData(idx, safemasternodeUnits::UnitRole).toInt();
 
     // Parse current value and convert to new unit
     bool valid = false;
@@ -142,8 +142,8 @@ void BuntuAmountField::unitChanged(int idx)
     currentUnit = newUnit;
 
     // Set max length after retrieving the value, to prevent truncation
-    amount->setDecimals(BuntuUnits::decimals(currentUnit));
-    amount->setMaximum(qPow(10, BuntuUnits::amountDigits(currentUnit)) - qPow(10, -amount->decimals()));
+    amount->setDecimals(safemasternodeUnits::decimals(currentUnit));
+    amount->setMaximum(qPow(10, safemasternodeUnits::amountDigits(currentUnit)) - qPow(10, -amount->decimals()));
 
     if(valid)
     {
@@ -158,7 +158,7 @@ void BuntuAmountField::unitChanged(int idx)
     setValid(true);
 }
 
-void BuntuAmountField::setDisplayUnit(int newUnit)
+void safemasternodeAmountField::setDisplayUnit(int newUnit)
 {
     unit->setValue(newUnit);
 }

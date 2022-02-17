@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About buntu</source>
-        <translation>Om buntu</translation>
+        <source>About safemasternode</source>
+        <translation>Om safemasternode</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;buntu&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;buntu&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;safemasternode&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;safemasternode&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Buntu developers
+        <source>Copyright © 2009-2014 The safemasternode developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The buntu developers</source>
-        <translation>Copyright © 2009-2014 The Buntu developers
+Copyright © 2014 The safemasternode developers</source>
+        <translation>Copyright © 2009-2014 The safemasternode developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The buntu developers</translation>
+Copyright © 2014 The safemasternode developers</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -60,8 +60,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your buntu addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Dette er dine buntu adresser til at modtage betalinger. Du ønsker måske at give en anden en til af hver afsender, så du kan holde styr på hvem der betaler dig.</translation>
+        <source>These are your safemasternode addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Dette er dine safemasternode adresser til at modtage betalinger. Du ønsker måske at give en anden en til af hver afsender, så du kan holde styr på hvem der betaler dig.</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -75,8 +75,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a buntu address</source>
-        <translation>Signerer en meddelelse for at bevise du ejer en buntu adresse</translation>
+        <source>Sign a message to prove you own a safemasternode address</source>
+        <translation>Signerer en meddelelse for at bevise du ejer en safemasternode adresse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -90,8 +90,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified buntu address</source>
-        <translation>Bekræft en meddelelse for at sikre, den blev underskrevet med en specificeret buntu adresse</translation>
+        <source>Verify a message to ensure it was signed with a specified safemasternode address</source>
+        <translation>Bekræft en meddelelse for at sikre, den blev underskrevet med en specificeret safemasternode adresse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -258,8 +258,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+82"/>
-        <source>buntu will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>buntu lukker nu for at afslutte krypteringen. Husk at en krypteret  tegnebog ikke fuldt ud beskytter dine mønter mod at blive stjålet af malware som har inficeret din computer.</translation>
+        <source>safemasternode will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>safemasternode lukker nu for at afslutte krypteringen. Husk at en krypteret  tegnebog ikke fuldt ud beskytter dine mønter mod at blive stjålet af malware som har inficeret din computer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -304,9 +304,9 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
-    <name>BuntuGUI</name>
+    <name>safemasternodeGUI</name>
     <message>
-        <location filename="../buntugui.cpp" line="+297"/>
+        <location filename="../safemasternodegui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>Underskriv besked...</translation>
     </message>
@@ -352,8 +352,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about buntu</source>
-        <translation>Vis oplysninger om buntu</translation>
+        <source>Show information about safemasternode</source>
+        <translation>Vis oplysninger om safemasternode</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -392,13 +392,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a buntu address</source>
-        <translation>Send mønter til en buntu adresse</translation>
+        <source>Send coins to a safemasternode address</source>
+        <translation>Send mønter til en safemasternode adresse</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for buntu</source>
-        <translation>Ændre indstillingsmuligheder for buntu</translation>
+        <source>Modify configuration options for safemasternode</source>
+        <translation>Ændre indstillingsmuligheder for safemasternode</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -438,8 +438,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-214"/>
         <location line="+551"/>
-        <source>buntu</source>
-        <translation>buntu</translation>
+        <source>safemasternode</source>
+        <translation>safemasternode</translation>
     </message>
     <message>
         <location line="-551"/>
@@ -448,8 +448,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About buntu</source>
-        <translation>&amp;Om buntu</translation>
+        <source>&amp;About safemasternode</source>
+        <translation>&amp;Om safemasternode</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -500,13 +500,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>buntu client</source>
-        <translation>buntu klient</translation>
+        <source>safemasternode client</source>
+        <translation>safemasternode klient</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to buntu network</source>
-        <translation><numerusform>%n aktiv forbindelse til buntu netværk</numerusform><numerusform>%n aktive forbindelser til buntu netværk</numerusform></translation>
+        <source>%n active connection(s) to safemasternode network</source>
+        <translation><numerusform>%n aktiv forbindelse til safemasternode netværk</numerusform><numerusform>%n aktive forbindelser til safemasternode netværk</numerusform></translation>
     </message>
     <message>
         <location line="+488"/>
@@ -600,8 +600,8 @@ Adresse: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid buntu address or malformed URI parameters.</source>
-        <translation>URI kan ikke tolkes! Dette kan skyldes en ugyldig buntu adresse eller misdannede URI parametre.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid safemasternode address or malformed URI parameters.</source>
+        <translation>URI kan ikke tolkes! Dette kan skyldes en ugyldig safemasternode adresse eller misdannede URI parametre.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -722,8 +722,8 @@ Adresse: %4
         <translation>Ingen rente</translation>
     </message>
     <message>
-        <location filename="../buntu.cpp" line="+104"/>
-        <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
+        <location filename="../safemasternode.cpp" line="+104"/>
+        <source>A fatal error occurred. safemasternode can no longer continue safely and will quit.</source>
         <translation>Der opstod en fejl under forsøg på at gemme dataene i tegnebogen til den nye placering.</translation>
     </message>
 </context>
@@ -1057,8 +1057,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid buntu address.</source>
-        <translation>Den indtastede adresse &quot;%1&quot; er ikke en gyldig buntu adresse.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid safemasternode address.</source>
+        <translation>Den indtastede adresse &quot;%1&quot; er ikke en gyldig safemasternode adresse.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1076,8 +1076,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>buntu-Qt</source>
-        <translation>buntu-Qt</translation>
+        <source>safemasternode-Qt</source>
+        <translation>safemasternode-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1149,13 +1149,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start buntu after logging in to the system.</source>
-        <translation>Automatisk start buntu efter at have logget ind på systemet.</translation>
+        <source>Automatically start safemasternode after logging in to the system.</source>
+        <translation>Automatisk start safemasternode efter at have logget ind på systemet.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start buntu on system login</source>
-        <translation>&amp;Start buntu ved systems login</translation>
+        <source>&amp;Start safemasternode on system login</source>
+        <translation>&amp;Start safemasternode ved systems login</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1164,8 +1164,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the buntu client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatisk åbne buntu klient-port på routeren. Dette virker kun, når din router understøtter UPnP og er det er aktiveret.</translation>
+        <source>Automatically open the safemasternode client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatisk åbne safemasternode klient-port på routeren. Dette virker kun, når din router understøtter UPnP og er det er aktiveret.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1174,8 +1174,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the buntu network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Opret forbindelse til buntu netværk via en SOCKS proxy (fx ved tilslutning gennem Tor).</translation>
+        <source>Connect to the safemasternode network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Opret forbindelse til safemasternode netværk via en SOCKS proxy (fx ved tilslutning gennem Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1249,8 +1249,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting buntu.</source>
-        <translation>Sproget i brugergrænsefladen kan indstilles her. Denne indstilling vil træde i kraft efter genstart af buntu tegnebog.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting safemasternode.</source>
+        <translation>Sproget i brugergrænsefladen kan indstilles her. Denne indstilling vil træde i kraft efter genstart af safemasternode tegnebog.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1260,7 +1260,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Vælg den standard underopdelingsenhed, som skal vises i brugergrænsefladen og ved afsendelse af buntus.</translation>
+        <translation>Vælg den standard underopdelingsenhed, som skal vises i brugergrænsefladen og ved afsendelse af safemasternodes.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1316,8 +1316,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting buntu.</source>
-        <translation>Denne indstilling vil træde i kraft efter genstart af buntu.</translation>
+        <source>This setting will take effect after restarting safemasternode.</source>
+        <translation>Denne indstilling vil træde i kraft efter genstart af safemasternode.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1335,8 +1335,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the buntu network after a connection is established, but this process has not completed yet.</source>
-        <translation>De viste oplysninger kan være forældet. Din tegnebog synkroniserer automatisk med buntu netværket efter en forbindelse er etableret, men denne proces er ikke afsluttet endnu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the safemasternode network after a connection is established, but this process has not completed yet.</source>
+        <translation>De viste oplysninger kan være forældet. Din tegnebog synkroniserer automatisk med safemasternode netværket efter en forbindelse er etableret, men denne proces er ikke afsluttet endnu.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1577,8 +1577,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the buntu-Qt help message to get a list with possible buntu command-line options.</source>
-        <translation>Vis buntu-Qt hjælpe besked for at få en liste med mulige buntu kommandolinjeparametre.</translation>
+        <source>Show the safemasternode-Qt help message to get a list with possible safemasternode command-line options.</source>
+        <translation>Vis safemasternode-Qt hjælpe besked for at få en liste med mulige safemasternode kommandolinjeparametre.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1597,13 +1597,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>buntu - Debug window</source>
-        <translation>buntu - Debug vindue</translation>
+        <source>safemasternode - Debug window</source>
+        <translation>safemasternode - Debug vindue</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>buntu Core</source>
-        <translation>buntu Kerne</translation>
+        <source>safemasternode Core</source>
+        <translation>safemasternode Kerne</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1612,8 +1612,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the buntu debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Åbn buntu debug logfilen fra den nuværende data mappe. Dette kan tage et par sekunder for store logfiler.</translation>
+        <source>Open the safemasternode debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Åbn safemasternode debug logfilen fra den nuværende data mappe. Dette kan tage et par sekunder for store logfiler.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1622,8 +1622,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="+325"/>
-        <source>Welcome to the buntu RPC console.</source>
-        <translation>Velkommen til buntu RPC-konsol.</translation>
+        <source>Welcome to the safemasternode RPC console.</source>
+        <translation>Velkommen til safemasternode RPC-konsol.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1683,7 +1683,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
         <location line="+5"/>
         <location line="+5"/>
         <source>Send Coins</source>
-        <translation>Send buntus</translation>
+        <translation>Send safemasternodes</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -1816,8 +1816,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a buntu address (e.g. D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Indtast en buntu-adresse (f.eks D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Indtast en safemasternode-adresse (f.eks D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1867,7 +1867,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="+5"/>
         <source>Confirm send coins</source>
-        <translation>Bekræft afsendelse af buntus</translation>
+        <translation>Bekræft afsendelse af safemasternodes</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1916,8 +1916,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+247"/>
-        <source>WARNING: Invalid buntu address</source>
-        <translation>ADVARSEL: Ugyldig buntu adresse</translation>
+        <source>WARNING: Invalid safemasternode address</source>
+        <translation>ADVARSEL: Ugyldig safemasternode adresse</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1990,8 +1990,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a buntu address (e.g. D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Indtast en buntu-adresse (f.eks D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Indtast en safemasternode-adresse (f.eks D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -2010,7 +2010,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="-118"/>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Du kan underskrive beskeder med dine Buntu-adresser for at bevise, at de tilhører dig. Pas på ikke at underskrive noget vagt, da phisingangreb kan narre dig til at overdrage din identitet. Underskriv kun fuldt detaljerede udsagn, du er enig i.</translation>
+        <translation>Du kan underskrive beskeder med dine safemasternode-adresser for at bevise, at de tilhører dig. Pas på ikke at underskrive noget vagt, da phisingangreb kan narre dig til at overdrage din identitet. Underskriv kun fuldt detaljerede udsagn, du er enig i.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -2051,8 +2051,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this buntu address</source>
-        <translation>Underskriv brevet for at bevise du ejer denne buntu adresse</translation>
+        <source>Sign the message to prove you own this safemasternode address</source>
+        <translation>Underskriv brevet for at bevise du ejer denne safemasternode adresse</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2083,8 +2083,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified buntu address</source>
-        <translation>Kontroller meddelelsen for at sikre, at den blev indgået med den angivne buntu adresse</translation>
+        <source>Verify the message to ensure it was signed with the specified safemasternode address</source>
+        <translation>Kontroller meddelelsen for at sikre, at den blev indgået med den angivne safemasternode adresse</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2094,8 +2094,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a buntu address (e.g. D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Indtast en buntu-adresse (f.eks D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Indtast en safemasternode-adresse (f.eks D8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2104,8 +2104,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter buntu signature</source>
-        <translation>Indtast buntu underskrift</translation>
+        <source>Enter safemasternode signature</source>
+        <translation>Indtast safemasternode underskrift</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2680,11 +2680,11 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
 </context>
 <context>
-    <name>buntu-core</name>
+    <name>safemasternode-core</name>
     <message>
-        <location filename="../buntustrings.cpp" line="+173"/>
-        <source>buntu version</source>
-        <translation>buntu version</translation>
+        <location filename="../safemasternodestrings.cpp" line="+173"/>
+        <source>safemasternode version</source>
+        <translation>safemasternode version</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2693,8 +2693,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or buntud</source>
-        <translation>Send kommando til-server eller buntud</translation>
+        <source>Send command to -server or safemasternoded</source>
+        <translation>Send kommando til-server eller safemasternoded</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2713,13 +2713,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: buntu.conf)</source>
-        <translation>Angiv konfigurationsfil (default: buntu.conf)</translation>
+        <source>Specify configuration file (default: safemasternode.conf)</source>
+        <translation>Angiv konfigurationsfil (default: safemasternode.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: buntud.pid)</source>
-        <translation>Angiv pid fil (standard: buntud.pid)</translation>
+        <source>Specify pid file (default: safemasternoded.pid)</source>
+        <translation>Angiv pid fil (standard: safemasternoded.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2736,13 +2736,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=bunturpc
+rpcuser=safemasternoderpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;safemasternode Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2848,8 +2848,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="-103"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong buntu will not work properly.</source>
-        <translation>Advarsel: Kontroller venligst, at computerens dato og klokkeslæt er korrekt! Hvis dit ur er forkert vil buntu ikke fungere korrekt.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong safemasternode will not work properly.</source>
+        <translation>Advarsel: Kontroller venligst, at computerens dato og klokkeslæt er korrekt! Hvis dit ur er forkert vil safemasternode ikke fungere korrekt.</translation>
     </message>
     <message>
         <location line="+132"/>
@@ -2923,8 +2923,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+41"/>
-        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
-        <translation>SSL-indstillinger: (se Buntu Wiki for SSL-opsætningsinstruktioner)</translation>
+        <source>SSL options: (see the safemasternode Wiki for SSL setup instructions)</source>
+        <translation>SSL-indstillinger: (se safemasternode Wiki for SSL-opsætningsinstruktioner)</translation>
     </message>
     <message>
         <location line="-81"/>
@@ -3155,7 +3155,7 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+10"/>
-        <source>Initialization sanity check failed. buntu is shutting down.</source>
+        <source>Initialization sanity check failed. safemasternode is shutting down.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3220,13 +3220,13 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of buntu</source>
-        <translation>Fejl ved indlæsning af wallet.dat: Wallet kræver en nyere version af buntu</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of safemasternode</source>
+        <translation>Fejl ved indlæsning af wallet.dat: Wallet kræver en nyere version af safemasternode</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart buntu to complete</source>
-        <translation>Det er nødvendig for wallet at blive omskrevet: Genstart buntu for fuldføre</translation>
+        <source>Wallet needed to be rewritten: restart safemasternode to complete</source>
+        <translation>Det er nødvendig for wallet at blive omskrevet: Genstart safemasternode for fuldføre</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3290,8 +3290,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+125"/>
-        <source>Unable to bind to %s on this computer. buntu is probably already running.</source>
-        <translation>Kunne ikke binde sig til %s på denne computer. buntu kører sikkert allerede.</translation>
+        <source>Unable to bind to %s on this computer. safemasternode is probably already running.</source>
+        <translation>Kunne ikke binde sig til %s på denne computer. safemasternode kører sikkert allerede.</translation>
     </message>
     <message>
         <location line="-101"/>
@@ -3330,7 +3330,7 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. buntu is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. safemasternode is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>

@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,8 +22,8 @@
 
 using namespace boost;
 
-const int BUNTU_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BUNTU_IPC_PREFIX("buntu:");
+const int safemasternode_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
+const QString safemasternode_IPC_PREFIX("safemasternode:");
 
 //
 // Create a name that is unique for:
@@ -32,7 +32,7 @@ const QString BUNTU_IPC_PREFIX("buntu:");
 //
 static QString ipcServerName()
 {
-    QString name("buntuQt");
+    QString name("safemasternodeQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -63,7 +63,7 @@ bool PaymentServer::ipcSendCommandLine()
     const QStringList& args = qApp->arguments();
     for (int i = 1; i < args.size(); i++)
     {
-        if (!args[i].startsWith(BUNTU_IPC_PREFIX, Qt::CaseInsensitive))
+        if (!args[i].startsWith(safemasternode_IPC_PREFIX, Qt::CaseInsensitive))
             continue;
         savedPaymentRequests.append(args[i]);
     }
@@ -72,7 +72,7 @@ bool PaymentServer::ipcSendCommandLine()
     {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
-        if (!socket->waitForConnected(BUNTU_IPC_CONNECT_TIMEOUT))
+        if (!socket->waitForConnected(safemasternode_IPC_CONNECT_TIMEOUT))
             return false;
 
         QByteArray block;
@@ -83,7 +83,7 @@ bool PaymentServer::ipcSendCommandLine()
         socket->write(block);
         socket->flush();
 
-        socket->waitForBytesWritten(BUNTU_IPC_CONNECT_TIMEOUT);
+        socket->waitForBytesWritten(safemasternode_IPC_CONNECT_TIMEOUT);
         socket->disconnectFromServer();
         delete socket;
         fResult = true;
@@ -93,7 +93,7 @@ bool PaymentServer::ipcSendCommandLine()
 
 PaymentServer::PaymentServer(QApplication* parent) : QObject(parent), saveURIs(true)
 {
-    // Install global event filter to catch QFileOpenEvents on the mac (sent when you click buntu: links)
+    // Install global event filter to catch QFileOpenEvents on the mac (sent when you click safemasternode: links)
     parent->installEventFilter(this);
 
     QString name = ipcServerName();
@@ -104,14 +104,14 @@ PaymentServer::PaymentServer(QApplication* parent) : QObject(parent), saveURIs(t
     uriServer = new QLocalServer(this);
 
     if (!uriServer->listen(name))
-        qDebug() << tr("Cannot start buntu: click-to-pay handler");
+        qDebug() << tr("Cannot start safemasternode: click-to-pay handler");
     else
         connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
 }
 
 bool PaymentServer::eventFilter(QObject *object, QEvent *event)
 {
-    // clicking on buntu: URLs creates FileOpen events on the Mac:
+    // clicking on safemasternode: URLs creates FileOpen events on the Mac:
     if (event->type() == QEvent::FileOpen)
     {
         QFileOpenEvent* fileEvent = static_cast<QFileOpenEvent*>(event);

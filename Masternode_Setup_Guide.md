@@ -1,7 +1,7 @@
 # Masternode Setup Guide
 
 ### 1. Requirements
-* 5 BNTU  
+* 5 SMTN  
 * VPS server
 	* [Vultr](https://www.vultr.com/?ref=7684542)
 	* [Digital Ocean](https://m.do.co/c/917baa6de4c8)
@@ -9,11 +9,11 @@
 * Text Editor (e.g. Notepad)
 ___
 ### 2. Local wallet setup part 1 of 2  
-Download latest wallet: [GitHub](https://github.com/CRYPT0BUNTU/buntu/releases)  
+Download latest wallet: [GitHub](https://github.com/CRYPT0safemasternode/safemasternode/releases)  
 
 Open the wallet
 
- *Note: If you're setting up using an Ubuntu desktop wallet and you do not see the File, Settings, or Help wallet menu options then you must uninstall apppmenu-qt5 from your system (Terminal> sudo apt-get remove appmenu-qt5)*
+ *Note: If you're setting up using an Usafemasternode desktop wallet and you do not see the File, Settings, or Help wallet menu options then you must uninstall apppmenu-qt5 from your system (Terminal> sudo apt-get remove appmenu-qt5)*
 
 Go to the `Receive` tab
 
@@ -31,7 +31,7 @@ Go to the `Send` tab
 
 Paste the address on the `Pay To` box and enter 5 in the `Amount` box  
 
-*Note : You must be sent exactly 5 BNTU in a single transaction*  
+*Note : You must be sent exactly 5 SMTN in a single transaction*  
 
 Click `Send` *(do not check `Darksend`)*
 
@@ -57,7 +57,7 @@ Paste the applicable command below into your terminal to run the automated maste
 #### Linux Dependencies
 apt-get install net-tools curl -y
 
-Ubuntu 16.04 VPS:
+Usafemasternode 16.04 VPS:
 
 Install dos2unix:
 ```
@@ -67,14 +67,14 @@ sudo apt-get install dos2unix -y
 Run the setup commands:
 
 ```
-wget -q https://github.com/CRYPT0BUNTU/buntu/releases/download/1.0/masternode1604.sh
+wget -q https://github.com/CRYPT0safemasternode/safemasternode/releases/download/1.0/masternode1604.sh
 chmod +x masternode1604.sh
 dos2unix masternode1804.sh
 bash masternode1604.sh
 
 ```  
 
-Ubuntu 18.04 VPS:
+Usafemasternode 18.04 VPS:
 
 Install dos2unix:
 ```
@@ -84,7 +84,7 @@ sudo apt-get install dos2unix -y
 Run the setup commands:
 
 ```
-wget -q https://github.com/CRYPT0BUNTU/buntu/releases/download/1.0/masternode1804.sh
+wget -q https://github.com/CRYPT0safemasternode/safemasternode/releases/download/1.0/masternode1804.sh
 chmod +x masternode1804.sh
 dos2unix masternode1804.sh
 bash masternode1804.sh
@@ -94,7 +94,7 @@ Paste your masternode genkey when prompted
 
 #### VPS Masternode Troubleshooting
 
-*Get the status code to identify issues:'./buntud masternode status'* 
+*Get the status code to identify issues:'./safemasternoded masternode status'* 
 
 The "status" of your masternode will be one of the following:
 
@@ -151,7 +151,7 @@ ___
 ### 6. Checking masternode status  
 Click `Update` periodically to ensure your masternodes are running
 
-After 30 minutes, your masternode `Active(secs)` will be reflected in the Buntu subtab
+After 30 minutes, your masternode `Active(secs)` will be reflected in the safemasternode subtab
 
-### Thank you for running a Buntu Masternode!
+### Thank you for running a safemasternode Masternode!
 ___

@@ -38,7 +38,7 @@
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
-         <string>buntu Network</string>
+         <string>safemasternode Network</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout">
          <item row="1" column="0">
@@ -98,7 +98,7 @@
            <item>
             <widget class="QLabel" name="label_2">
              <property name="text">
-              <string>buntu Node Count:</string>
+              <string>safemasternode Node Count:</string>
              </property>
             </widget>
            </item>

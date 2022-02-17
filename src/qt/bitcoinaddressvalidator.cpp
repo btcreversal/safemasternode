@@ -1,4 +1,4 @@
-#include "buntuaddressvalidator.h"
+#include "safemasternodeaddressvalidator.h"
 
 /* Base58 characters are:
      "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
@@ -13,12 +13,12 @@
   - '0' and 'O' to 'o'
 */
 
-BuntuAddressValidator::BuntuAddressValidator(QObject *parent) :
+safemasternodeAddressValidator::safemasternodeAddressValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State BuntuAddressValidator::validate(QString &input, int &pos) const
+QValidator::State safemasternodeAddressValidator::validate(QString &input, int &pos) const
 {
     // Correction
     for(int idx=0; idx<input.size();)

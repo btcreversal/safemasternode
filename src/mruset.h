@@ -1,8 +1,8 @@
-// Copyright (c) 2012 The Buntu developers
+// Copyright (c) 2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_MRUSET_H
-#define BUNTU_MRUSET_H
+#ifndef safemasternode_MRUSET_H
+#define safemasternode_MRUSET_H
 
 #include <set>
 #include <deque>

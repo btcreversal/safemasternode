@@ -1,18 +1,18 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='buntu.conf'
-CONFIGFOLDER='/root/.buntu'
-COIN_DAEMON='buntud'
-COIN_CLI='buntud'
+CONFIG_FILE='safemasternode.conf'
+CONFIGFOLDER='/root/.safemasternode'
+COIN_DAEMON='safemasternoded'
+COIN_CLI='safemasternoded'
 COIN_PATH='/usr/local/bin/'
-COIN_REPO='https://github.com/CRYPT0BUNTU/Buntu.git'
-COIN_TGZ='https://github.com/CRYPT0BUNTU/Buntu/releases/download/1.0/buntud1604.tar.gz'
-COIN_BOOTSTRAP='https://github.com/CRYPT0BUNTU/Buntu/releases/download/1.0/bootstrap.tar.gz'
+COIN_REPO='https://github.com/CRYPT0safemasternode/safemasternode.git'
+COIN_TGZ='https://github.com/CRYPT0safemasternode/safemasternode/releases/download/1.0/safemasternoded1604.tar.gz'
+COIN_BOOTSTRAP='https://github.com/CRYPT0safemasternode/safemasternode/releases/download/1.0/bootstrap.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_CHAIN=$(echo $COIN_BOOTSTRAP | awk -F'/' '{print $NF}')
 SENTINEL_REPO='N/A'
-COIN_NAME='buntu'
+COIN_NAME='safemasternode'
 COIN_PORT=32821
 RPC_PORT=32822
 BOOTSTRAPFILE='bootstrap.tar.gz'
@@ -211,7 +211,7 @@ fi
 
 function checks() {
 if [[ $(lsb_release -d) != *16.04* ]]; then
-  echo -e "${RED}You are not running Ubuntu 16.04. Installation is cancelled.${NC}"
+  echo -e "${RED}You are not running Usafemasternode 16.04. Installation is cancelled.${NC}"
   exit 1
 fi
 
@@ -232,8 +232,8 @@ apt-get update >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
 apt install -y software-properties-common >/dev/null 2>&1
-echo -e "${PURPLE}Adding buntu PPA repository"
-apt-add-repository -y ppa:buntu/buntu >/dev/null 2>&1
+echo -e "${PURPLE}Adding safemasternode PPA repository"
+apt-add-repository -y ppa:safemasternode/safemasternode >/dev/null 2>&1
 echo -e "Installing required packages, it may take some time to finish.${NC}"
 apt-get update >/dev/null 2>&1
 apt-get install libzmq3-dev -y >/dev/null 2>&1
@@ -247,7 +247,7 @@ if [ "$?" -gt "0" ];
     echo -e "${RED}Not all required packages were installed properly. Try to install them manually by running the following commands:${NC}\n"
     echo "apt-get update"
     echo "apt -y install software-properties-common"
-    echo "apt-add-repository -y ppa:buntu/buntu"
+    echo "apt-add-repository -y ppa:safemasternode/safemasternode"
     echo "apt-get update"
     echo "apt install -y make build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libgmp-dev libboost-system-dev \
 libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev \
@@ -278,7 +278,7 @@ function important_information() {
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "${GREEN}Daemon info:${NC}"
  echo -e "${GREEN} cd /usr/local/bin/${NC}"
- echo -e "${GREEN} ./buntud getinfo${NC}"
+ echo -e "${GREEN} ./safemasternoded getinfo${NC}"
 
  }
 

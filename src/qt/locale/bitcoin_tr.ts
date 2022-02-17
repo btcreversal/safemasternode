@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About buntu</source>
-        <translation>buntu Hakkında</translation>
+        <source>About safemasternode</source>
+        <translation>safemasternode Hakkında</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;buntu&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;buntu&lt;/b&gt; versiyonu</translation>
+        <source>&lt;b&gt;safemasternode&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;safemasternode&lt;/b&gt; versiyonu</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Buntu developers
+        <source>Copyright © 2009-2014 The safemasternode developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2015-2017 The buntu developers</source>
-        <translation>Telif Hakkı © 2009-2014 Buntu geliştiricileri
+Copyright © 2015-2017 The safemasternode developers</source>
+        <translation>Telif Hakkı © 2009-2014 safemasternode geliştiricileri
 Telif Hakkı © 2012-2014 NovaCoin geliştiricileri
-Telif Hakkı © 2015-2017 buntu geliştiricileri</translation>
+Telif Hakkı © 2015-2017 safemasternode geliştiricileri</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -65,8 +65,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your buntu addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Bunlar, ödeme almak için buntu adreslerinizdir. Her bir göndericiye farklı birini verebilir, böylece size kimin ödeme yaptığını takip edebilirsiniz.</translation>
+        <source>These are your safemasternode addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Bunlar, ödeme almak için safemasternode adreslerinizdir. Her bir göndericiye farklı birini verebilir, böylece size kimin ödeme yaptığını takip edebilirsiniz.</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -80,8 +80,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a buntu address</source>
-        <translation>Bir buntu adresine sahip olduğunu ispatlamak için bir mesaj imzala</translation>
+        <source>Sign a message to prove you own a safemasternode address</source>
+        <translation>Bir safemasternode adresine sahip olduğunu ispatlamak için bir mesaj imzala</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -95,8 +95,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified buntu address</source>
-        <translation>Mesajın, belirli bir buntu adresiyle imzalandığından emin olmak için onu doğrula</translation>
+        <source>Verify a message to ensure it was signed with a specified safemasternode address</source>
+        <translation>Mesajın, belirli bir safemasternode adresiyle imzalandığından emin olmak için onu doğrula</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -263,8 +263,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="+82"/>
-        <source>buntu will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>buntu, şifreleme işlemini tamamlamak için şimdi kapatılacak. Cüzdanınızı şifrelemenin; coinlerinizin, bilgisayarınızı etkileyen zararlı yazılımlar tarafından çalınmasını bütünüyle engelleyemeyebileceğini unutmayınız.</translation>
+        <source>safemasternode will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>safemasternode, şifreleme işlemini tamamlamak için şimdi kapatılacak. Cüzdanınızı şifrelemenin; coinlerinizin, bilgisayarınızı etkileyen zararlı yazılımlar tarafından çalınmasını bütünüyle engelleyemeyebileceğini unutmayınız.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -309,9 +309,9 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
 </context>
 <context>
-    <name>BuntuGUI</name>
+    <name>safemasternodeGUI</name>
     <message>
-        <location filename="../buntugui.cpp" line="+297"/>
+        <location filename="../safemasternodegui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>&amp;Mesaj imzala...</translation>
     </message>
@@ -357,8 +357,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about buntu</source>
-        <translation>buntu hakkındaki bilgiyi göster</translation>
+        <source>Show information about safemasternode</source>
+        <translation>safemasternode hakkındaki bilgiyi göster</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -397,13 +397,13 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a buntu address</source>
-        <translation>Bir buntu adresine coin gönder</translation>
+        <source>Send coins to a safemasternode address</source>
+        <translation>Bir safemasternode adresine coin gönder</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for buntu</source>
-        <translation>buntu yapılandırma seçeneklerini değiştir</translation>
+        <source>Modify configuration options for safemasternode</source>
+        <translation>safemasternode yapılandırma seçeneklerini değiştir</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -443,8 +443,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     <message>
         <location line="-214"/>
         <location line="+551"/>
-        <source>buntu</source>
-        <translation>buntu</translation>
+        <source>safemasternode</source>
+        <translation>safemasternode</translation>
     </message>
     <message>
         <location line="-551"/>
@@ -453,8 +453,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About buntu</source>
-        <translation>buntu &amp;Hakkında</translation>
+        <source>&amp;About safemasternode</source>
+        <translation>safemasternode &amp;Hakkında</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -505,13 +505,13 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>buntu client</source>
-        <translation>buntu istemcisi</translation>
+        <source>safemasternode client</source>
+        <translation>safemasternode istemcisi</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to buntu network</source>
-        <translation><numerusform>buntu ağına %n etkin bağlantı</numerusform><numerusform>buntu ağına %n etkin bağlantı</numerusform></translation>
+        <source>%n active connection(s) to safemasternode network</source>
+        <translation><numerusform>safemasternode ağına %n etkin bağlantı</numerusform><numerusform>safemasternode ağına %n etkin bağlantı</numerusform></translation>
     </message>
     <message>
         <location line="+488"/>
@@ -605,8 +605,8 @@ Adres: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid buntu address or malformed URI parameters.</source>
-        <translation>URI ayrıştırılamadı! Bu, geçersiz bir buntu adresi veya hatalı URI parametreleri nedeniyle olabilir.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid safemasternode address or malformed URI parameters.</source>
+        <translation>URI ayrıştırılamadı! Bu, geçersiz bir safemasternode adresi veya hatalı URI parametreleri nedeniyle olabilir.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -727,9 +727,9 @@ Adres: %4
         <translation>Pay alınmıyor</translation>
     </message>
     <message>
-        <location filename="../buntu.cpp" line="+104"/>
-        <source>A fatal error occurred. buntu can no longer continue safely and will quit.</source>
-        <translation>Önemli bir hata oluştu. buntu artık güvenli bir şekilde devam edemez ve şimdi kapatılacak.</translation>
+        <location filename="../safemasternode.cpp" line="+104"/>
+        <source>A fatal error occurred. safemasternode can no longer continue safely and will quit.</source>
+        <translation>Önemli bir hata oluştu. safemasternode artık güvenli bir şekilde devam edemez ve şimdi kapatılacak.</translation>
     </message>
 </context>
 <context>
@@ -1062,8 +1062,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid buntu address.</source>
-        <translation>Girilen %1 adresi, geçerli bir buntu adresi değildir.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid safemasternode address.</source>
+        <translation>Girilen %1 adresi, geçerli bir safemasternode adresi değildir.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1081,8 +1081,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>buntu-Qt</source>
-        <translation>buntu-Qt</translation>
+        <source>safemasternode-Qt</source>
+        <translation>safemasternode-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1154,13 +1154,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start buntu after logging in to the system.</source>
-        <translation>Sisteme giriş yaptıktan sonra buntu&apos;i otomatik olarak başlat</translation>
+        <source>Automatically start safemasternode after logging in to the system.</source>
+        <translation>Sisteme giriş yaptıktan sonra safemasternode&apos;i otomatik olarak başlat</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start buntu on system login</source>
-        <translation>Sisteme girişte buntu&apos;i &amp;başlat</translation>
+        <source>&amp;Start safemasternode on system login</source>
+        <translation>Sisteme girişte safemasternode&apos;i &amp;başlat</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1169,8 +1169,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the buntu client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Yönelticide buntu istemci portunu otomatik olarak aç. Bu, sadece yönelticiniz UPnP&apos;i desteklediğinde ve etkin olduğunda çalışır.</translation>
+        <source>Automatically open the safemasternode client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Yönelticide safemasternode istemci portunu otomatik olarak aç. Bu, sadece yönelticiniz UPnP&apos;i desteklediğinde ve etkin olduğunda çalışır.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1179,8 +1179,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the buntu network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>buntu ağına bir SOCKS vekil sunucusu yoluyla bağlan (örn. Tor yoluyla bağlanıldığında)</translation>
+        <source>Connect to the safemasternode network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>safemasternode ağına bir SOCKS vekil sunucusu yoluyla bağlan (örn. Tor yoluyla bağlanıldığında)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1254,8 +1254,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting buntu.</source>
-        <translation>Kullanıcı arabirimi dili buradan ayarlanabilir. Ayar, buntu yeniden başlatıldığında etkin olacaktır.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting safemasternode.</source>
+        <translation>Kullanıcı arabirimi dili buradan ayarlanabilir. Ayar, safemasternode yeniden başlatıldığında etkin olacaktır.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1265,7 +1265,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Buntu gönderildiğinde arayüzde gösterilecek varsayılan alt birimi seçiniz.</translation>
+        <translation>safemasternode gönderildiğinde arayüzde gösterilecek varsayılan alt birimi seçiniz.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1321,8 +1321,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting buntu.</source>
-        <translation>Bu ayar, buntu&apos;i yeniden başlattıktan sonra etkin olacaktır.</translation>
+        <source>This setting will take effect after restarting safemasternode.</source>
+        <translation>Bu ayar, safemasternode&apos;i yeniden başlattıktan sonra etkin olacaktır.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1340,8 +1340,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the buntu network after a connection is established, but this process has not completed yet.</source>
-        <translation>Görüntülenen bilginin tarihi geçmiş olabilir. Cüzdanınız, bağlantı kurulduktan sonra otomatik olarak buntu ağı ile senkronize olur ancak bu süreç, henüz tamamlanmamıştır.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the safemasternode network after a connection is established, but this process has not completed yet.</source>
+        <translation>Görüntülenen bilginin tarihi geçmiş olabilir. Cüzdanınız, bağlantı kurulduktan sonra otomatik olarak safemasternode ağı ile senkronize olur ancak bu süreç, henüz tamamlanmamıştır.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1582,8 +1582,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the buntu-Qt help message to get a list with possible buntu command-line options.</source>
-        <translation>Muhtemel buntu komut satırı seçeneklerinin bir listesini getirmek için buntu-Qt yardım mesajını göster</translation>
+        <source>Show the safemasternode-Qt help message to get a list with possible safemasternode command-line options.</source>
+        <translation>Muhtemel safemasternode komut satırı seçeneklerinin bir listesini getirmek için safemasternode-Qt yardım mesajını göster</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1602,13 +1602,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-104"/>
-        <source>buntu - Debug window</source>
-        <translation>buntu - Hata ayıklama penceresi</translation>
+        <source>safemasternode - Debug window</source>
+        <translation>safemasternode - Hata ayıklama penceresi</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>buntu Core</source>
-        <translation>buntu Core</translation>
+        <source>safemasternode Core</source>
+        <translation>safemasternode Core</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1617,8 +1617,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the buntu debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>buntu hata ayıklama günlük kütüğü dosyasını, mevcut veri klasöründen aç. Bu işlem, büyük günlük kütüğü dosyaları için birkaç saniye sürebilir.</translation>
+        <source>Open the safemasternode debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>safemasternode hata ayıklama günlük kütüğü dosyasını, mevcut veri klasöründen aç. Bu işlem, büyük günlük kütüğü dosyaları için birkaç saniye sürebilir.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1627,8 +1627,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="+325"/>
-        <source>Welcome to the buntu RPC console.</source>
-        <translation>buntu RPC konsoluna hoş geldiniz.</translation>
+        <source>Welcome to the safemasternode RPC console.</source>
+        <translation>safemasternode RPC konsoluna hoş geldiniz.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1688,7 +1688,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="+5"/>
         <location line="+5"/>
         <source>Send Coins</source>
-        <translation>Buntu yolla</translation>
+        <translation>safemasternode yolla</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -1736,8 +1736,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="+86"/>
         <location line="+86"/>
         <location line="+32"/>
-        <source>0.00 BNTU</source>
-        <translation>123.456 BNTU {0.00 ?}</translation>
+        <source>0.00 SMTN</source>
+        <translation>123.456 SMTN {0.00 ?}</translation>
     </message>
     <message>
         <location line="-191"/>
@@ -1806,8 +1806,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+16"/>
-        <source>123.456 BNTU</source>
-        <translation>123.456 BNTU</translation>
+        <source>123.456 SMTN</source>
+        <translation>123.456 SMTN</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -1821,8 +1821,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a buntu address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Bir buntu adresi gir (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Bir safemasternode adresi gir (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1921,8 +1921,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+247"/>
-        <source>WARNING: Invalid buntu address</source>
-        <translation>UYARI: Geçersiz buntu adresi</translation>
+        <source>WARNING: Invalid safemasternode address</source>
+        <translation>UYARI: Geçersiz safemasternode adresi</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1995,8 +1995,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a buntu address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Bir buntu adresi girin (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Bir safemasternode adresi girin (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -2056,8 +2056,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this buntu address</source>
-        <translation>Bu buntu adresine sahip olduğunuzu ispatlamak için mesajı imzala</translation>
+        <source>Sign the message to prove you own this safemasternode address</source>
+        <translation>Bu safemasternode adresine sahip olduğunuzu ispatlamak için mesajı imzala</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2088,8 +2088,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified buntu address</source>
-        <translation>Mesajın, belirtilen buntu adresiyle imzalandığından emin olmak için onu doğrula</translation>
+        <source>Verify the message to ensure it was signed with the specified safemasternode address</source>
+        <translation>Mesajın, belirtilen safemasternode adresiyle imzalandığından emin olmak için onu doğrula</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2099,8 +2099,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a buntu address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Bir buntu adresi girin (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a safemasternode address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Bir safemasternode adresi girin (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2109,8 +2109,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter buntu signature</source>
-        <translation>buntu imzası gir</translation>
+        <source>Enter safemasternode signature</source>
+        <translation>safemasternode imzası gir</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2685,11 +2685,11 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
 </context>
 <context>
-    <name>buntu-core</name>
+    <name>safemasternode-core</name>
     <message>
-        <location filename="../buntustrings.cpp" line="+173"/>
-        <source>buntu version</source>
-        <translation>buntu versiyonu</translation>
+        <location filename="../safemasternodestrings.cpp" line="+173"/>
+        <source>safemasternode version</source>
+        <translation>safemasternode versiyonu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2698,8 +2698,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or buntud</source>
-        <translation>-sunucu veya buntud&apos;ye komut gönder</translation>
+        <source>Send command to -server or safemasternoded</source>
+        <translation>-sunucu veya safemasternoded&apos;ye komut gönder</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2718,13 +2718,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: buntu.conf)</source>
-        <translation>Konfigürasyon dosyasını belirt (varsayılan: buntu.conf)</translation>
+        <source>Specify configuration file (default: safemasternode.conf)</source>
+        <translation>Konfigürasyon dosyasını belirt (varsayılan: safemasternode.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: buntud.pid)</source>
-        <translation>pid dosyasını belirt (varsayılan: buntu.pid)</translation>
+        <source>Specify pid file (default: safemasternoded.pid)</source>
+        <translation>pid dosyasını belirt (varsayılan: safemasternode.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2741,13 +2741,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=bunturpc
+rpcuser=safemasternoderpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;safemasternode Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2853,8 +2853,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="-103"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong buntu will not work properly.</source>
-        <translation>Uyarı: Lütfen bilgisayarınızın tarih ve saatinin doğru olduğunu kontrol ediniz! Saatiniz yanlış ise, buntu düzgün çalışmayacaktır.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong safemasternode will not work properly.</source>
+        <translation>Uyarı: Lütfen bilgisayarınızın tarih ve saatinin doğru olduğunu kontrol ediniz! Saatiniz yanlış ise, safemasternode düzgün çalışmayacaktır.</translation>
     </message>
     <message>
         <location line="+132"/>
@@ -2928,8 +2928,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+41"/>
-        <source>SSL options: (see the Buntu Wiki for SSL setup instructions)</source>
-        <translation> SSL seçenekleri: (SSL kurulum bilgisi için Buntu vikisine bakınız)</translation>
+        <source>SSL options: (see the safemasternode Wiki for SSL setup instructions)</source>
+        <translation> SSL seçenekleri: (SSL kurulum bilgisi için safemasternode vikisine bakınız)</translation>
     </message>
     <message>
         <location line="-81"/>
@@ -3160,8 +3160,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+10"/>
-        <source>Initialization sanity check failed. buntu is shutting down.</source>
-        <translation>Başlangıç uygunluk kontrolü başarısız oldu. buntu kapatılıyor.</translation>
+        <source>Initialization sanity check failed. safemasternode is shutting down.</source>
+        <translation>Başlangıç uygunluk kontrolü başarısız oldu. safemasternode kapatılıyor.</translation>
     </message>
     <message>
         <location line="+50"/>
@@ -3225,13 +3225,13 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of buntu</source>
-        <translation>wallet.dat yüklenirken hata: Cüzdan, daha yeni bir buntu versiyonuna ihtiyaç duyuyor.</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of safemasternode</source>
+        <translation>wallet.dat yüklenirken hata: Cüzdan, daha yeni bir safemasternode versiyonuna ihtiyaç duyuyor.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart buntu to complete</source>
-        <translation>Cüzdanın yeniden yazılması gerekmektedir: Tamamlamak için buntu&apos;i yeniden başlatın</translation>
+        <source>Wallet needed to be rewritten: restart safemasternode to complete</source>
+        <translation>Cüzdanın yeniden yazılması gerekmektedir: Tamamlamak için safemasternode&apos;i yeniden başlatın</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3295,8 +3295,8 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+125"/>
-        <source>Unable to bind to %s on this computer. buntu is probably already running.</source>
-        <translation>Bu bilgisayarda %s bağlanamadı. buntu muhtemelen halen çalışmaktadır.</translation>
+        <source>Unable to bind to %s on this computer. safemasternode is probably already running.</source>
+        <translation>Bu bilgisayarda %s bağlanamadı. safemasternode muhtemelen halen çalışmaktadır.</translation>
     </message>
     <message>
         <location line="-101"/>
@@ -3335,7 +3335,7 @@ for example: alertnotify=echo %%s | mail -s &quot;buntu Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. buntu is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. safemasternode is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>

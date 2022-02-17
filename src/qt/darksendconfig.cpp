@@ -1,7 +1,7 @@
 #include "darksendconfig.h"
 #include "ui_darksendconfig.h"
 
-#include "buntuunits.h"
+#include "safemasternodeunits.h"
 #include "guiconstants.h"
 #include "optionsmodel.h"
 #include "walletmodel.h"
@@ -38,11 +38,11 @@ void DarksendConfig::clickBasic()
 {
     configure(true, 1000, 2);
 
-    QString strAmount(BuntuUnits::formatWithUnit(
+    QString strAmount(safemasternodeUnits::formatWithUnit(
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("Darksend Configuration"),
         tr(
-            "Darksend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening buntu's configuration screen."
+            "Darksend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening safemasternode's configuration screen."
         ).arg(strAmount)
     );
 
@@ -53,11 +53,11 @@ void DarksendConfig::clickHigh()
 {
     configure(true, 1000, 8);
 
-    QString strAmount(BuntuUnits::formatWithUnit(
+    QString strAmount(safemasternodeUnits::formatWithUnit(
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("Darksend Configuration"),
         tr(
-            "Darksend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening buntu's configuration screen."
+            "Darksend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening safemasternode's configuration screen."
         ).arg(strAmount)
     );
 
@@ -68,11 +68,11 @@ void DarksendConfig::clickMax()
 {
     configure(true, 1000, 16);
 
-    QString strAmount(BuntuUnits::formatWithUnit(
+    QString strAmount(safemasternodeUnits::formatWithUnit(
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("Darksend Configuration"),
         tr(
-            "Darksend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Buntu's configuration screen."
+            "Darksend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening safemasternode's configuration screen."
         ).arg(strAmount)
     );
 
@@ -84,8 +84,8 @@ void DarksendConfig::configure(bool enabled, int coins, int rounds) {
     QSettings settings;
 
     settings.setValue("nDarksendRounds", rounds);
-    settings.setValue("nAnonymizebuntuAmount", coins);
+    settings.setValue("nAnonymizesafemasternodeAmount", coins);
 
     nDarksendRounds = rounds;
-    nAnonymizebuntuAmount = coins;
+    nAnonymizesafemasternodeAmount = coins;
 }

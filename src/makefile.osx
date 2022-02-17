@@ -1,9 +1,9 @@
 # -*- mode: Makefile; -*-
-# Copyright (c) 2011 Buntu Developers
+# Copyright (c) 2011 safemasternode Developers
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-# Mac OS X makefile for buntu
+# Mac OS X makefile for safemasternode
 # Originally by Laszlo Hanyecz (solar@heliacal.net)
 
 CXX=clang++
@@ -33,7 +33,7 @@ USE_LOWMEM:=0
 LIBS= -dead_strip
 
 ifdef STATIC
-# Build STATIC if you are redistributing the buntud binary
+# Build STATIC if you are redistributing the safemasternoded binary
 LIBS += \
  $(DEPSDIR)/lib/db48/libdb_cxx-4.8.a \
  $(DEPSDIR)/lib/libboost_system.a \
@@ -84,7 +84,7 @@ OBJS= \
     obj/pubkey.o \
     obj/ecwrapper.o \
     obj/init.o \
-    obj/buntud.o \
+    obj/safemasternoded.o \
     obj/keystore.o \
     obj/core.o \
     obj/main.o \
@@ -155,13 +155,13 @@ ifeq (${USE_LOWMEM}, 1)
     DEFS += -DLOWMEM
 endif
 
-all: buntud
+all: safemasternoded
 
 # build secp256k1
 DEFS += $(addprefix -I,$(CURDIR)/secp256k1/include)
 secp256k1/src/libsecp256k1_la-secp256k1.o:
 	@echo "Building Secp256k1 ..."; cd secp256k1; chmod 755 *; ./autogen.sh; ./configure --enable-module-recovery; make; cd ..;
-buntud: secp256k1/src/libsecp256k1_la-secp256k1.o
+safemasternoded: secp256k1/src/libsecp256k1_la-secp256k1.o
 
 # build leveldb
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
@@ -189,11 +189,11 @@ obj/%.o: %.c
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-buntud: $(OBJS:obj/%=obj/%)
+safemasternoded: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 clean:
-	-rm -f buntud
+	-rm -f safemasternoded
 	-rm -f obj/*.o
 	-rm -f obj/*.P
 	-rm -f obj/build.h

@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BUNTU_THREADSAFETY_H
-#define BUNTU_THREADSAFETY_H
+#ifndef safemasternode_THREADSAFETY_H
+#define safemasternode_THREADSAFETY_H
 
 #ifdef __clang__
 // TL;DR Add GUARDED_BY(mutex) to member variables. The others are
@@ -51,4 +51,4 @@
 #define SHARED_LOCKS_REQUIRED(...)
 #define NO_THREAD_SAFETY_ANALYSIS
 #endif  // __GNUC__
-#endif  // BUNTU_THREADSAFETY_H
+#endif  // safemasternode_THREADSAFETY_H

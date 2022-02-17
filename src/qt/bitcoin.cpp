@@ -4,7 +4,7 @@
 
 #include <QApplication>
 
-#include "buntugui.h"
+#include "safemasternodegui.h"
 #include "clientmodel.h"
 #include "walletmodel.h"
 #include "optionsmodel.h"
@@ -28,8 +28,8 @@
 #include <QSplashScreen>
 #include <QLibraryInfo>
 
-#if defined(BUNTU_NEED_QT_PLUGINS) && !defined(_BUNTU_QT_PLUGINS_INCLUDED)
-#define _BUNTU_QT_PLUGINS_INCLUDED
+#if defined(safemasternode_NEED_QT_PLUGINS) && !defined(_safemasternode_QT_PLUGINS_INCLUDED)
+#define _safemasternode_QT_PLUGINS_INCLUDED
 #define __INSURE__
 #include <QtPlugin>
 Q_IMPORT_PLUGIN(qcncodecs)
@@ -40,7 +40,7 @@ Q_IMPORT_PLUGIN(qtaccessiblewidgets)
 #endif
 
 // Need a global reference for the notifications to find the GUI
-static BuntuGUI *guiref;
+static safemasternodeGUI *guiref;
 static QSplashScreen *splashref;
 
 static void ThreadSafeMessageBox(const std::string& message, const std::string& caption, unsigned int style)
@@ -94,7 +94,7 @@ static void InitMessage(const std::string &message)
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("buntu-core", psz).toStdString();
+    return QCoreApplication::translate("safemasternode-core", psz).toStdString();
 }
 
 /* Handle runaway exceptions. Shows a message box with the problem and quits the program.
@@ -102,7 +102,7 @@ static std::string Translate(const char* psz)
 static void handleRunawayException(std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
-    QMessageBox::critical(0, "Runaway exception", BuntuGUI::tr("A fatal error occurred. buntu can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+    QMessageBox::critical(0, "Runaway exception", safemasternodeGUI::tr("A fatal error occurred. safemasternode can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
     exit(1);
 }
 
@@ -121,7 +121,7 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 }
 #endif
 
-#ifndef BUNTU_QT_TEST
+#ifndef safemasternode_QT_TEST
 int main(int argc, char *argv[])
 {
 	fHaveGUI = true;
@@ -134,7 +134,7 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(buntu);
+    Q_INIT_RESOURCE(safemasternode);
     QApplication app(argc, argv);
 
     // Do this early as we don't want to bother initializing if we are just calling IPC
@@ -155,12 +155,12 @@ int main(int argc, char *argv[])
     // Command-line options take precedence:
     ParseParameters(argc, argv);
 
-    // ... then buntu.conf:
+    // ... then safemasternode.conf:
     if (!boost::filesystem::is_directory(GetDataDir(false)))
     {
         // This message can not be translated, as translation is not initialized yet
-        // (which not yet possible because lang=XX can be overridden in buntu.conf in the data directory)
-        QMessageBox::critical(0, "buntu",
+        // (which not yet possible because lang=XX can be overridden in safemasternode.conf in the data directory)
+        QMessageBox::critical(0, "safemasternode",
                               QString("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
         return 1;
     }
@@ -168,12 +168,12 @@ int main(int argc, char *argv[])
 
     // Application identification (must be set before OptionsModel is initialized,
     // as it is used to locate QSettings)
-    app.setOrganizationName("buntu");
+    app.setOrganizationName("safemasternode");
     //XXX app.setOrganizationDomain("");
     if(GetBoolArg("-testnet", false)) // Separate UI settings for testnet
-        app.setApplicationName("buntu-Qt-testnet");
+        app.setApplicationName("safemasternode-Qt-testnet");
     else
-        app.setApplicationName("buntu-Qt");
+        app.setApplicationName("safemasternode-Qt");
 
     // ... then GUI settings:
     OptionsModel optionsModel;
@@ -197,11 +197,11 @@ int main(int argc, char *argv[])
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         app.installTranslator(&qtTranslator);
 
-    // Load e.g. buntu_de.qm (shortcut "de" needs to be defined in buntu.qrc)
+    // Load e.g. safemasternode_de.qm (shortcut "de" needs to be defined in safemasternode.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         app.installTranslator(&translatorBase);
 
-    // Load e.g. buntu_de_DE.qm (shortcut "de_DE" needs to be defined in buntu.qrc)
+    // Load e.g. safemasternode_de_DE.qm (shortcut "de_DE" needs to be defined in safemasternode.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         app.installTranslator(&translator);
 
@@ -224,7 +224,7 @@ int main(int argc, char *argv[])
     // on mac, also change the icon now because it would look strange to have a testnet splash (green) and a std app icon (orange)
     if(GetBoolArg("-testnet", false))
     {
-        MacDockIconHandler::instance()->setIcon(QIcon(":icons/buntu_testnet"));
+        MacDockIconHandler::instance()->setIcon(QIcon(":icons/safemasternode_testnet"));
     }
 #endif
 
@@ -250,7 +250,7 @@ int main(int argc, char *argv[])
 
         boost::thread_group threadGroup;
 
-        BuntuGUI window;
+        safemasternodeGUI window;
         guiref = &window;
 
         QTimer* pollShutdownTimer = new QTimer(guiref);
@@ -287,7 +287,7 @@ int main(int argc, char *argv[])
                 }
 
                 // Now that initialization/startup is done, process any command-line
-                // buntu: URIs
+                // safemasternode: URIs
                 QObject::connect(paymentServer, SIGNAL(receivedURI(QString)), &window, SLOT(handleURI(QString)));
                 QTimer::singleShot(100, paymentServer, SLOT(uiReady()));
 
@@ -299,7 +299,7 @@ int main(int argc, char *argv[])
 		window.setMessageModel(0);
                 guiref = 0;
             }
-            // Shutdown the core and its threads, but don't exit Buntu-Qt here
+            // Shutdown the core and its threads, but don't exit safemasternode-Qt here
             threadGroup.interrupt_all();
             threadGroup.join_all();
             Shutdown();
@@ -318,4 +318,4 @@ int main(int argc, char *argv[])
     }
     return 0;
 }
-#endif // BUNTU_QT_TEST
+#endif // safemasternode_QT_TEST

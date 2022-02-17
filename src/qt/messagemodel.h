@@ -67,7 +67,7 @@ struct MessageTableEntry
     }
 };
 
-/** Interface to buntu Secure Messaging from Qt view code. */
+/** Interface to safemasternode Secure Messaging from Qt view code. */
 class MessageModel : public QAbstractTableModel
 {
     Q_OBJECT
@@ -93,8 +93,8 @@ public:
         SentDateTime = 1, /**< Time Sent */
         ReceivedDateTime = 2, /**< Time Received */
         Label = 3,   /**< User specified label */
-        ToAddress = 4, /**< To Buntu address */
-        FromAddress = 5, /**< From Buntu address */
+        ToAddress = 4, /**< To safemasternode address */
+        FromAddress = 5, /**< From safemasternode address */
         Message = 6, /**< Plaintext */
         TypeInt = 7, /**< Plaintext */
         Key = 8, /**< chKey */

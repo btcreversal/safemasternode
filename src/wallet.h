@@ -1,9 +1,9 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_WALLET_H
-#define BUNTU_WALLET_H
+#ifndef safemasternode_WALLET_H
+#define safemasternode_WALLET_H
 
 #include "walletdb.h"
 
@@ -256,7 +256,7 @@ public:
     void EraseFromWallet(const uint256 &hash);
     int ScanForWalletTransactions(CBlockIndex* pindexStart, bool fUpdate = false);
     void ReacceptWalletTransactions();
-    void ResendWalletTransactions(bool fbuntu = false);
+    void ResendWalletTransactions(bool fsafemasternode = false);
 
     CAmount GetBalance() const;
     CAmount GetStake() const;

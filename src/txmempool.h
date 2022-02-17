@@ -1,9 +1,9 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2013 The Buntu developers
+// Copyright (c) 2009-2013 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_TXMEMPOOL_H
-#define BUNTU_TXMEMPOOL_H
+#ifndef safemasternode_TXMEMPOOL_H
+#define safemasternode_TXMEMPOOL_H
 
 #include "core.h"
 
@@ -52,4 +52,4 @@ public:
     bool lookup(uint256 hash, CTransaction& result) const;
 };
 
-#endif /* BUNTU_TXMEMPOOL_H */
+#endif /* safemasternode_TXMEMPOOL_H */

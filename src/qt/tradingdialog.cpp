@@ -37,11 +37,11 @@ tradingDialog::tradingDialog(QWidget *parent) :
     qDebug() <<  "Expected this";
     
     ui->BtcAvailableLabel->setTextFormat(Qt::RichText);
-    ui->BNTUAvailableLabel->setTextFormat(Qt::RichText);
+    ui->SMTNAvailableLabel->setTextFormat(Qt::RichText);
     ui->BuyCostLabel->setTextFormat(Qt::RichText);
     ui->SellCostLabel->setTextFormat(Qt::RichText);
     ui->BittrexBTCLabel->setTextFormat(Qt::RichText);
-    ui->BittrexBNTULabel->setTextFormat(Qt::RichText);
+    ui->BittrexSMTNLabel->setTextFormat(Qt::RichText);
     ui->CSDumpLabel->setTextFormat(Qt::RichText);
     ui->CSTotalLabel->setTextFormat(Qt::RichText);
     ui->CSReceiveLabel->setTextFormat(Qt::RichText);
@@ -57,14 +57,14 @@ tradingDialog::tradingDialog(QWidget *parent) :
     connect(ui->PasswordInput, SIGNAL(returnPressed()),ui->LoadKeys,SIGNAL(clicked()));
 
     /*OrderBook Table Init*/
-    CreateOrderBookTables(*ui->BidsTable,QStringList() << "SUM(BTC)" << "TOTAL(BTC)" << "BNTU(SIZE)" << "BID(BTC)");
-    CreateOrderBookTables(*ui->AsksTable,QStringList() << "ASK(BTC)" << "BNTU(SIZE)" << "TOTAL(BTC)" << "SUM(BTC)");
+    CreateOrderBookTables(*ui->BidsTable,QStringList() << "SUM(BTC)" << "TOTAL(BTC)" << "SMTN(SIZE)" << "BID(BTC)");
+    CreateOrderBookTables(*ui->AsksTable,QStringList() << "ASK(BTC)" << "SMTN(SIZE)" << "TOTAL(BTC)" << "SUM(BTC)");
     /*OrderBook Table Init*/
 
     /*Market History Table Init*/
     ui->MarketHistoryTable->setColumnCount(5);
     ui->MarketHistoryTable->verticalHeader()->setVisible(false);
-    ui->MarketHistoryTable->setHorizontalHeaderLabels(QStringList()<<"DATE"<<"BUY/SELL"<<"BID/ASK"<<"TOTAL UNITS(BNTU)"<<"TOTAL COST(BTC");
+    ui->MarketHistoryTable->setHorizontalHeaderLabels(QStringList()<<"DATE"<<"BUY/SELL"<<"BID/ASK"<<"TOTAL UNITS(SMTN)"<<"TOTAL COST(BTC");
     ui->MarketHistoryTable->setRowCount(0);
     int Cellwidth =  ui->MarketHistoryTable->width() / 5;
     ui->MarketHistoryTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -138,7 +138,7 @@ void tradingDialog::InitTrading()
 }
 
 void tradingDialog::UpdaterFunction(){
-    //BNTUst get the main exchange info in order to populate qLabels in maindialog. then get data
+    //SMTNst get the main exchange info in order to populate qLabels in maindialog. then get data
     //required for the current tab.
 
      int Retval = SetExchangeInfoTextLabels();
@@ -150,18 +150,18 @@ void tradingDialog::UpdaterFunction(){
 
 QString tradingDialog::GetMarketSummary(){
 
-     QString Response = sendRequest("https://bittrex.com/api/v1.1/public/GetMarketSummary?market=btc-BNTU");
+     QString Response = sendRequest("https://bittrex.com/api/v1.1/public/GetMarketSummary?market=btc-SMTN");
      return Response;
 }
 
 QString tradingDialog::GetOrderBook(){
 
-      QString  Response = sendRequest("https://bittrex.com/api/v1.1/public/getorderbook?market=BTC-BNTU&type=both&depth=50");
+      QString  Response = sendRequest("https://bittrex.com/api/v1.1/public/getorderbook?market=BTC-SMTN&type=both&depth=50");
       return Response;
 }
 
 QString tradingDialog::GetMarketHistory(){
-      QString Response = sendRequest("https://bittrex.com/api/v1.1/public/getmarkethistory?market=BTC-BNTU&count=100");
+      QString Response = sendRequest("https://bittrex.com/api/v1.1/public/getmarkethistory?market=BTC-SMTN&count=100");
       return Response;
 }
 
@@ -176,14 +176,14 @@ QString tradingDialog::CancelOrder(QString OrderId){
         return Response;
 }
 
-QString tradingDialog::BuyBNTU(QString OrderType, double Quantity, double Rate){
+QString tradingDialog::BuySMTN(QString OrderType, double Quantity, double Rate){
 
     QString str = "";
     QString URL = "https://bittrex.com/api/v1.1/market/";
             URL += OrderType;
             URL += "?apikey=";
             URL += this->ApiKey;
-            URL += "&nonce=12345434&market=BTC-BNTU&quantity=";
+            URL += "&nonce=12345434&market=BTC-SMTN&quantity=";
             URL += str.number(Quantity,'i',8);
             URL += "&rate=";
             URL += str.number(Rate,'i',8);
@@ -192,14 +192,14 @@ QString tradingDialog::BuyBNTU(QString OrderType, double Quantity, double Rate){
     return Response;
 }
 
-QString tradingDialog::SellBNTU(QString OrderType, double Quantity, double Rate){
+QString tradingDialog::SellSMTN(QString OrderType, double Quantity, double Rate){
 
     QString str = "";
     QString URL = "https://bittrex.com/api/v1.1/market/";
             URL += OrderType;
             URL += "?apikey=";
             URL += this->ApiKey;
-            URL += "&nonce=12345434&market=BTC-BNTU&quantity=";
+            URL += "&nonce=12345434&market=BTC-SMTN&quantity=";
             URL += str.number(Quantity,'i',8);
             URL += "&rate=";
             URL += str.number(Rate,'i',8);
@@ -228,7 +228,7 @@ QString tradingDialog::Withdraw(double Amount, QString Address, QString Coin){
 QString tradingDialog::GetOpenOrders(){
     QString URL = "https://bittrex.com/api/v1.1/market/getopenorders?apikey=";
             URL += this->ApiKey;
-            URL += "&nonce=12345434&market=BTC-BNTU";
+            URL += "&nonce=12345434&market=BTC-SMTN";
 
     QString Response = sendRequest(URL);
     return Response;
@@ -249,7 +249,7 @@ QString tradingDialog::GetDepositAddress(){
 
     QString URL = "https://bittrex.com/api/v1.1/account/getdepositaddress?apikey=";
             URL += this->ApiKey;
-            URL += "&nonce=12345434&currency=BNTU";
+            URL += "&nonce=12345434&currency=SMTN";
 
     QString Response = sendRequest(URL);
     return Response;
@@ -259,7 +259,7 @@ QString tradingDialog::GetAccountHistory(){
 
     QString URL = "https://bittrex.com/api/v1.1/account/getorderhistory?apikey=";
             URL += this->ApiKey;
-            URL += "&nonce=12345434&market=BTC-BNTU&count=10";
+            URL += "&nonce=12345434&market=BTC-SMTN&count=10";
 
     QString Response = sendRequest(URL);
     return Response;
@@ -283,7 +283,7 @@ int tradingDialog::SetExchangeInfoTextLabels(){
 
     ui->Bid->setText("<b>Bid:</b> <span style='font-weight:bold; font-size:12px; color:Green;'>" + str.number(obj["Bid"].toDouble(),'i',8) + "</span> BTC");
 
-    ui->volumet->setText("<b>BNTU Volume:</b> <span style='font-weight:bold; font-size:12px; color:blue;'>" + str.number(obj["Volume"].toDouble(),'i',8) + "</span> BNTU");
+    ui->volumet->setText("<b>SMTN Volume:</b> <span style='font-weight:bold; font-size:12px; color:blue;'>" + str.number(obj["Volume"].toDouble(),'i',8) + "</span> SMTN");
 
     ui->volumebtc->setText("<b>BTC Volume:</b> <span style='font-weight:bold; font-size:12px; color:blue;'>" + str.number(obj["BaseVolume"].toDouble(),'i',8) + "</span> BTC");
 
@@ -461,8 +461,8 @@ void tradingDialog::ParseAndPopulateOrderBookTables(QString OrderBook){
     QJsonArray  BuyArray  = ResultObject.value("buy").toArray();                //get buy/sell object from result object
     QJsonArray  SellArray = ResultObject.value("sell").toArray();               //get buy/sell object from result object
 
-    double BNTUSupply = 0;
-    double BNTUDemand = 0;
+    double SMTNSupply = 0;
+    double SMTNDemand = 0;
     double BtcSupply = 0;
     double BtcDemand = 0;
 
@@ -476,7 +476,7 @@ void tradingDialog::ParseAndPopulateOrderBookTables(QString OrderBook){
         double y = obj["Quantity"].toDouble();
         double a = (x * y);
 
-        BNTUSupply += y;
+        SMTNSupply += y;
         BtcSupply += a;
 
         AskRows = ui->AsksTable->rowCount();
@@ -498,7 +498,7 @@ void tradingDialog::ParseAndPopulateOrderBookTables(QString OrderBook){
         double y = obj["Quantity"].toDouble();
         double a = (x * y);
 
-        BNTUDemand += y;
+        SMTNDemand += y;
         BtcDemand += a;
 
         BidRows = ui->BidsTable->rowCount();
@@ -510,11 +510,11 @@ void tradingDialog::ParseAndPopulateOrderBookTables(QString OrderBook){
         BuyItteration++;
     }
 
-    ui->BNTUSupply->setText("<b>Supply:</b> <span style='font-weight:bold; font-size:12px; color:blue'>" + str.number(BNTUSupply,'i',8) + "</span><b> BNTU</b>");
+    ui->SMTNSupply->setText("<b>Supply:</b> <span style='font-weight:bold; font-size:12px; color:blue'>" + str.number(SMTNSupply,'i',8) + "</span><b> SMTN</b>");
     ui->BtcSupply->setText("<span style='font-weight:bold; font-size:12px; color:blue'>" + str.number(BtcSupply,'i',8) + "</span><b> BTC</b>");
     ui->AsksCount->setText("<b>Ask's :</b> <span style='font-weight:bold; font-size:12px; color:blue'>" + str.number(ui->AsksTable->rowCount()) + "</span>");
 
-    ui->BNTUDemand->setText("<b>Demand:</b> <span style='font-weight:bold; font-size:12px; color:blue'>" + str.number(BNTUDemand,'i',8) + "</span><b> BNTU</b>");
+    ui->SMTNDemand->setText("<b>Demand:</b> <span style='font-weight:bold; font-size:12px; color:blue'>" + str.number(SMTNDemand,'i',8) + "</span><b> SMTN</b>");
     ui->BtcDemand->setText("<span style='font-weight:bold; font-size:12px; color:blue'>" + str.number(BtcDemand,'i',8) + "</span><b> BTC</b>");
     ui->BidsCount->setText("<b>Bid's :</b> <span style='font-weight:bold; font-size:12px; color:blue'>" + str.number(ui->BidsTable->rowCount()) + "</span>");
     obj.empty();
@@ -562,11 +562,11 @@ void tradingDialog::ActionsOnSwitch(int index = -1){
                 case 0:    //buy tab is active
 
                     Response = GetBalance("BTC");
-                    Response2 = GetBalance("BNTU");
+                    Response2 = GetBalance("SMTN");
                     Response3 = GetOrderBook();
 
                     if((Response.size() > 0 && Response != "Error") && (Response2.size() > 0 && Response2 != "Error")){
-                        DisplayBalance(*ui->BtcAvailableLabel, *ui->BNTUAvailableLabel, Response, Response2);
+                        DisplayBalance(*ui->BtcAvailableLabel, *ui->SMTNAvailableLabel, Response, Response2);
                     }
                     if ((Response3.size() > 0 && Response3 != "Error")) {
                         ParseAndPopulateOrderBookTables(Response3);
@@ -575,10 +575,10 @@ void tradingDialog::ActionsOnSwitch(int index = -1){
                 break;
 
                 case 1: //Cross send tab active
-                    Response = GetBalance("BNTU");
+                    Response = GetBalance("SMTN");
                     Response2 = GetBalance("BTC");
                     if((Response.size() > 0 && Response != "Error") && (Response2.size() > 0 && Response2 != "Error")){
-                        DisplayBalance(*ui->BittrexBNTULabel, *ui->BittrexBTCLabel, Response, Response2);
+                        DisplayBalance(*ui->BittrexSMTNLabel, *ui->BittrexBTCLabel, Response, Response2);
                     }
 
                 break;
@@ -608,12 +608,12 @@ void tradingDialog::ActionsOnSwitch(int index = -1){
                 case 5://show balance tab
                     Response = GetBalance("BTC");
                     if(Response.size() > 0 && Response != "Error"){
-                        DisplayBalance(*ui->BuntuBalanceLabel,*ui->BuntuAvailableLabel,*ui->BuntuPendingLabel, QString::fromUtf8("BTC"),Response);
+                        DisplayBalance(*ui->safemasternodeBalanceLabel,*ui->safemasternodeAvailableLabel,*ui->safemasternodePendingLabel, QString::fromUtf8("BTC"),Response);
                     }
 
-                    Response = GetBalance("BNTU");
+                    Response = GetBalance("SMTN");
                     if(Response.size() > 0 && Response != "Error"){
-                        DisplayBalance(*ui->BNTUBalanceLabel,*ui->BNTUAvailableLabel_2,*ui->BNTUPendingLabel, QString::fromUtf8("BNTU"),Response);
+                        DisplayBalance(*ui->SMTNBalanceLabel,*ui->SMTNAvailableLabel_2,*ui->SMTNPendingLabel, QString::fromUtf8("SMTN"),Response);
                     }
                 break;
 
@@ -704,7 +704,7 @@ void tradingDialog::CalculateBuyCostLabel(){
 void tradingDialog::CalculateSellCostLabel(){
 
     double price    = ui->SellBidPriceEdit->text().toDouble();
-    double Quantity = ui->UnitsInputBNTU->text().toDouble();
+    double Quantity = ui->UnitsInputSMTN->text().toDouble();
     double cost = ((price * Quantity) - ((price * Quantity / 100) * 0.25));
 
     QString Str = "";
@@ -713,15 +713,15 @@ void tradingDialog::CalculateSellCostLabel(){
 
 void tradingDialog::CalculateCSReceiveLabel(){
 
-    //calculate amount of currency than can be transferred to buntu
-    QString balance = GetBalance("BNTU");
+    //calculate amount of currency than can be transferred to safemasternode
+    QString balance = GetBalance("SMTN");
     QString buyorders = GetOrderBook();
 
     QJsonObject BuyObject = GetResultObjectFromJSONObject(buyorders);
     QJsonObject BalanceObject =  GetResultObjectFromJSONObject(balance);
     QJsonObject obj;
 
-    double AvailableBNTU = BalanceObject["Available"].toDouble();
+    double AvailableSMTN = BalanceObject["Available"].toDouble();
     double Quantity = ui->CSUnitsInput->text().toDouble();
     double Received = 0;
     double Qty = 0;
@@ -754,7 +754,7 @@ void tradingDialog::CalculateCSReceiveLabel(){
     QString ReceiveStr = "";
     QString DumpStr = "";
     QString TotalStr = "";
-    if ( Qty < AvailableBNTU )
+    if ( Qty < AvailableSMTN )
     {
         ui->CSReceiveLabel->setText("<span style='font-weight:bold; font-size:12px; color:green'>" + ReceiveStr.number((ui->CSUnitsInput->text().toDouble() - 0.0002),'i',8) + "</span>");
         ui->CSDumpLabel->setText("<span style='font-weight:bold; font-size:12px; color:red'>" + DumpStr.number(Price,'i',8) + "</span>");
@@ -914,14 +914,14 @@ void tradingDialog::on_GenDepositBTN_clicked()
 
 void tradingDialog::on_Sell_Max_Amount_clicked()
 {
-    //calculate amount of BTC that can be gained from selling BNTU available balance
-    QString responseA = GetBalance("BNTU");
+    //calculate amount of BTC that can be gained from selling SMTN available balance
+    QString responseA = GetBalance("SMTN");
     QString str;
     QJsonObject ResultObject =  GetResultObjectFromJSONObject(responseA);
 
-    double AvailableBNTU = ResultObject["Available"].toDouble();
+    double AvailableSMTN = ResultObject["Available"].toDouble();
 
-    ui->UnitsInputBNTU->setText(str.number(AvailableBNTU,'i',8));
+    ui->UnitsInputSMTN->setText(str.number(AvailableSMTN,'i',8));
 }
 
 void tradingDialog::on_Buy_Max_Amount_clicked()
@@ -948,7 +948,7 @@ void tradingDialog::on_Buy_Max_Amount_clicked()
 
 void tradingDialog::on_CS_Max_Amount_clicked()
 {
-    double Quantity = ui->BittrexBNTULabel->text().toDouble();
+    double Quantity = ui->BittrexSMTNLabel->text().toDouble();
     double Received = 0;
     double Qty = 0;
     double Price = 0;
@@ -993,14 +993,14 @@ void tradingDialog::on_CS_Max_Amount_clicked()
 void tradingDialog::on_Withdraw_Max_Amount_clicked()
 {
     //calculate amount of currency than can be brought with the BTC balance available
-    QString responseA = GetBalance("BNTU");
+    QString responseA = GetBalance("SMTN");
     QString str;
 
     QJsonObject ResultObject =  GetResultObjectFromJSONObject(responseA);
 
-    double AvailableBNTU = ResultObject["Available"].toDouble();
+    double AvailableSMTN = ResultObject["Available"].toDouble();
 
-    ui->WithdrawUnitsInput->setText(str.number(AvailableBNTU,'i',8));
+    ui->WithdrawUnitsInput->setText(str.number(AvailableSMTN,'i',8));
 }
 
 QJsonObject tradingDialog::GetResultObjectFromJSONObject(QString response){
@@ -1089,7 +1089,7 @@ void tradingDialog::on_BuyBidcomboBox_currentIndexChanged(const QString &arg1)
     CalculateBuyCostLabel(); //update cost
 }
 
-void tradingDialog::on_BuyBNTU_clicked()
+void tradingDialog::on_BuySMTN_clicked()
 {
     double Rate;
     double Quantity;
@@ -1104,7 +1104,7 @@ void tradingDialog::on_BuyBNTU_clicked()
 
     QString Msg = "Are you sure you want to buy ";
             Msg += ui->UnitsInput->text();
-            Msg += "BNTU @ ";
+            Msg += "SMTN @ ";
             Msg += ui->BuyBidPriceEdit->text();
             Msg += " BTC Each";
 
@@ -1113,7 +1113,7 @@ void tradingDialog::on_BuyBNTU_clicked()
 
     if (reply == QMessageBox::Yes) {
 
-        QString Response =  BuyBNTU(Order,Quantity,Rate);
+        QString Response =  BuySMTN(Order,Quantity,Rate);
 
         QJsonDocument jsonResponse = QJsonDocument::fromJson(Response.toUtf8());          //get json from str.
         QJsonObject  ResponseObject = jsonResponse.object();                              //get json obj
@@ -1129,13 +1129,13 @@ void tradingDialog::on_BuyBNTU_clicked()
     }
 }
 
-void tradingDialog::on_SellBNTUBTN_clicked()
+void tradingDialog::on_SellSMTNBTN_clicked()
 {
     double Rate;
     double Quantity;
 
     Rate     = ui->SellBidPriceEdit->text().toDouble();
-    Quantity = ui->UnitsInputBNTU->text().toDouble();
+    Quantity = ui->UnitsInputSMTN->text().toDouble();
 
     QString OrderType = "Limit";
     QString Order;
@@ -1143,8 +1143,8 @@ void tradingDialog::on_SellBNTUBTN_clicked()
     if(OrderType == "Limit"){Order = "selllimit";}else if (OrderType == "Market"){ Order = "sellmarket";}
 
     QString Msg = "Are you sure you want to Sell ";
-            Msg += ui->UnitsInputBNTU->text();
-            Msg += " BNTU @ ";
+            Msg += ui->UnitsInputSMTN->text();
+            Msg += " SMTN @ ";
             Msg += ui->SellBidPriceEdit->text();
             Msg += " BTC Each";
 
@@ -1153,7 +1153,7 @@ void tradingDialog::on_SellBNTUBTN_clicked()
 
     if (reply == QMessageBox::Yes) {
 
-        QString Response =  SellBNTU(Order,Quantity,Rate);
+        QString Response =  SellSMTN(Order,Quantity,Rate);
         QJsonDocument jsonResponse = QJsonDocument::fromJson(Response.toUtf8());          //get json from str.
         QJsonObject  ResponseObject = jsonResponse.object();                              //get json obj
 
@@ -1225,7 +1225,7 @@ void tradingDialog::on_CSUnitsBtn_clicked()
                 Qty += y;
                 Quantity -= ((Price * y) - ((Price * y / 100) * 0.25));
 
-                QString SellResponse = SellBNTU(Order,y,x);
+                QString SellResponse = SellSMTN(Order,y,x);
                 QJsonDocument SelljsonResponse = QJsonDocument::fromJson(SellResponse.toUtf8());          //get json from str.
                 QJsonObject SellResponseObject = SelljsonResponse.object();                              //get json obj
 
@@ -1248,7 +1248,7 @@ void tradingDialog::on_CSUnitsBtn_clicked()
                 if (Quantity < 0.00051){
                     Quantity = 0.00051;
                 }
-                QString SellResponse = SellBNTU(Order,(Quantity / x),x);
+                QString SellResponse = SellSMTN(Order,(Quantity / x),x);
                 QJsonDocument SelljsonResponse = QJsonDocument::fromJson(SellResponse.toUtf8());          //get json from str.
                 QJsonObject SellResponseObject = SelljsonResponse.object();                              //get json obj
 
@@ -1270,10 +1270,10 @@ void tradingDialog::on_CSUnitsBtn_clicked()
                         if (ResponseObject["success"].toBool() == false){
                             QMessageBox::information(this,"Failed",ResponseObject["message"].toString());
                         } else if (ResponseObject["success"].toBool() == true){
-                            QMessageBox::information(this,"Success","<center>Cross-Send Successful</center>\n Sold "+Astr.number(Qty,'i',4)+" BNTU for "+Qstr.number((ui->CSUnitsInput->text().toDouble()-0.0002),'i',8)+" BTC");
+                            QMessageBox::information(this,"Success","<center>Cross-Send Successful</center>\n Sold "+Astr.number(Qty,'i',4)+" SMTN for "+Qstr.number((ui->CSUnitsInput->text().toDouble()-0.0002),'i',8)+" BTC");
                         }
                     } else if (ResponseObject["success"].toBool() == true){
-                        QMessageBox::information(this,"Success","<center>Cross-Send Successful</center>\n Sold "+Astr.number(Qty,'i',4)+" BNTU for "+Qstr.number((ui->CSUnitsInput->text().toDouble()-0.0002),'i',8)+" BTC");
+                        QMessageBox::information(this,"Success","<center>Cross-Send Successful</center>\n Sold "+Astr.number(Qty,'i',4)+" SMTN for "+Qstr.number((ui->CSUnitsInput->text().toDouble()-0.0002),'i',8)+" BTC");
                     }
                 }
                 break;
@@ -1285,10 +1285,10 @@ void tradingDialog::on_WithdrawUnitsBtn_clicked()
 {
     double Quantity = ui->WithdrawUnitsInput->text().toDouble();
     QString Qstr;
-    QString Coin = "BNTU";
+    QString Coin = "SMTN";
     QString Msg = "Are you sure you want to Withdraw ";
             Msg += Qstr.number((Quantity - 0.02),'i',8);
-            Msg += " BNTU to ";
+            Msg += " SMTN to ";
             Msg += ui->WithdrawAddress->text();
             Msg += " ?";
 
@@ -1319,7 +1319,7 @@ void tradingDialog::on_WithdrawUnitsBtn_clicked()
         }
 }
 
-void tradingDialog::on_UnitsInputBNTU_textChanged(const QString &arg1)
+void tradingDialog::on_UnitsInputSMTN_textChanged(const QString &arg1)
 {
      CalculateSellCostLabel(); //update cost
 }

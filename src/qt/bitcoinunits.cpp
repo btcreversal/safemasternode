@@ -1,30 +1,30 @@
-// Copyright (c) 2011-2014 The Buntu developers
+// Copyright (c) 2011-2014 The safemasternode developers
 // Copyright (c) 2014-2015 The Dash developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "buntuunits.h"
+#include "safemasternodeunits.h"
 #include "main.h"
 
 #include <QSettings>
 #include <QStringList>
 
-BuntuUnits::BuntuUnits(QObject *parent):
+safemasternodeUnits::safemasternodeUnits(QObject *parent):
         QAbstractListModel(parent),
         unitlist(availableUnits())
 {
 }
 
-QList<BuntuUnits::Unit> BuntuUnits::availableUnits()
+QList<safemasternodeUnits::Unit> safemasternodeUnits::availableUnits()
 {
-    QList<BuntuUnits::Unit> unitlist;
+    QList<safemasternodeUnits::Unit> unitlist;
     unitlist.append(BTC);
     unitlist.append(mBTC);
     unitlist.append(uBTC);
     return unitlist;
 }
 
-bool BuntuUnits::valid(int unit)
+bool safemasternodeUnits::valid(int unit)
 {
     switch(unit)
     {
@@ -37,29 +37,29 @@ bool BuntuUnits::valid(int unit)
     }
 }
 
-QString BuntuUnits::name(int unit)
+QString safemasternodeUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("BNTU");
-    case mBTC: return QString("mBNTU");
-    case uBTC: return QString::fromUtf8("μBNTU");
+    case BTC: return QString("SMTN");
+    case mBTC: return QString("mSMTN");
+    case uBTC: return QString::fromUtf8("μSMTN");
     default: return QString("???");
     }
 }
 
-QString BuntuUnits::description(int unit)
+QString safemasternodeUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("buntus");
-    case mBTC: return QString("Milli-buntus (1 / 1,000)");
-    case uBTC: return QString("Micro-buntus (1 / 1,000,000)");
+    case BTC: return QString("safemasternodes");
+    case mBTC: return QString("Milli-safemasternodes (1 / 1,000)");
+    case uBTC: return QString("Micro-safemasternodes (1 / 1,000,000)");
     default: return QString("???");
     }
 }
 
-qint64 BuntuUnits::factor(int unit)
+qint64 safemasternodeUnits::factor(int unit)
 {
     switch(unit)
     {
@@ -70,7 +70,7 @@ qint64 BuntuUnits::factor(int unit)
     }
 }
 
-int BuntuUnits::amountDigits(int unit)
+int safemasternodeUnits::amountDigits(int unit)
 {
     switch(unit)
     {
@@ -81,7 +81,7 @@ int BuntuUnits::amountDigits(int unit)
     }
 }
 
-int BuntuUnits::decimals(int unit)
+int safemasternodeUnits::decimals(int unit)
 {
     switch(unit)
     {
@@ -92,7 +92,7 @@ int BuntuUnits::decimals(int unit)
     }
 }
 
-QString BuntuUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
+QString safemasternodeUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
@@ -120,7 +120,7 @@ QString BuntuUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorSt
     return quotient_str + QString(".") + remainder_str;
 }
 
-// TODO: Review all remaining calls to BuntuUnits::formatWithUnit to
+// TODO: Review all remaining calls to safemasternodeUnits::formatWithUnit to
 // TODO: determine whether the output is used in a plain text context
 // TODO: or an HTML context (and replace with
 // TODO: BtcoinUnits::formatHtmlWithUnit in the latter case). Hopefully
@@ -135,19 +135,19 @@ QString BuntuUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorSt
 // Please take care to use formatHtmlWithUnit instead, when
 // appropriate.
 
-QString BuntuUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString safemasternodeUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     return format(unit, amount, plussign, separators) + QString(" ") + name(unit);
 }
 
-QString BuntuUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString safemasternodeUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(formatWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
     return QString("<span style='white-space: nowrap;'>%1</span>").arg(str);
 }
 
-QString BuntuUnits::floorWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString safemasternodeUnits::floorWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QSettings settings;
     int digits = settings.value("digits").toInt();
@@ -158,14 +158,14 @@ QString BuntuUnits::floorWithUnit(int unit, const CAmount& amount, bool plussign
     return result + QString(" ") + name(unit);
 }
 
-QString BuntuUnits::floorHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString safemasternodeUnits::floorHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(floorWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
     return QString("<span style='white-space: nowrap;'>%1</span>").arg(str);
 }
 
-bool BuntuUnits::parse(int unit, const QString &value, CAmount *val_out)
+bool safemasternodeUnits::parse(int unit, const QString &value, CAmount *val_out)
 {
     if(!valid(unit) || value.isEmpty())
         return false; // Refuse to parse invalid unit or empty string
@@ -204,23 +204,23 @@ bool BuntuUnits::parse(int unit, const QString &value, CAmount *val_out)
     return ok;
 }
 
-QString BuntuUnits::getAmountColumnTitle(int unit)
+QString safemasternodeUnits::getAmountColumnTitle(int unit)
 {
     QString amountTitle = QObject::tr("Amount");
-    if (BuntuUnits::valid(unit))
+    if (safemasternodeUnits::valid(unit))
     {
-        amountTitle += " ("+BuntuUnits::name(unit) + ")";
+        amountTitle += " ("+safemasternodeUnits::name(unit) + ")";
     }
     return amountTitle;
 }
 
-int BuntuUnits::rowCount(const QModelIndex &parent) const
+int safemasternodeUnits::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return unitlist.size();
 }
 
-QVariant BuntuUnits::data(const QModelIndex &index, int role) const
+QVariant safemasternodeUnits::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if(row >= 0 && row < unitlist.size())
@@ -240,7 +240,7 @@ QVariant BuntuUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CAmount BuntuUnits::maxMoney()
+CAmount safemasternodeUnits::maxMoney()
 {
     return MAX_MONEY;
 }

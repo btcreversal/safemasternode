@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = buntu-qt
+TARGET = safemasternode-qt
 VERSION = 1.0.0.0
 INCLUDEPATH += src src/json src/qt src/qt/plugins/mrichtexteditor
 QT += network printsupport
@@ -111,8 +111,8 @@ contains(USE_DBUS, 1) {
     QT += dbus
 }
 
-contains(BUNTU_NEED_QT_PLUGINS, 1) {
-    DEFINES += BUNTU_NEED_QT_PLUGINS
+contains(safemasternode_NEED_QT_PLUGINS, 1) {
+    DEFINES += safemasternode_NEED_QT_PLUGINS
     QTPLUGIN += qcncodecs qjpcodecs qtwcodecs qkrcodecs qtaccessiblewidgets
 }
 
@@ -203,7 +203,7 @@ macx:QMAKE_CXXFLAGS_WARN_ON += -Wno-deprecated-declarations
 
 # Input
 DEPENDPATH += src src/json src/qt
-HEADERS += src/qt/buntugui.h \
+HEADERS += src/qt/safemasternodegui.h \
     src/qt/transactiontablemodel.h \
     src/qt/addresstablemodel.h \
     src/qt/bantablemodel.h \
@@ -215,7 +215,7 @@ HEADERS += src/qt/buntugui.h \
     src/qt/signverifymessagedialog.h \
     src/qt/aboutdialog.h \
     src/qt/editaddressdialog.h \
-    src/qt/buntuaddressvalidator.h \
+    src/qt/safemasternodeaddressvalidator.h \
     src/alert.h \
     src/allocators.h \
     src/addrman.h \
@@ -268,7 +268,7 @@ HEADERS += src/qt/buntugui.h \
     src/qt/trafficgraphwidget.h \
     src/qt/transactiondesc.h \
     src/qt/transactiondescdialog.h \
-    src/qt/buntuamountfield.h \
+    src/qt/safemasternodeamountfield.h \
     src/wallet.h \
     src/keystore.h \
     src/qt/transactionfilterproxy.h \
@@ -284,7 +284,7 @@ HEADERS += src/qt/buntugui.h \
     src/crypter.h \
     src/qt/sendcoinsentry.h \
     src/qt/qvalidatedlineedit.h \
-    src/qt/buntuunits.h \
+    src/qt/safemasternodeunits.h \
     src/qt/qvaluecombobox.h \
     src/qt/askpassphrasedialog.h \
     src/protocol.h \
@@ -330,7 +330,7 @@ HEADERS += src/qt/buntugui.h \
     src/qt/qvalidatedtextedit.h \
     src/qt/tradingdialog.h
 
-SOURCES += src/qt/buntu.cpp src/qt/buntugui.cpp \
+SOURCES += src/qt/safemasternode.cpp src/qt/safemasternodegui.cpp \
     src/qt/transactiontablemodel.cpp \
     src/qt/addresstablemodel.cpp \
     src/qt/bantablemodel.cpp \
@@ -342,7 +342,7 @@ SOURCES += src/qt/buntu.cpp src/qt/buntugui.cpp \
     src/qt/signverifymessagedialog.cpp \
     src/qt/aboutdialog.cpp \
     src/qt/editaddressdialog.cpp \
-    src/qt/buntuaddressvalidator.cpp \
+    src/qt/safemasternodeaddressvalidator.cpp \
     src/alert.cpp \
     src/allocators.cpp \
     src/base58.cpp \
@@ -376,8 +376,8 @@ SOURCES += src/qt/buntu.cpp src/qt/buntugui.cpp \
     src/qt/trafficgraphwidget.cpp \
     src/qt/transactiondesc.cpp \
     src/qt/transactiondescdialog.cpp \
-    src/qt/buntustrings.cpp \
-    src/qt/buntuamountfield.cpp \
+    src/qt/safemasternodestrings.cpp \
+    src/qt/safemasternodeamountfield.cpp \
     src/wallet.cpp \
     src/keystore.cpp \
     src/qt/transactionfilterproxy.cpp \
@@ -399,7 +399,7 @@ SOURCES += src/qt/buntu.cpp src/qt/buntugui.cpp \
     src/crypter.cpp \
     src/qt/sendcoinsentry.cpp \
     src/qt/qvalidatedlineedit.cpp \
-    src/qt/buntuunits.cpp \
+    src/qt/safemasternodeunits.cpp \
     src/qt/qvaluecombobox.cpp \
     src/qt/askpassphrasedialog.cpp \
     src/protocol.cpp \
@@ -445,7 +445,7 @@ SOURCES += src/qt/buntu.cpp src/qt/buntugui.cpp \
     src/rpcsmessage.cpp
 
 RESOURCES += \
-    src/qt/buntu.qrc
+    src/qt/safemasternode.qrc
 
 FORMS += \
     src/qt/forms/coincontroldialog.ui \
@@ -477,11 +477,11 @@ SOURCES += src/qt/qrcodedialog.cpp
 FORMS += src/qt/forms/qrcodedialog.ui
 }
 
-CODECBNTUTR = UTF-8
+CODECSMTNTR = UTF-8
 
 # for lrelease/lupdate
-# also add new translations to src/qt/buntu.qrc under translations/
-TRANSLATIONS = $$files(src/qt/locale/buntu_*.ts)
+# also add new translations to src/qt/safemasternode.qrc under translations/
+TRANSLATIONS = $$files(src/qt/locale/safemasternode_*.ts)
 
 isEmpty(QMAKE_LRELEASE) {
     win32:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\\lrelease.exe
@@ -498,7 +498,7 @@ QMAKE_EXTRA_COMPILERS += TSQM
 
 # "Other files" to show in Qt Creator
 OTHER_FILES += \
-    doc/*.rst doc/*.txt doc/README README.md res/buntu-qt.rc
+    doc/*.rst doc/*.txt doc/README README.md res/safemasternode-qt.rc
 
 # platform specific defaults, if not overridden on command line
 isEmpty(BOOST_LIB_SUFFIX) {
@@ -586,7 +586,7 @@ contains(USE_UPNP, -) {
 }
 
 windows:DEFINES += WIN32
-windows:RC_FILE = src/qt/res/buntu-qt.rc
+windows:RC_FILE = src/qt/res/safemasternode-qt.rc
 
 windows:!contains(MINGW_THREAD_BUGFIX, 0) {
     # At least qmake's win32-g++-cross profile is missing the -lmingwthrd
@@ -604,7 +604,7 @@ macx:OBJECTIVE_SOURCES += src/qt/macdockiconhandler.mm src/qt/macnotificationhan
 macx:LIBS += -framework Foundation -framework ApplicationServices -framework AppKit -framework CoreServices
 macx:DEFINES += MAC_OSX MSG_NOSIGNAL=0
 macx:ICON = src/qt/res/icons/logo.icns
-macx:TARGET = "buntu-Qt"
+macx:TARGET = "safemasternode-Qt"
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread

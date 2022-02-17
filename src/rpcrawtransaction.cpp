@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -43,7 +43,7 @@ void ScriptPubKeyToJSON(const CScript& scriptPubKey, Object& out, bool fIncludeH
 
     Array a;
     BOOST_FOREACH(const CTxDestination& addr, addresses)
-        a.push_back(CbuntucoinAddress(addr).ToString());
+        a.push_back(CsafemasternodecoinAddress(addr).ToString());
     out.push_back(Pair("addresses", a));
 }
 
@@ -162,15 +162,15 @@ Value listunspent(const Array& params, bool fHelp)
     if (params.size() > 1)
         nMaxDepth = params[1].get_int();
 
-    set<CbuntucoinAddress> setAddress;
+    set<CsafemasternodecoinAddress> setAddress;
     if (params.size() > 2)
     {
         Array inputs = params[2].get_array();
         BOOST_FOREACH(Value& input, inputs)
         {
-            CbuntucoinAddress address(input.get_str());
+            CsafemasternodecoinAddress address(input.get_str());
             if (!address.IsValid())
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid buntu address: ")+input.get_str());
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid safemasternode address: ")+input.get_str());
             if (setAddress.count(address))
                 throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+input.get_str());
            setAddress.insert(address);
@@ -204,7 +204,7 @@ Value listunspent(const Array& params, bool fHelp)
         CTxDestination address;
         if (ExtractDestination(out.tx->vout[out.i].scriptPubKey, address))
         {
-            entry.push_back(Pair("address", CbuntucoinAddress(address).ToString()));
+            entry.push_back(Pair("address", CsafemasternodecoinAddress(address).ToString()));
             if (pwalletMain->mapAddressBook.count(address))
                 entry.push_back(Pair("account", pwalletMain->mapAddressBook[address]));
         }
@@ -271,12 +271,12 @@ Value createrawtransaction(const Array& params, bool fHelp)
         rawTx.vin.push_back(in);
     }
 
-    set<CbuntucoinAddress> setAddress;
+    set<CsafemasternodecoinAddress> setAddress;
     BOOST_FOREACH(const Pair& s, sendTo)
     {
-        CbuntucoinAddress address(s.name_);
+        CsafemasternodecoinAddress address(s.name_);
         if (!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid buntu address: ")+s.name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid safemasternode address: ")+s.name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+s.name_);
@@ -339,7 +339,7 @@ Value decodescript(const Array& params, bool fHelp)
     }
     ScriptPubKeyToJSON(script, r, false);
 
-    r.push_back(Pair("p2sh", CbuntucoinAddress(script.GetID()).ToString()));
+    r.push_back(Pair("p2sh", CsafemasternodecoinAddress(script.GetID()).ToString()));
     return r;
 }
 
@@ -419,7 +419,7 @@ Value signrawtransaction(const Array& params, bool fHelp)
         Array keys = params[2].get_array();
         BOOST_FOREACH(Value k, keys)
         {
-            CbuntucoinSecret vchSecret;
+            CsafemasternodecoinSecret vchSecret;
             bool fGood = vchSecret.SetString(k.get_str());
             if (!fGood)
                 throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid private key");
@@ -605,9 +605,9 @@ Value searchrawtransactions(const Array &params, bool fHelp)
         throw runtime_error(
             "searchrawtransactions <address> [verbose=1] [skip=0] [count=100]\n");
 
-    CbuntucoinAddress address(params[0].get_str());
+    CsafemasternodecoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Buntu address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid safemasternode address");
     CTxDestination dest = address.Get();
 
     std::vector<uint256> vtxhash;

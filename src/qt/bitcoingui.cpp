@@ -1,13 +1,13 @@
 /*
- * Qt4 buntu GUI.
+ * Qt4 safemasternode GUI.
  *
  * W.J. van der Laan 2011-2012
- * The Buntu Developers 2011-2012
+ * The safemasternode Developers 2011-2012
  */
 
 #include <QApplication>
 
-#include "buntugui.h"
+#include "safemasternodegui.h"
 
 #include "transactiontablemodel.h"
 #include "addressbookpage.h"
@@ -23,7 +23,7 @@
 #include "addresstablemodel.h"
 #include "transactionview.h"
 #include "overviewpage.h"
-#include "buntuunits.h"
+#include "safemasternodeunits.h"
 #include "guiconstants.h"
 #include "askpassphrasedialog.h"
 #include "notificator.h"
@@ -76,7 +76,7 @@ extern CWallet* pwalletMain;
 extern int64_t nLastCoinStakeSearchInterval;
 double GetPoSKernelPS();
 
-BuntuGUI::BuntuGUI(QWidget *parent):
+safemasternodeGUI::safemasternodeGUI(QWidget *parent):
     QMainWindow(parent),
     clientModel(0),
     walletModel(0),
@@ -96,16 +96,16 @@ BuntuGUI::BuntuGUI(QWidget *parent):
     nWeight(0)
 {
     resize(900, 520);
-    setWindowTitle(tr("buntu") + " - " + tr("Wallet"));
+    setWindowTitle(tr("safemasternode") + " - " + tr("Wallet"));
 #ifndef Q_OS_MAC
-    qApp->setWindowIcon(QIcon(":icons/buntu"));
-    setWindowIcon(QIcon(":icons/buntu"));
+    qApp->setWindowIcon(QIcon(":icons/safemasternode"));
+    setWindowIcon(QIcon(":icons/safemasternode"));
 #else
     //setUnifiedTitleAndToolBarOnMac(true);
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
 #endif
-    setObjectName("buntu");
-    setStyleSheet("#buntu {background-color:white;}");
+    setObjectName("safemasternode");
+    setStyleSheet("#safemasternode {background-color:white;}");
     // Accept D&D of URIs
     setAcceptDrops(true);
 
@@ -260,9 +260,9 @@ BuntuGUI::BuntuGUI(QWidget *parent):
     gotoOverviewPage();
 }
 
-BuntuGUI::~BuntuGUI()
+safemasternodeGUI::~safemasternodeGUI()
 {
-    if(trayIcon) // Hide tray icon, as deleting will let it linger until quit (on Ubuntu)
+    if(trayIcon) // Hide tray icon, as deleting will let it linger until quit (on Usafemasternode)
         trayIcon->hide();
 #ifdef Q_OS_MAC
     delete appMenuBar;
@@ -271,7 +271,7 @@ BuntuGUI::~BuntuGUI()
     delete rpcConsole;
 }
 
-void BuntuGUI::createActions()
+void safemasternodeGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
 
@@ -288,7 +288,7 @@ void BuntuGUI::createActions()
     tabGroup->addAction(receiveCoinsAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setToolTip(tr("Send coins to a buntu address"));
+    sendCoinsAction->setToolTip(tr("Send coins to a safemasternode address"));
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_3));
     tabGroup->addAction(sendCoinsAction);
@@ -352,16 +352,16 @@ void BuntuGUI::createActions()
     quitAction->setToolTip(tr("Quit application"));
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
-    aboutAction = new QAction(tr("&About buntu"), this);
-    aboutAction->setToolTip(tr("Show information about buntu"));
+    aboutAction = new QAction(tr("&About safemasternode"), this);
+    aboutAction->setToolTip(tr("Show information about safemasternode"));
     aboutAction->setMenuRole(QAction::AboutRole);
     aboutQtAction = new QAction(tr("About &Qt"), this);
     aboutQtAction->setToolTip(tr("Show information about Qt"));
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
     optionsAction = new QAction(tr("&Options..."), this);
-    optionsAction->setToolTip(tr("Modify configuration options for buntu"));
+    optionsAction->setToolTip(tr("Modify configuration options for safemasternode"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
-    toggleHideAction = new QAction(QIcon(":/icons/buntu"), tr("&Show / Hide"), this);
+    toggleHideAction = new QAction(QIcon(":/icons/safemasternode"), tr("&Show / Hide"), this);
     encryptWalletAction = new QAction(tr("&Encrypt Wallet..."), this);
     encryptWalletAction->setToolTip(tr("Encrypt or decrypt wallet"));
     backupWalletAction = new QAction(tr("&Backup Wallet..."), this);
@@ -394,7 +394,7 @@ void BuntuGUI::createActions()
     connect(verifyMessageAction, SIGNAL(triggered()), this, SLOT(gotoVerifyMessageTab()));
 }
 
-void BuntuGUI::createMenuBar()
+void safemasternodeGUI::createMenuBar()
 {
 #ifdef Q_OS_MAC
     appMenuBar = new QMenuBar();
@@ -435,7 +435,7 @@ static QWidget* makeToolBarSpacer()
     return spacer;
 }
 
-void BuntuGUI::createToolBars()
+void safemasternodeGUI::createToolBars()
 {
     fLiteMode = GetBoolArg("-litemode", false);
 
@@ -487,7 +487,7 @@ void BuntuGUI::createToolBars()
     }
 }
 
-void BuntuGUI::setClientModel(ClientModel *clientModel)
+void safemasternodeGUI::setClientModel(ClientModel *clientModel)
 {
     if(!fOnlyTor)
     netLabel->setText("CLEARNET");
@@ -507,14 +507,14 @@ void BuntuGUI::setClientModel(ClientModel *clientModel)
         {
             setWindowTitle(windowTitle() + QString(" ") + tr("[testnet]"));
 #ifndef Q_OS_MAC
-            qApp->setWindowIcon(QIcon(":icons/buntu_testnet"));
-            setWindowIcon(QIcon(":icons/buntu_testnet"));
+            qApp->setWindowIcon(QIcon(":icons/safemasternode_testnet"));
+            setWindowIcon(QIcon(":icons/safemasternode_testnet"));
 #else
-            MacDockIconHandler::instance()->setIcon(QIcon(":icons/buntu_testnet"));
+            MacDockIconHandler::instance()->setIcon(QIcon(":icons/safemasternode_testnet"));
 #endif
             if(trayIcon)
             {
-                trayIcon->setToolTip(tr("buntu client") + QString(" ") + tr("[testnet]"));
+                trayIcon->setToolTip(tr("safemasternode client") + QString(" ") + tr("[testnet]"));
                 trayIcon->setIcon(QIcon(":/icons/toolbar_testnet"));
                 toggleHideAction->setIcon(QIcon(":/icons/toolbar_testnet"));
             }
@@ -541,7 +541,7 @@ void BuntuGUI::setClientModel(ClientModel *clientModel)
     }
 }
 
-void BuntuGUI::setWalletModel(WalletModel *walletModel)
+void safemasternodeGUI::setWalletModel(WalletModel *walletModel)
 {
     this->walletModel = walletModel;
     if(walletModel)
@@ -572,7 +572,7 @@ void BuntuGUI::setWalletModel(WalletModel *walletModel)
     }
 }
 
-void BuntuGUI::setMessageModel(MessageModel *messageModel)
+void safemasternodeGUI::setMessageModel(MessageModel *messageModel)
 {
     this->messageModel = messageModel;
     if(messageModel)
@@ -589,14 +589,14 @@ void BuntuGUI::setMessageModel(MessageModel *messageModel)
     }
 }
 
-void BuntuGUI::createTrayIcon()
+void safemasternodeGUI::createTrayIcon()
 {
     QMenu *trayIconMenu;
 #ifndef Q_OS_MAC
     trayIcon = new QSystemTrayIcon(this);
     trayIconMenu = new QMenu(this);
     trayIcon->setContextMenu(trayIconMenu);
-    trayIcon->setToolTip(tr("buntu client"));
+    trayIcon->setToolTip(tr("safemasternode client"));
     trayIcon->setIcon(QIcon(":/icons/toolbar"));
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
@@ -629,7 +629,7 @@ void BuntuGUI::createTrayIcon()
 }
 
 #ifndef Q_OS_MAC
-void BuntuGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
+void safemasternodeGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     if(reason == QSystemTrayIcon::Trigger)
     {
@@ -639,7 +639,7 @@ void BuntuGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 }
 #endif
 
-void BuntuGUI::optionsClicked()
+void safemasternodeGUI::optionsClicked()
 {
     if(!clientModel || !clientModel->getOptionsModel())
         return;
@@ -648,14 +648,14 @@ void BuntuGUI::optionsClicked()
     dlg.exec();
 }
 
-void BuntuGUI::aboutClicked()
+void safemasternodeGUI::aboutClicked()
 {
     AboutDialog dlg;
     dlg.setModel(clientModel);
     dlg.exec();
 }
 
-void BuntuGUI::setNumConnections(int count)
+void safemasternodeGUI::setNumConnections(int count)
 {
     QString icon;
     switch(count)
@@ -667,10 +667,10 @@ void BuntuGUI::setNumConnections(int count)
     default: icon = fUseBlackTheme ? ":/icons/black/connect_4" : ":/icons/connect_4"; break;
     }
     labelConnectionsIcon->setPixmap(QIcon(icon).pixmap(STATUSBAR_ICONSIZE,STATUSBAR_ICONSIZE));
-    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to buntu network", "", count));
+    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to safemasternode network", "", count));
 }
 
-void BuntuGUI::setNumBlocks(int count)
+void safemasternodeGUI::setNumBlocks(int count)
 {
     QString tooltip;
 
@@ -751,9 +751,9 @@ void BuntuGUI::setNumBlocks(int count)
     statusBar()->setVisible(true);
 }
 
-void BuntuGUI::message(const QString &title, const QString &message, bool modal, unsigned int style)
+void safemasternodeGUI::message(const QString &title, const QString &message, bool modal, unsigned int style)
 {
-    QString strTitle = tr("buntu") + " - ";
+    QString strTitle = tr("safemasternode") + " - ";
     // Default to information icon
     int nMBoxIcon = QMessageBox::Information;
     int nNotifyIcon = Notificator::Information;
@@ -797,7 +797,7 @@ void BuntuGUI::message(const QString &title, const QString &message, bool modal,
         notificator->notify((Notificator::Class)nNotifyIcon, strTitle, message);
 }
 
-void BuntuGUI::error(const QString &title, const QString &message, bool modal)
+void safemasternodeGUI::error(const QString &title, const QString &message, bool modal)
 {
     // Report errors from network/worker thread
     if(modal)
@@ -808,7 +808,7 @@ void BuntuGUI::error(const QString &title, const QString &message, bool modal)
     }
 }
 
-void BuntuGUI::changeEvent(QEvent *e)
+void safemasternodeGUI::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
 #ifndef Q_OS_MAC // Ignored on Mac
@@ -827,7 +827,7 @@ void BuntuGUI::changeEvent(QEvent *e)
 #endif
 }
 
-void BuntuGUI::closeEvent(QCloseEvent *event)
+void safemasternodeGUI::closeEvent(QCloseEvent *event)
 {
     if(clientModel)
     {
@@ -845,21 +845,21 @@ void BuntuGUI::closeEvent(QCloseEvent *event)
     QMainWindow::closeEvent(event);
 }
 
-void BuntuGUI::askFee(qint64 nFeeRequired, bool *payFee)
+void safemasternodeGUI::askFee(qint64 nFeeRequired, bool *payFee)
 {
     if (!clientModel || !clientModel->getOptionsModel())
         return;
 
     QString strMessage = tr("This transaction is over the size limit. You can still send it for a fee of %1, "
         "which goes to the nodes that process your transaction and helps to support the network. "
-        "Do you want to pay the fee?").arg(BuntuUnits::formatWithUnit(clientModel->getOptionsModel()->getDisplayUnit(), nFeeRequired));
+        "Do you want to pay the fee?").arg(safemasternodeUnits::formatWithUnit(clientModel->getOptionsModel()->getDisplayUnit(), nFeeRequired));
     QMessageBox::StandardButton retval = QMessageBox::question(
           this, tr("Confirm transaction fee"), strMessage,
           QMessageBox::Yes|QMessageBox::Cancel, QMessageBox::Yes);
     *payFee = (retval == QMessageBox::Yes);
 }
 
-void BuntuGUI::incomingTransaction(const QModelIndex & parent, int start, int end)
+void safemasternodeGUI::incomingTransaction(const QModelIndex & parent, int start, int end)
 {
 	// Prevent balloon-spam when initial block download is in progress
     if(!walletModel || !clientModel || clientModel->inInitialBlockDownload() || walletModel->processingQueuedTransactions())
@@ -887,12 +887,12 @@ void BuntuGUI::incomingTransaction(const QModelIndex & parent, int start, int en
                              "Type: %3\n"
                              "Address: %4\n")
                           .arg(date)
-                          .arg(BuntuUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), amount, true))
+                          .arg(safemasternodeUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), amount, true))
                           .arg(type)
                           .arg(address), icon);
 }
 
-void BuntuGUI::incomingMessage(const QModelIndex & parent, int start, int end)
+void safemasternodeGUI::incomingMessage(const QModelIndex & parent, int start, int end)
 {
     if(!messageModel)
         return;
@@ -921,7 +921,7 @@ void BuntuGUI::incomingMessage(const QModelIndex & parent, int start, int end)
     };
 }
 
-void BuntuGUI::clearWidgets()
+void safemasternodeGUI::clearWidgets()
 {
     centralStackedWidget->setCurrentWidget(centralStackedWidget->widget(0));
     for(int i = centralStackedWidget->count(); i>0; i--){
@@ -931,7 +931,7 @@ void BuntuGUI::clearWidgets()
     }
 }
 
-void BuntuGUI::gotoMasternodeManagerPage()
+void safemasternodeGUI::gotoMasternodeManagerPage()
 {
     masternodeManagerAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(masternodeManagerPage);
@@ -940,7 +940,7 @@ void BuntuGUI::gotoMasternodeManagerPage()
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BuntuGUI::gotoBlockBrowser()
+void safemasternodeGUI::gotoBlockBrowser()
 {
     blockAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(blockBrowser);
@@ -949,7 +949,7 @@ void BuntuGUI::gotoBlockBrowser()
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BuntuGUI::gotoOverviewPage()
+void safemasternodeGUI::gotoOverviewPage()
 {
     overviewAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(overviewPage);
@@ -958,7 +958,7 @@ void BuntuGUI::gotoOverviewPage()
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BuntuGUI::gotoHistoryPage()
+void safemasternodeGUI::gotoHistoryPage()
 {
     historyAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(transactionsPage);
@@ -968,7 +968,7 @@ void BuntuGUI::gotoHistoryPage()
     connect(exportAction, SIGNAL(triggered()), transactionView, SLOT(exportClicked()));
 }
 
-void BuntuGUI::gotoAddressBookPage()
+void safemasternodeGUI::gotoAddressBookPage()
 {
     addressBookAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(addressBookPage);
@@ -978,7 +978,7 @@ void BuntuGUI::gotoAddressBookPage()
     connect(exportAction, SIGNAL(triggered()), addressBookPage, SLOT(exportClicked()));
 }
 
-void BuntuGUI::gotoTradingPage()
+void safemasternodeGUI::gotoTradingPage()
 {
 
      //TradingAction->setChecked(true);
@@ -988,7 +988,7 @@ void BuntuGUI::gotoTradingPage()
   //  disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BuntuGUI::gotoReceiveCoinsPage()
+void safemasternodeGUI::gotoReceiveCoinsPage()
 {
     receiveCoinsAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(receiveCoinsPage);
@@ -998,7 +998,7 @@ void BuntuGUI::gotoReceiveCoinsPage()
     connect(exportAction, SIGNAL(triggered()), receiveCoinsPage, SLOT(exportClicked()));
 }
 
-void BuntuGUI::gotoSendCoinsPage()
+void safemasternodeGUI::gotoSendCoinsPage()
 {
     sendCoinsAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(sendCoinsPage);
@@ -1007,7 +1007,7 @@ void BuntuGUI::gotoSendCoinsPage()
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
-void BuntuGUI::gotoSignMessageTab(QString addr)
+void safemasternodeGUI::gotoSignMessageTab(QString addr)
 {
     // call show() in showTab_SM()
     signVerifyMessageDialog->showTab_SM(true);
@@ -1016,7 +1016,7 @@ void BuntuGUI::gotoSignMessageTab(QString addr)
         signVerifyMessageDialog->setAddress_SM(addr);
 }
 
-void BuntuGUI::gotoVerifyMessageTab(QString addr)
+void safemasternodeGUI::gotoVerifyMessageTab(QString addr)
 {
     // call show() in showTab_VM()
     signVerifyMessageDialog->showTab_VM(true);
@@ -1025,7 +1025,7 @@ void BuntuGUI::gotoVerifyMessageTab(QString addr)
         signVerifyMessageDialog->setAddress_VM(addr);
 }
 
-void BuntuGUI::gotoMessagePage()
+void safemasternodeGUI::gotoMessagePage()
 {
     messageAction->setChecked(true);
     centralStackedWidget->setCurrentWidget(messagePage);
@@ -1035,14 +1035,14 @@ void BuntuGUI::gotoMessagePage()
     connect(exportAction, SIGNAL(triggered()), messagePage, SLOT(exportClicked()));
 }
 
-void BuntuGUI::dragEnterEvent(QDragEnterEvent *event)
+void safemasternodeGUI::dragEnterEvent(QDragEnterEvent *event)
 {
     // Accept only URIs
     if(event->mimeData()->hasUrls())
         event->acceptProposedAction();
 }
 
-void BuntuGUI::dropEvent(QDropEvent *event)
+void safemasternodeGUI::dropEvent(QDropEvent *event)
 {
     if(event->mimeData()->hasUrls())
     {
@@ -1058,13 +1058,13 @@ void BuntuGUI::dropEvent(QDropEvent *event)
         if (nValidUrisFound)
             gotoSendCoinsPage();
         else
-            notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid buntu address or malformed URI parameters."));
+            notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid safemasternode address or malformed URI parameters."));
     }
 
     event->acceptProposedAction();
 }
 
-void BuntuGUI::handleURI(QString strURI)
+void safemasternodeGUI::handleURI(QString strURI)
 {
     // URI has to be valid
     if (sendCoinsPage->handleURI(strURI))
@@ -1073,10 +1073,10 @@ void BuntuGUI::handleURI(QString strURI)
         gotoSendCoinsPage();
     }
     else
-        notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid buntu address or malformed URI parameters."));
+        notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid safemasternode address or malformed URI parameters."));
 }
 
-void BuntuGUI::setEncryptionStatus(int status)
+void safemasternodeGUI::setEncryptionStatus(int status)
 {
     if(fWalletUnlockStakingOnly)
     {
@@ -1122,7 +1122,7 @@ void BuntuGUI::setEncryptionStatus(int status)
     }
 }
 
-void BuntuGUI::encryptWallet()
+void safemasternodeGUI::encryptWallet()
 {
     if(!walletModel)
         return;
@@ -1134,7 +1134,7 @@ void BuntuGUI::encryptWallet()
     setEncryptionStatus(walletModel->getEncryptionStatus());
 }
 
-void BuntuGUI::backupWallet()
+void safemasternodeGUI::backupWallet()
 {
     QString saveDir = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
     QString filename = QFileDialog::getSaveFileName(this, tr("Backup Wallet"), saveDir, tr("Wallet Data (*.dat)"));
@@ -1145,14 +1145,14 @@ void BuntuGUI::backupWallet()
     }
 }
 
-void BuntuGUI::changePassphrase()
+void safemasternodeGUI::changePassphrase()
 {
     AskPassphraseDialog dlg(AskPassphraseDialog::ChangePass, this);
     dlg.setModel(walletModel);
     dlg.exec();
 }
 
-void BuntuGUI::unlockWallet()
+void safemasternodeGUI::unlockWallet()
 {
     if(!walletModel)
         return;
@@ -1167,7 +1167,7 @@ void BuntuGUI::unlockWallet()
     }
 }
 
-void BuntuGUI::lockWallet()
+void safemasternodeGUI::lockWallet()
 {
     if(!walletModel)
         return;
@@ -1175,7 +1175,7 @@ void BuntuGUI::lockWallet()
     walletModel->setWalletLocked(true);
 }
 
-void BuntuGUI::showNormalIfMinimized(bool fToggleHidden)
+void safemasternodeGUI::showNormalIfMinimized(bool fToggleHidden)
 {
     // activateWindow() (sometimes) helps with keyboard focus on Windows
     if (isHidden())
@@ -1197,12 +1197,12 @@ void BuntuGUI::showNormalIfMinimized(bool fToggleHidden)
         hide();
 }
 
-void BuntuGUI::toggleHidden()
+void safemasternodeGUI::toggleHidden()
 {
     showNormalIfMinimized(true);
 }
 
-void BuntuGUI::updateWeight()
+void safemasternodeGUI::updateWeight()
 {
     if (!pwalletMain)
         return;
@@ -1218,7 +1218,7 @@ void BuntuGUI::updateWeight()
     nWeight = pwalletMain->GetStakeWeight();
 }
 
-void BuntuGUI::updateStakingIcon()
+void safemasternodeGUI::updateStakingIcon()
 {
     updateWeight();
 
@@ -1269,13 +1269,13 @@ void BuntuGUI::updateStakingIcon()
     }
 }
 
-void BuntuGUI::detectShutdown()
+void safemasternodeGUI::detectShutdown()
 {
     if (ShutdownRequested())
         QMetaObject::invokeMethod(QCoreApplication::instance(), "quit", Qt::QueuedConnection);
 }
 
-void BuntuGUI::showProgress(const QString &title, int nProgress)
+void safemasternodeGUI::showProgress(const QString &title, int nProgress)
 {
     if (nProgress == 0)
     {

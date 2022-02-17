@@ -1,8 +1,8 @@
-// Copyright (c) 2009-2013 The Buntu developers
+// Copyright (c) 2009-2013 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_NETBASE_H
-#define BUNTU_NETBASE_H
+#ifndef safemasternode_NETBASE_H
+#define safemasternode_NETBASE_H
 
 #include "compat.h"
 #include "serialize.h"

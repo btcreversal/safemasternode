@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -40,7 +40,7 @@ bool AppInit(int argc, char* argv[])
         //
         // Parameters
         //
-        // If Qt is used, parameters/buntu.conf are parsed in qt/buntu.cpp's main()
+        // If Qt is used, parameters/safemasternode.conf are parsed in qt/safemasternode.cpp's main()
         ParseParameters(argc, argv);
         if (!boost::filesystem::is_directory(GetDataDir(false)))
         {
@@ -51,13 +51,13 @@ bool AppInit(int argc, char* argv[])
 
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
-            // First part of help message is specific to buntud / RPC client
-            std::string strUsage = _("buntu version") + " " + FormatFullVersion() + "\n\n" +
+            // First part of help message is specific to safemasternoded / RPC client
+            std::string strUsage = _("safemasternode version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  buntud [options]                     " + "\n" +
-                  "  buntud [options] <command> [params]  " + _("Send command to -server or buntud") + "\n" +
-                  "  buntud [options] help                " + _("List commands") + "\n" +
-                  "  buntud [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  safemasternoded [options]                     " + "\n" +
+                  "  safemasternoded [options] <command> [params]  " + _("Send command to -server or safemasternoded") + "\n" +
+                  "  safemasternoded [options] help                " + _("List commands") + "\n" +
+                  "  safemasternoded [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -67,7 +67,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "buntu:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "safemasternode:"))
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -130,7 +130,7 @@ int main(int argc, char* argv[])
 {
     bool fRet = false;
 
-    // Connect buntud signal handlers
+    // Connect safemasternoded signal handlers
     noui_connect();
 
     fRet = AppInit(argc, argv);

@@ -1,4 +1,4 @@
-IDI_ICON1 ICON DISCARDABLE "icons/buntu.ico"
+IDI_ICON1 ICON DISCARDABLE "icons/safemasternode.ico"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information
@@ -18,14 +18,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "buntu"
-            VALUE "FileDescription",    "buntu-Qt (OSS GUI client for buntu)"
+            VALUE "CompanyName",        "safemasternode"
+            VALUE "FileDescription",    "safemasternode-Qt (OSS GUI client for safemasternode)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "buntu-qt"
-            VALUE "LegalCopyright",     "2009-2014 The Buntu developers, 2012-2014 The NovaCoin & PPCoin developers, 2015-2017 The buntu developers"
+            VALUE "InternalName",       "safemasternode-qt"
+            VALUE "LegalCopyright",     "2009-2014 The safemasternode developers, 2012-2014 The NovaCoin & PPCoin developers, 2015-2017 The safemasternode developers"
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "buntu-qt.exe"
-            VALUE "ProductName",        "buntu-Qt"
+            VALUE "OriginalFilename",   "safemasternode-qt.exe"
+            VALUE "ProductName",        "safemasternode-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

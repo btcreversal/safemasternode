@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2012 The Buntu developers
+// Copyright (c) 2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BUNTU_UI_INTERFACE_H
-#define BUNTU_UI_INTERFACE_H
+#ifndef safemasternode_UI_INTERFACE_H
+#define safemasternode_UI_INTERFACE_H
 
 #include <boost/signals2/last_value.hpp>
 #include <boost/signals2/signal.hpp>
@@ -61,7 +61,7 @@ public:
         BTN_MASK = (BTN_OK | BTN_YES | BTN_NO | BTN_ABORT | BTN_RETRY | BTN_IGNORE |
                     BTN_CLOSE | BTN_CANCEL | BTN_DISCARD | BTN_HELP | BTN_APPLY | BTN_RESET),
 
-        /** buntu blocking, modal message box dialog (not just OS notification) */
+        /** safemasternode blocking, modal message box dialog (not just OS notification) */
         MODAL               = 0x10000000U,
 
         /** Predefined combinations for certain default usage cases */

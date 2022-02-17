@@ -1,8 +1,8 @@
-// Copyright (c) 2012 The Buntu developers
+// Copyright (c) 2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_VERSION_H
-#define BUNTU_VERSION_H
+#ifndef safemasternode_VERSION_H
+#define safemasternode_VERSION_H
 
 #include "clientversion.h"
 #include <string>

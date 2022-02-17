@@ -325,7 +325,7 @@ TEST(CorruptionTest, CompactionInputError) {
   Corrupt(kTableFile, 100, 1);
   Check(5, 9);
 
-  // buntu compactions by writing lots of values
+  // safemasternode compactions by writing lots of values
   Build(10000);
   Check(10000, 10000);
 }

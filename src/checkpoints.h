@@ -1,8 +1,8 @@
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_CHECKPOINT_H
-#define  BUNTU_CHECKPOINT_H
+#ifndef safemasternode_CHECKPOINT_H
+#define  safemasternode_CHECKPOINT_H
 
 #include <map>
 #include "net.h"

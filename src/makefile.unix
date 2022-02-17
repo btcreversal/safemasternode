@@ -59,9 +59,9 @@ LIBS+= \
 # Hardening
 # Make some classes of vulnerabilities unexploitable in case one is discovered.
 #
-    # This is a workaround for Ubuntu bug #691722, the default -fstack-protector causes
+    # This is a workaround for Usafemasternode bug #691722, the default -fstack-protector causes
     # -fstack-protector-all to be ignored unless -fno-stack-protector is used first.
-    # see: https://bugs.launchpad.net/ubuntu/+source/gcc-4.5/+bug/691722
+    # see: https://bugs.launchpad.net/usafemasternode/+source/gcc-4.5/+bug/691722
     HARDENING=-fno-stack-protector
 
     # Stack Canaries
@@ -121,7 +121,7 @@ OBJS= \
     obj/pubkey.o \
     obj/ecwrapper.o \
     obj/init.o \
-    obj/buntud.o \
+    obj/safemasternoded.o \
     obj/keystore.o \
     obj/core.o \
     obj/main.o \
@@ -176,13 +176,13 @@ ifeq (${USE_WALLET}, 1)
         obj/walletdb.o
 endif
 
-all: buntud
+all: safemasternoded
 
 # build secp256k1
 DEFS += $(addprefix -I,$(CURDIR)/secp256k1/include)
 secp256k1/src/libsecp256k1_la-secp256k1.o:
 	@echo "Building Secp256k1 ..."; cd secp256k1; chmod 755 *; ./autogen.sh; ./configure --enable-module-recovery; make; cd ..;
-buntud: secp256k1/src/libsecp256k1_la-secp256k1.o
+safemasternoded: secp256k1/src/libsecp256k1_la-secp256k1.o
 
 # build leveldb
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
@@ -210,11 +210,11 @@ obj/%.o: %.c
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-buntud: $(OBJS:obj/%=obj/%)
+safemasternoded: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f buntud
+	-rm -f safemasternoded
 	-rm -f obj/*.o
 	-rm -f obj/*.P
 	-rm -f obj/build.h

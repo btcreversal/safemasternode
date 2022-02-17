@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2013 The Buntu developers
+// Copyright (c) 2009-2013 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +11,8 @@
 // - E-mail usually won't line-break if there's no punctuation to break at.
 // - Double-clicking selects the whole number as one word if it's all alphanumeric.
 //
-#ifndef BUNTU_BASE58_H
-#define BUNTU_BASE58_H
+#ifndef safemasternode_BASE58_H
+#define safemasternode_BASE58_H
 
 #include "chainparams.h"
 #include "pubkey.h"
@@ -92,23 +92,23 @@ public:
     bool operator> (const CBase58Data& b58) const { return CompareTo(b58) >  0; }
 };
 
-/** base58-encoded buntu addresses.
+/** base58-encoded safemasternode addresses.
  * Public-key-hash-addresses have version 0 (or 111 testnet).
  * The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
  * Script-hash-addresses have version 5 (or 196 testnet).
  * The data vector contains RIPEMD160(SHA256(cscript)), where cscript is the serialized redemption script.
  */
-class CbuntucoinAddress : public CBase58Data {
+class CsafemasternodecoinAddress : public CBase58Data {
 public:
     bool Set(const CKeyID &id);
     bool Set(const CScriptID &id);
     bool Set(const CTxDestination &dest);
     bool IsValid() const;
 
-    CbuntucoinAddress() {}
-    CbuntucoinAddress(const CTxDestination &dest) { Set(dest); }
-    CbuntucoinAddress(const std::string& strAddress) { SetString(strAddress); }
-    CbuntucoinAddress(const char* pszAddress) { SetString(pszAddress); }
+    CsafemasternodecoinAddress() {}
+    CsafemasternodecoinAddress(const CTxDestination &dest) { Set(dest); }
+    CsafemasternodecoinAddress(const std::string& strAddress) { SetString(strAddress); }
+    CsafemasternodecoinAddress(const char* pszAddress) { SetString(pszAddress); }
 
     CTxDestination Get() const;
     bool GetKeyID(CKeyID &keyID) const;
@@ -118,7 +118,7 @@ public:
 /**
  * A base58-encoded secret key
  */
-class CbuntucoinSecret : public CBase58Data
+class CsafemasternodecoinSecret : public CBase58Data
 {
 public:
     void SetKey(const CKey& vchSecret);
@@ -127,11 +127,11 @@ public:
     bool SetString(const char* pszSecret);
     bool SetString(const std::string& strSecret);
 
-    CbuntucoinSecret(const CKey& vchSecret) { SetKey(vchSecret); }
-    CbuntucoinSecret() {}
+    CsafemasternodecoinSecret(const CKey& vchSecret) { SetKey(vchSecret); }
+    CsafemasternodecoinSecret() {}
 };
 
-template<typename K, int Size, CChainParams::Base58Type Type> class CbuntucoinExtKeyBase : public CBase58Data
+template<typename K, int Size, CChainParams::Base58Type Type> class CsafemasternodecoinExtKeyBase : public CBase58Data
 {
 public:
     void SetKey(const K &key) {
@@ -146,37 +146,37 @@ public:
         return ret;
     }
 
-    CbuntucoinExtKeyBase(const K &key) {
+    CsafemasternodecoinExtKeyBase(const K &key) {
         SetKey(key);
     }
 
-    CbuntucoinExtKeyBase() {}
+    CsafemasternodecoinExtKeyBase() {}
 };
 
-typedef CbuntucoinExtKeyBase<CExtKey, 74, CChainParams::EXT_SECRET_KEY> CbuntucoinExtKey;
-typedef CbuntucoinExtKeyBase<CExtPubKey, 74, CChainParams::EXT_PUBLIC_KEY> CbuntucoinExtPubKey;
+typedef CsafemasternodecoinExtKeyBase<CExtKey, 74, CChainParams::EXT_SECRET_KEY> CsafemasternodecoinExtKey;
+typedef CsafemasternodecoinExtKeyBase<CExtPubKey, 74, CChainParams::EXT_PUBLIC_KEY> CsafemasternodecoinExtPubKey;
 
-/** base58-encoded Buntu addresses.
+/** base58-encoded safemasternode addresses.
  * Public-key-hash-addresses have version 0 (or 111 testnet).
  * The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
  * Script-hash-addresses have version 5 (or 196 testnet).
  * The data vector contains RIPEMD160(SHA256(cscript)), where cscript is the serialized redemption script.
  */
-class CBuntuAddress : public CBase58Data {
+class CsafemasternodeAddress : public CBase58Data {
 public:
     bool Set(const CKeyID &id);
     bool Set(const CScriptID &id);
     bool Set(const CTxDestination &dest);
     bool IsValid() const;
 
-    CBuntuAddress() {}
-    CBuntuAddress(const CTxDestination &dest) { Set(dest); }
-    CBuntuAddress(const std::string& strAddress) { SetString(strAddress); }
-    CBuntuAddress(const char* pszAddress) { SetString(pszAddress); }
+    CsafemasternodeAddress() {}
+    CsafemasternodeAddress(const CTxDestination &dest) { Set(dest); }
+    CsafemasternodeAddress(const std::string& strAddress) { SetString(strAddress); }
+    CsafemasternodeAddress(const char* pszAddress) { SetString(pszAddress); }
 
     CTxDestination Get() const;
     bool GetKeyID(CKeyID &keyID) const;
     bool IsScript() const;
 };
 
-#endif // BUNTU_BASE58_H
+#endif // safemasternode_BASE58_H

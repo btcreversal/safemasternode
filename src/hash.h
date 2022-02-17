@@ -1,9 +1,9 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_HASH_H
-#define BUNTU_HASH_H
+#ifndef safemasternode_HASH_H
+#define safemasternode_HASH_H
 
 #include "uint256.h"
 #include "serialize.h"
@@ -16,7 +16,7 @@
 
 #include <vector>
 
-/** A hasher class for buntu's 256-bit hash (double SHA-256). */
+/** A hasher class for safemasternode's 256-bit hash (double SHA-256). */
 class CHash256 {
 private:
     CSHA256 sha;
@@ -40,7 +40,7 @@ public:
     }
 };
 
-/** A hasher class for buntu's 160-bit hash (SHA-256 + RIPEMD-160). */
+/** A hasher class for safemasternode's 160-bit hash (SHA-256 + RIPEMD-160). */
 class CHash160 {
 private:
     CSHA256 sha;

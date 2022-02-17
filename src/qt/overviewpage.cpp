@@ -5,7 +5,7 @@
 #include "darksend.h"
 #include "darksendconfig.h"
 #include "walletmodel.h"
-#include "buntuunits.h"
+#include "safemasternodeunits.h"
 #include "optionsmodel.h"
 #include "transactiontablemodel.h"
 #include "transactionfilterproxy.h"
@@ -27,7 +27,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate(): QAbstractItemDelegate(), unit(BuntuUnits::BTC)
+    TxViewDelegate(): QAbstractItemDelegate(), unit(safemasternodeUnits::BTC)
     {
 
     }
@@ -83,7 +83,7 @@ public:
             foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(fUseBlackTheme ? QColor(255, 255, 255) : foreground);
-        QString amountText = BuntuUnits::formatWithUnit(unit, amount, true);
+        QString amountText = safemasternodeUnits::formatWithUnit(unit, amount, true);
         if(!confirmed)
         {
             amountText = QString("[") + amountText + QString("]");
@@ -199,17 +199,17 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& stake, cons
     currentWatchOnlyStake = watchOnlyStake;
     currentWatchUnconfBalance = watchUnconfBalance;
     currentWatchImmatureBalance = watchImmatureBalance;
-    ui->labelBalance->setText(BuntuUnits::formatWithUnit(nDisplayUnit, balance));
-    ui->labelStake->setText(BuntuUnits::formatWithUnit(nDisplayUnit, stake));
-    ui->labelUnconfirmed->setText(BuntuUnits::formatWithUnit(nDisplayUnit, unconfirmedBalance));
-    ui->labelImmature->setText(BuntuUnits::formatWithUnit(nDisplayUnit, immatureBalance));
-    ui->labelAnonymized->setText(BuntuUnits::formatWithUnit(nDisplayUnit, anonymizedBalance));
-    ui->labelTotal->setText(BuntuUnits::formatWithUnit(nDisplayUnit, balance + stake + unconfirmedBalance + immatureBalance));
-    ui->labelWatchAvailable->setText(BuntuUnits::floorWithUnit(nDisplayUnit, watchOnlyBalance));
-    ui->labelWatchStake->setText(BuntuUnits::floorWithUnit(nDisplayUnit, watchOnlyStake));
-    ui->labelWatchPending->setText(BuntuUnits::floorWithUnit(nDisplayUnit, watchUnconfBalance));
-    ui->labelWatchImmature->setText(BuntuUnits::floorWithUnit(nDisplayUnit, watchImmatureBalance));
-    ui->labelWatchTotal->setText(BuntuUnits::floorWithUnit(nDisplayUnit, watchOnlyBalance + watchOnlyStake + watchUnconfBalance + watchImmatureBalance));
+    ui->labelBalance->setText(safemasternodeUnits::formatWithUnit(nDisplayUnit, balance));
+    ui->labelStake->setText(safemasternodeUnits::formatWithUnit(nDisplayUnit, stake));
+    ui->labelUnconfirmed->setText(safemasternodeUnits::formatWithUnit(nDisplayUnit, unconfirmedBalance));
+    ui->labelImmature->setText(safemasternodeUnits::formatWithUnit(nDisplayUnit, immatureBalance));
+    ui->labelAnonymized->setText(safemasternodeUnits::formatWithUnit(nDisplayUnit, anonymizedBalance));
+    ui->labelTotal->setText(safemasternodeUnits::formatWithUnit(nDisplayUnit, balance + stake + unconfirmedBalance + immatureBalance));
+    ui->labelWatchAvailable->setText(safemasternodeUnits::floorWithUnit(nDisplayUnit, watchOnlyBalance));
+    ui->labelWatchStake->setText(safemasternodeUnits::floorWithUnit(nDisplayUnit, watchOnlyStake));
+    ui->labelWatchPending->setText(safemasternodeUnits::floorWithUnit(nDisplayUnit, watchUnconfBalance));
+    ui->labelWatchImmature->setText(safemasternodeUnits::floorWithUnit(nDisplayUnit, watchImmatureBalance));
+    ui->labelWatchTotal->setText(safemasternodeUnits::floorWithUnit(nDisplayUnit, watchOnlyBalance + watchOnlyStake + watchUnconfBalance + watchImmatureBalance));
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users
@@ -339,15 +339,15 @@ void OverviewPage::updateDarksendProgress()
     if(!pwalletMain) return;
 
     QString strAmountAndRounds;
-    QString strAnonymizebuntuAmount = BuntuUnits::formatWithUnit(false, nAnonymizebuntuAmount * COIN, false, BuntuUnits::separatorAlways);
+    QString strAnonymizesafemasternodeAmount = safemasternodeUnits::formatWithUnit(false, nAnonymizesafemasternodeAmount * COIN, false, safemasternodeUnits::separatorAlways);
 
     if(currentBalance == 0)
     {
         ui->darksendProgress->setValue(0);
         ui->darksendProgress->setToolTip(tr("No inputs detected"));
         // when balance is zero just show info from settings
-        strAnonymizebuntuAmount = strAnonymizebuntuAmount.remove(strAnonymizebuntuAmount.indexOf("."), BuntuUnits::decimals(nDisplayUnit) + 1);
-        strAmountAndRounds = strAnonymizebuntuAmount + " BNTU / " + tr("%n Rounds", "", nDarksendRounds);
+        strAnonymizesafemasternodeAmount = strAnonymizesafemasternodeAmount.remove(strAnonymizesafemasternodeAmount.indexOf("."), safemasternodeUnits::decimals(nDisplayUnit) + 1);
+        strAmountAndRounds = strAnonymizesafemasternodeAmount + " SMTN / " + tr("%n Rounds", "", nDarksendRounds);
 
         ui->labelAmountRounds->setToolTip(tr("No inputs detected"));
         ui->labelAmountRounds->setText(strAmountAndRounds);
@@ -375,24 +375,24 @@ void OverviewPage::updateDarksendProgress()
     CAmount nMaxToAnonymize = nAnonymizableBalance + currentAnonymizedBalance + nDenominatedUnconfirmedBalance;
 
     // If it's more than the anon threshold, limit to that.
-    if(nMaxToAnonymize > nAnonymizebuntuAmount*COIN) nMaxToAnonymize = nAnonymizebuntuAmount*COIN;
+    if(nMaxToAnonymize > nAnonymizesafemasternodeAmount*COIN) nMaxToAnonymize = nAnonymizesafemasternodeAmount*COIN;
 
     if(nMaxToAnonymize == 0) return;
 
-    if(nMaxToAnonymize >= nAnonymizebuntuAmount * COIN) {
+    if(nMaxToAnonymize >= nAnonymizesafemasternodeAmount * COIN) {
         ui->labelAmountRounds->setToolTip(tr("Found enough compatible inputs to anonymize %1")
-                                          .arg(strAnonymizebuntuAmount));
-        strAnonymizebuntuAmount = strAnonymizebuntuAmount.remove(strAnonymizebuntuAmount.indexOf("."), BuntuUnits::decimals(nDisplayUnit) + 1);
-        strAmountAndRounds = strAnonymizebuntuAmount + " BNTU / " + tr("%n Rounds", "", nDarksendRounds);
+                                          .arg(strAnonymizesafemasternodeAmount));
+        strAnonymizesafemasternodeAmount = strAnonymizesafemasternodeAmount.remove(strAnonymizesafemasternodeAmount.indexOf("."), safemasternodeUnits::decimals(nDisplayUnit) + 1);
+        strAmountAndRounds = strAnonymizesafemasternodeAmount + " SMTN / " + tr("%n Rounds", "", nDarksendRounds);
     } else {
-        QString strMaxToAnonymize = BuntuUnits::formatHtmlWithUnit(nDisplayUnit, nMaxToAnonymize, false, BuntuUnits::separatorAlways);
+        QString strMaxToAnonymize = safemasternodeUnits::formatHtmlWithUnit(nDisplayUnit, nMaxToAnonymize, false, safemasternodeUnits::separatorAlways);
         ui->labelAmountRounds->setToolTip(tr("Not enough compatible inputs to anonymize <span style='color:red;'>%1</span>,<br>"
                                              "will anonymize <span style='color:red;'>%2</span> instead")
-                                          .arg(strAnonymizebuntuAmount)
+                                          .arg(strAnonymizesafemasternodeAmount)
                                           .arg(strMaxToAnonymize));
-        strMaxToAnonymize = strMaxToAnonymize.remove(strMaxToAnonymize.indexOf("."), BuntuUnits::decimals(nDisplayUnit) + 1);
+        strMaxToAnonymize = strMaxToAnonymize.remove(strMaxToAnonymize.indexOf("."), safemasternodeUnits::decimals(nDisplayUnit) + 1);
         strAmountAndRounds = "<span style='color:red;'>" +
-                QString(BuntuUnits::factor(nDisplayUnit) == 1 ? "" : "~") + strMaxToAnonymize +
+                QString(safemasternodeUnits::factor(nDisplayUnit) == 1 ? "" : "~") + strMaxToAnonymize +
                 " / " + tr("%n Rounds", "", nDarksendRounds) + "</span>";
     }
     ui->labelAmountRounds->setText(strAmountAndRounds);
@@ -527,7 +527,7 @@ void OverviewPage::toggleDarksend(){
         int64_t balance = currentBalance;
         float minAmount = 1.49 * COIN;
         if(balance < minAmount){
-            QString strMinAmount(BuntuUnits::formatWithUnit(nDisplayUnit, minAmount));
+            QString strMinAmount(safemasternodeUnits::formatWithUnit(nDisplayUnit, minAmount));
             QMessageBox::warning(this, tr("Darksend"),
                 tr("Darksend requires at least %1 to use.").arg(strMinAmount),
                 QMessageBox::Ok, QMessageBox::Ok);
@@ -563,7 +563,7 @@ void OverviewPage::toggleDarksend(){
 
         /* show darksend configuration if client has defaults set */
 
-        if(nAnonymizebuntuAmount == 0){
+        if(nAnonymizesafemasternodeAmount == 0){
             DarksendConfig dlg(this);
             dlg.setModel(walletModel);
             dlg.exec();

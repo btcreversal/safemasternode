@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2014 The Buntu developers
+// Copyright (c) 2011-2014 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "optionsmodel.h"
 
-#include "buntuunits.h"
+#include "safemasternodeunits.h"
 #include "guiutil.h"
 
 #include "init.h"
@@ -53,7 +53,7 @@ void OptionsModel::Init()
 
     // Display
     if (!settings.contains("nDisplayUnit"))
-        settings.setValue("nDisplayUnit", BuntuUnits::BTC);
+        settings.setValue("nDisplayUnit", safemasternodeUnits::BTC);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
     
     fUseBlackTheme = settings.value("fUseBlackTheme", false).toBool();
@@ -66,13 +66,13 @@ void OptionsModel::Init()
     if (!settings.contains("nDarksendRounds"))
         settings.setValue("nDarksendRounds", 2);
     nDarksendRounds = settings.value("nDarksendRounds").toLongLong();
-    if (!settings.contains("nAnonymizebuntuAmount"))
-        settings.setValue("nAnonymizebuntuAmount", 1000);
-    nAnonymizebuntuAmount = settings.value("nAnonymizebuntuAmount").toLongLong();
+    if (!settings.contains("nAnonymizesafemasternodeAmount"))
+        settings.setValue("nAnonymizesafemasternodeAmount", 1000);
+    nAnonymizesafemasternodeAmount = settings.value("nAnonymizesafemasternodeAmount").toLongLong();
     if (settings.contains("nDarksendRounds"))
         SoftSetArg("-darksendrounds", settings.value("nDarksendRounds").toString().toStdString());
-    if (settings.contains("nAnonymizebuntuAmount"))
-        SoftSetArg("-anonymizetraveamount", settings.value("nAnonymizebuntuAmount").toString().toStdString());
+    if (settings.contains("nAnonymizesafemasternodeAmount"))
+        SoftSetArg("-anonymizetraveamount", settings.value("nAnonymizesafemasternodeAmount").toString().toStdString());
 
 
 
@@ -206,8 +206,8 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return fCoinControlFeatures;
         case DarksendRounds:
             return QVariant(nDarksendRounds);
-        case AnonymizebuntuAmount:
-            return QVariant(nAnonymizebuntuAmount);
+        case AnonymizesafemasternodeAmount:
+            return QVariant(nAnonymizesafemasternodeAmount);
         case UseBlackTheme:
             return QVariant(fUseBlackTheme);
         default:
@@ -318,10 +318,10 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
             settings.setValue("nDarksendRounds", nDarksendRounds);
             emit darksendRoundsChanged(nDarksendRounds);
             break;
-        case AnonymizebuntuAmount:
-            nAnonymizebuntuAmount = value.toInt();
-            settings.setValue("nAnonymizebuntuAmount", nAnonymizebuntuAmount);
-            emit AnonymizebuntuAmountChanged(nAnonymizebuntuAmount);
+        case AnonymizesafemasternodeAmount:
+            nAnonymizesafemasternodeAmount = value.toInt();
+            settings.setValue("nAnonymizesafemasternodeAmount", nAnonymizesafemasternodeAmount);
+            emit AnonymizesafemasternodeAmountChanged(nAnonymizesafemasternodeAmount);
             break;
         default:
             break;

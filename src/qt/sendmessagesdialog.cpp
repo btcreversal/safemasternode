@@ -34,7 +34,7 @@ SendMessagesDialog::SendMessagesDialog(Mode mode, Type type, QWidget *parent) :
 #if QT_VERSION >= 0x040700
      /* Do not move this to the XML file, Qt before 4.7 will choke on it */
     if(mode == SendMessagesDialog::Encrypted)
-        ui->addressFrom->setPlaceholderText(tr("Enter a buntu address (e.g. BTBa6KMQCYVP2kLvE2frRY2vGfsr5omUeN)"));
+        ui->addressFrom->setPlaceholderText(tr("Enter a safemasternode address (e.g. BTBa6KMQCYVP2kLvE2frRY2vGfsr5omUeN)"));
  #endif
     addEntry();
 

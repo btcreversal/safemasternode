@@ -160,7 +160,7 @@ class LogTest {
     EncodeFixed32(&dest_.contents_[header_offset], crc);
   }
 
-  void buntuError() {
+  void safemasternodeError() {
     source_.force_error_ = true;
   }
 
@@ -335,7 +335,7 @@ TEST(LogTest, RandomRead) {
 
 TEST(LogTest, ReadError) {
   Write("foo");
-  buntuError();
+  safemasternodeError();
   ASSERT_EQ("EOF", Read());
   ASSERT_EQ(kBlockSize, DroppedBytes());
   ASSERT_EQ("OK", MatchError("read error"));

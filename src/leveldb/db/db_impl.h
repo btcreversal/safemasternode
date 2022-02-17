@@ -47,7 +47,7 @@ class DBImpl : public DB {
   // Compact any files in the named level that overlap [*begin,*end]
   void TEST_CompactRange(int level, const Slice* begin, const Slice* end);
 
-  // buntu current memtable contents to be compacted.
+  // safemasternode current memtable contents to be compacted.
   Status TEST_CompactMemTable();
 
   // Return an internal iterator over the current state of the database.

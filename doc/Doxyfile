@@ -28,7 +28,7 @@ DOXYFILE_ENCODING      = UTF-8
 # The PROJECT_NAME tag is a single word (or a sequence of words surrounded 
 # by quotes) that should identify the project.
 
-PROJECT_NAME           = Buntu
+PROJECT_NAME           = safemasternode
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. 
 # This could be handy for archiving the generated documentation or 
@@ -47,7 +47,7 @@ PROJECT_BRIEF          = "P2P Digital Currency"
 # exceed 55 pixels and the maximum width should not exceed 200 pixels. 
 # Doxygen will copy the logo to the output directory.
 
-PROJECT_LOGO           = doc/buntu_logo_doxygen.png
+PROJECT_LOGO           = doc/safemasternode_logo_doxygen.png
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) 
 # base path where the generated documentation will be put. 
@@ -207,12 +207,12 @@ TAB_SIZE               = 8
 
 ALIASES                = 
 
-# Set the OPTIMIZE_OUTPUT_BNTU_C tag to YES if your project consists of C 
+# Set the OPTIMIZE_OUTPUT_SMTN_C tag to YES if your project consists of C 
 # sources only. Doxygen will then generate output that is more tailored for C. 
 # For instance, some of the names that are used will be different. The list 
 # of all members will be omitted, etc.
 
-OPTIMIZE_OUTPUT_BNTU_C  = NO
+OPTIMIZE_OUTPUT_SMTN_C  = NO
 
 # Set the OPTIMIZE_OUTPUT_JAVA tag to YES if your project consists of Java 
 # sources only. Doxygen will then generate output that is more tailored for 
@@ -221,11 +221,11 @@ OPTIMIZE_OUTPUT_BNTU_C  = NO
 
 OPTIMIZE_OUTPUT_JAVA   = NO
 
-# Set the OPTIMIZE_BNTU_BNTUTRAN tag to YES if your project consists of Fortran 
+# Set the OPTIMIZE_SMTN_SMTNTRAN tag to YES if your project consists of Fortran 
 # sources only. Doxygen will then generate output that is more tailored for 
 # Fortran.
 
-OPTIMIZE_BNTU_BNTUTRAN   = NO
+OPTIMIZE_SMTN_SMTNTRAN   = NO
 
 # Set the OPTIMIZE_OUTPUT_VHDL tag to YES if your project consists of VHDL 
 # sources. Doxygen will then generate output that is tailored for 

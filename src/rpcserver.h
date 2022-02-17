@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef _BUNTURPC_SERVER_H_
-#define _BUNTURPC_SERVER_H_ 1
+#ifndef _safemasternodeRPC_SERVER_H_
+#define _safemasternodeRPC_SERVER_H_ 1
 
 #include "uint256.h"
 #include "rpcprotocol.h"
@@ -50,7 +50,7 @@ public:
 };
 
 /**
- * Buntu RPC command dispatcher.
+ * safemasternode RPC command dispatcher.
  */
 class CRPCTable
 {

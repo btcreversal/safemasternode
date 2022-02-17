@@ -1,9 +1,9 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2013 The Buntu developers
+// Copyright (c) 2009-2013 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_KEY_H
-#define BUNTU_KEY_H
+#ifndef safemasternode_KEY_H
+#define safemasternode_KEY_H
 
 #include "allocators.h"
 #include "pubkey.h"

@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Buntu developers
+// Copyright (c) 2009-2014 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -81,7 +81,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "buntu Signed Message:\n";
+const string strMessageMagic = "safemasternode Signed Message:\n";
 
 std::set<uint256> setValidatedTx;
 
@@ -141,8 +141,8 @@ void SyncWithWallets(const CTransaction &tx, const CBlock *pblock, bool fConnect
     g_signals.SyncTransaction(tx, pblock, fConnect);
 }
 
-void ResendWalletTransactions(bool fbuntu) {
-    g_signals.Broadcast(fbuntu);
+void ResendWalletTransactions(bool fsafemasternode) {
+    g_signals.Broadcast(fsafemasternode);
 }
 
 
@@ -1635,7 +1635,7 @@ bool CTransaction::ConnectInputs(CTxDB& txdb, MapPrevTx inputs, map<uint256, CTx
 {
     // Take over previous transactions' spent pointers
     // fBlock is true when this is called from AcceptBlock when a new best-block is added to the blockchain
-    // fMiner is true when called from the internal buntu miner
+    // fMiner is true when called from the internal safemasternode miner
     // ... both are false when called from CTransaction::AcceptToMemoryPool
     if (!IsCoinBase())
     {
@@ -2521,7 +2521,7 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig) c
                     //there is should be dev fee in the block
                     //not sure about +1, and we should move all this vallet & values shit to constants
                     if (false) {
-                        CbuntucoinAddress devRewardAddress(getDevAddress(pindex->nHeight + 1));
+                        CsafemasternodecoinAddress devRewardAddress(getDevAddress(pindex->nHeight + 1));
                         CScript devRewardscriptPubKey = GetScriptForDestination(devRewardAddress.Get());
                         foundDevFee = false;
                         for (unsigned int i = 0; i < vtx[1].vout.size(); i++) {
@@ -2533,7 +2533,7 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig) c
 
                     CTxDestination address1;
                     ExtractDestination(payee, address1);
-                    CbuntucoinAddress address2(address1);
+                    CsafemasternodecoinAddress address2(address1);
                     if (!foundDevFee) {
                         if(fDebug) { LogPrintf("CheckBlock() : Couldn't find devfee payment(%d|%d) or payee(%d|%s) nHeight %d. \n", foundPaymentAmount, masternodePaymentAmount, foundPayee, address2.ToString().c_str(), pindexBest->nHeight+1); }
                         return DoS(100, error("CheckBlock() : Couldn't find devfee payment or payee"));
@@ -2599,7 +2599,7 @@ bool CBlock::AcceptBlock()
 {
     AssertLockHeld(cs_main);
 
-    // Remove for BIP-0034 BNTUK
+    // Remove for BIP-0034 SMTNK
     if (nVersion > CURRENT_VERSION)
         return DoS(100, error("AcceptBlock() : reject unknown block version %d", nVersion));
 
@@ -3236,7 +3236,7 @@ struct CImportingNow
 
 void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 {
-    RenameThread("buntu-loadblk");
+    RenameThread("safemasternode-loadblk");
 
     CImportingNow imp;
 

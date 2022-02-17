@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef _BUNTUALERT_H_
-#define _BUNTUALERT_H_ 1
+#ifndef _safemasternodeALERT_H_
+#define _safemasternodeALERT_H_ 1
 
 #include "serialize.h"
 

@@ -7,18 +7,18 @@ handle those translations.
 Files and Folders
 -----------------
 
-### buntu-qt.pro
+### safemasternode-qt.pro
 
 This file takes care of generating `.qm` files from `.ts` files. It is mostly
 automated.
 
-### src/qt/buntu.qrc
+### src/qt/safemasternode.qrc
 
 This file must be updated whenever a new translation is added. Please note that
 files must end with `.qm`, not `.ts`.
 
     <qresource prefix="/translations">
-        <file alias="en">locale/buntu_en.qm</file>
+        <file alias="en">locale/safemasternode_en.qm</file>
         ...
     </qresource>
 
@@ -26,11 +26,11 @@ files must end with `.qm`, not `.ts`.
 
 This directory contains all translations. Filenames must adhere to this format:
 
-    buntu_xx_YY.ts or buntu_xx.ts
+    safemasternode_xx_YY.ts or safemasternode_xx.ts
 
 #### Source file
 
-`src/qt/locale/buntu_en.ts` is treated in a special way. It is used as the
+`src/qt/locale/safemasternode_en.ts` is treated in a special way. It is used as the
 source for all other translations. Whenever a string in the code is changed
 this file must be updated to reflect those changes. Usually, this can be
 accomplished by running `lupdate` (included in the Qt SDK).
@@ -44,7 +44,7 @@ Syncing with transifex
 
 We are using http://transifex.net as a frontend for translating the client.
 
-https://www.transifex.net/projects/p/buntu/resource/tx/
+https://www.transifex.net/projects/p/safemasternode/resource/tx/
 
 The "transifex client" (see: http://help.transifex.net/features/client/)
 will help with fetching new translations from transifex. Use the following
@@ -55,9 +55,9 @@ config to be able to connect with the client.
     [main]
     host = https://www.transifex.net
 
-    [buntu.tx]
-    file_filter = src/qt/locale/buntu_<lang>.ts
-    source_file = src/qt/locale/buntu_en.ts
+    [safemasternode.tx]
+    file_filter = src/qt/locale/safemasternode_<lang>.ts
+    source_file = src/qt/locale/safemasternode_en.ts
     source_lang = en
     
 ### .tx/config (for Windows)
@@ -65,9 +65,9 @@ config to be able to connect with the client.
     [main]
     host = https://www.transifex.net
 
-    [buntu.tx]
-    file_filter = src\qt\locale\buntu_<lang>.ts
-    source_file = src\qt\locale\buntu_en.ts
+    [safemasternode.tx]
+    file_filter = src\qt\locale\safemasternode_<lang>.ts
+    source_file = src\qt\locale\safemasternode_en.ts
     source_lang = en
 
 It is also possible to directly download new translations one by one from transifex.
@@ -75,6 +75,6 @@ It is also possible to directly download new translations one by one from transi
 ### Fetching new translations
 
 1. `tx pull -a`
-2. update `src/qt/buntu.qrc` manually or via
-   `ls src/qt/locale/*ts|xargs -n1 basename|sed 's/\(buntu_\(.*\)\).ts/<file alias="\2">locale/\1.qm<\/file>/'`
+2. update `src/qt/safemasternode.qrc` manually or via
+   `ls src/qt/locale/*ts|xargs -n1 basename|sed 's/\(safemasternode_\(.*\)\).ts/<file alias="\2">locale/\1.qm<\/file>/'`
 3. `git add` new translations from `src/qt/locale/`

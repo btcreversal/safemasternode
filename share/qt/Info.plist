@@ -7,23 +7,23 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleGetInfoString</key>
-	<string>buntu-Qt</string>
+	<string>safemasternode-Qt</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleExecutable</key>
-	<string>buntu-Qt</string>
+	<string>safemasternode-Qt</string>
 	<key>CFBundleIdentifier</key>
-	<string>co.buntu.buntu-Qt</string>
+	<string>co.safemasternode.safemasternode-Qt</string>
         <key>CFBundleURLTypes</key>
         <array>
           <dict>
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
             <key>CFBundleURLName</key>
-            <string>co.buntu.buntuPayment</string>
+            <string>co.safemasternode.safemasternodePayment</string>
             <key>CFBundleURLSchemes</key>
             <array>
-              <string>buntu</string>
+              <string>safemasternode</string>
             </array>
           </dict>
         </array>

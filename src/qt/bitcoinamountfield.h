@@ -1,5 +1,5 @@
-#ifndef BUNTUAMOUNTFIELD_H
-#define BUNTUAMOUNTFIELD_H
+#ifndef safemasternodeAMOUNTFIELD_H
+#define safemasternodeAMOUNTFIELD_H
 
 #include <QWidget>
 #include "util.h"
@@ -9,18 +9,18 @@ class QDoubleSpinBox;
 class QValueComboBox;
 QT_END_NAMESPACE
 
-/** Widget for entering buntu amounts.
+/** Widget for entering safemasternode amounts.
   */
-class BuntuAmountField: public QWidget
+class safemasternodeAmountField: public QWidget
 {
     Q_OBJECT
 
     // ugly hack: for some unknown reason CAmount (instead of qint64) does not work here as expected
-    // discussion: https://github.com/buntu/buntu/pull/5117
+    // discussion: https://github.com/safemasternode/safemasternode/pull/5117
     Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY textChanged USER true)
 
 public:
-    explicit BuntuAmountField(QWidget *parent = 0);
+    explicit safemasternodeAmountField(QWidget *parent = 0);
 
     CAmount value(bool *valid=0) const;
     void setValue(const CAmount& value);
@@ -61,4 +61,4 @@ private slots:
 
 };
 
-#endif // BUNTUAMOUNTFIELD_H
+#endif // safemasternodeAMOUNTFIELD_H

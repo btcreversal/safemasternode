@@ -1,5 +1,5 @@
-#ifndef BUNTUUNITS_H
-#define BUNTUUNITS_H
+#ifndef safemasternodeUNITS_H
+#define safemasternodeUNITS_H
 
 #include "util.h"
 
@@ -37,18 +37,18 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** Buntu unit definitions. Encapsulates parsing and formatting
+/** safemasternode unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class BuntuUnits: public QAbstractListModel
+class safemasternodeUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit BuntuUnits(QObject *parent);
+    explicit safemasternodeUnits(QObject *parent);
 
-    /** Buntu units.
-      @note Source: https://en.buntu.it/wiki/Units . Please add only sensible ones
+    /** safemasternode units.
+      @note Source: https://en.safemasternode.it/wiki/Units . Please add only sensible ones
      */
     enum Unit
     {
@@ -121,8 +121,8 @@ public:
     static CAmount maxMoney();
 
 private:
-    QList<BuntuUnits::Unit> unitlist;
+    QList<safemasternodeUnits::Unit> unitlist;
 };
-typedef BuntuUnits::Unit BuntuUnit;
+typedef safemasternodeUnits::Unit safemasternodeUnit;
 
-#endif // BUNTUUNITS_H
+#endif // safemasternodeUNITS_H

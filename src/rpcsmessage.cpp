@@ -167,7 +167,7 @@ Value smsglocalkeys(const Array& params, bool fHelp)
                 && !it->fReceiveEnabled)
                 continue;
             
-            CbuntucoinAddress coinAddress(it->sAddress);
+            CsafemasternodecoinAddress coinAddress(it->sAddress);
             if (!coinAddress.IsValid())
                 continue;
             
@@ -306,7 +306,7 @@ Value smsglocalkeys(const Array& params, bool fHelp)
             if (!IsMine(*pwalletMain, entry.first))
                 continue;
             
-            CbuntucoinAddress coinAddress(entry.first);
+            CsafemasternodecoinAddress coinAddress(entry.first);
             if (!coinAddress.IsValid())
                 continue;
             
@@ -370,7 +370,7 @@ Value smsgscanbuckets(const Array& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "smsgscanbuckets \n"
-            "buntu rescan of all messages in the bucket store.");
+            "safemasternode rescan of all messages in the bucket store.");
     
     if (!fSecMsgEnabled)
         throw runtime_error("Secure messaging is disabled.");
@@ -461,7 +461,7 @@ Value smsggetpubkey(const Array& params, bool fHelp)
             return result;
     };
     
-    CbuntucoinAddress coinAddress(address);
+    CsafemasternodecoinAddress coinAddress(address);
     
     
     CKeyID keyID;

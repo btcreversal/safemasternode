@@ -1,9 +1,9 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BUNTU_MAIN_H
-#define BUNTU_MAIN_H
+#ifndef safemasternode_MAIN_H
+#define safemasternode_MAIN_H
 
 #include "core.h"
 #include "bignum.h"
@@ -136,7 +136,7 @@ void UnregisterAllWallets();
 /** Push an updated transaction to all registered wallets */
 void SyncWithWallets(const CTransaction& tx, const CBlock* pblock = NULL, bool fConnect = true);
 /** Ask wallets to resend their transactions */
-void ResendWalletTransactions(bool fbuntu = false);
+void ResendWalletTransactions(bool fsafemasternode = false);
 
 /** Register with a network node to receive its signals */
 void RegisterNodeSignals(CNodeSignals& nodeSignals);
@@ -326,7 +326,7 @@ public:
     // Compute priority, given priority of inputs and (optionally) tx size
     double ComputePriority(double dPriorityInputs, unsigned int nTxSize=0) const;
 
-    /** Amount of buntus spent by this transaction.
+    /** Amount of safemasternodes spent by this transaction.
         @return sum of all outputs (note: does not include fees)
      */
     int64_t GetValueOut() const
@@ -341,7 +341,7 @@ public:
         return nValueOut;
     }
 
-    /** Amount of buntus coming in to this transaction
+    /** Amount of safemasternodes coming in to this transaction
         Note that lightweight clients may not know anything besides the hash of previous transactions,
         so may not be able to calculate this.
 
@@ -1443,7 +1443,7 @@ protected:
     virtual void SetBestChain(const CBlockLocator &locator) =0;
     virtual bool UpdatedTransaction(const uint256 &hash) =0;
     virtual void Inventory(const uint256 &hash) =0;
-    virtual void ResendWalletTransactions(bool fbuntu) =0;
+    virtual void ResendWalletTransactions(bool fsafemasternode) =0;
     friend void ::RegisterWallet(CWalletInterface*);
     friend void ::UnregisterWallet(CWalletInterface*);
     friend void ::UnregisterAllWallets();

@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2014 The Buntu developers
+// Copyright (c) 2011-2014 The safemasternode developers
 // Copyright (c) 2014-2015 The Dash developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -38,7 +38,7 @@ WalletModel::WalletModel(CWallet *wallet, OptionsModel *optionsModel, QObject *p
     cachedNumBlocks(0)
 {
     fHaveWatchOnly = wallet->HaveWatchOnly();
-    fbuntuCheckBalanceChanged = false;
+    fsafemasternodeCheckBalanceChanged = false;
 
     addressTableModel = new AddressTableModel(wallet, this);
     transactionTableModel = new TransactionTableModel(wallet, this);
@@ -139,9 +139,9 @@ void WalletModel::pollBalanceChanged()
     if(!lockWallet)
         return;
 
-    if(fbuntuCheckBalanceChanged || nBestHeight != cachedNumBlocks || nDarksendRounds != cachedDarksendRounds || cachedTxLocks != nCompleteTXLocks)
+    if(fsafemasternodeCheckBalanceChanged || nBestHeight != cachedNumBlocks || nDarksendRounds != cachedDarksendRounds || cachedTxLocks != nCompleteTXLocks)
     {
-        fbuntuCheckBalanceChanged = false;
+        fsafemasternodeCheckBalanceChanged = false;
 
         // Balance and number of transactions might have changed
         cachedNumBlocks = nBestHeight;
@@ -195,7 +195,7 @@ void WalletModel::checkBalanceChanged()
 void WalletModel::updateTransaction()
 {
     // Balance and number of transactions might have changed
-    fbuntuCheckBalanceChanged = true;
+    fsafemasternodeCheckBalanceChanged = true;
 }
 
 void WalletModel::updateAddressBook(const QString &address, const QString &label, bool isMine, int status)
@@ -220,7 +220,7 @@ bool WalletModel::validateAddress(const QString &address)
             return true;
     };
 
-    CbuntucoinAddress addressParsed(sAddr);
+    CsafemasternodecoinAddress addressParsed(sAddr);
     return addressParsed.IsValid();
 }
 
@@ -257,7 +257,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         setAddress.insert(rcp.address);
         ++nAddresses;
 
-        CScript scriptPubKey = GetScriptForDestination(CbuntucoinAddress(rcp.address.toStdString()).Get());
+        CScript scriptPubKey = GetScriptForDestination(CsafemasternodecoinAddress(rcp.address.toStdString()).Get());
         vecSend.push_back(std::pair<CScript, CAmount>(scriptPubKey, rcp.amount));
 
         total += rcp.amount;
@@ -378,7 +378,7 @@ WalletModel::SendCoinsReturn WalletModel::sendCoins(WalletModelTransaction &tran
 
                     CKeyID ckidTo = cpkTo.GetID();
 
-                    CbuntucoinAddress addrTo(ckidTo);
+                    CsafemasternodecoinAddress addrTo(ckidTo);
 
                     if (SecretToPublicKey(ephem_secret, ephem_pubkey) != 0)
                     {
@@ -444,7 +444,7 @@ WalletModel::SendCoinsReturn WalletModel::sendCoins(WalletModelTransaction &tran
             }
 
             CScript scriptPubKey;
-            scriptPubKey.SetDestination(CbuntucoinAddress(sAddr).Get());
+            scriptPubKey.SetDestination(CsafemasternodecoinAddress(sAddr).Get());
             vecSend.push_back(make_pair(scriptPubKey, rcp.amount));
 
             if (rcp.narration.length() > 0)
@@ -522,7 +522,7 @@ WalletModel::SendCoinsReturn WalletModel::sendCoins(WalletModelTransaction &tran
     foreach(const SendCoinsRecipient &rcp, recipients)
     {
         std::string strAddress = rcp.address.toStdString();
-        CTxDestination dest = CbuntucoinAddress(strAddress).Get();
+        CTxDestination dest = CsafemasternodecoinAddress(strAddress).Get();
         std::string strLabel = rcp.label.toStdString();
         {
             LOCK(wallet->cs_wallet);
@@ -658,7 +658,7 @@ static void NotifyAddressBookChanged(WalletModel *walletmodel, CWallet *wallet,
                                   Q_ARG(int, status));
     } else
     {
-    QString strAddress = QString::fromStdString(CbuntucoinAddress(address).ToString());
+    QString strAddress = QString::fromStdString(CsafemasternodecoinAddress(address).ToString());
     QString strLabel = QString::fromStdString(label);
 
     qDebug() << "NotifyAddressBookChanged : " + strAddress + " " + strLabel + " isMine=" + QString::number(isMine) + " status=" + QString::number(status);
@@ -782,7 +782,7 @@ WalletModel::UnlockContext::~UnlockContext()
 
 void WalletModel::UnlockContext::CopyFrom(const UnlockContext& rhs)
 {
-    // buntu context; old object no longer relocks wallet
+    // safemasternode context; old object no longer relocks wallet
     *this = rhs;
     rhs.relock = false;
 }
@@ -841,7 +841,7 @@ void WalletModel::listCoins(std::map<QString, std::vector<COutput> >& mapCoins) 
         CTxDestination address;
         if(!out.fSpendable || !ExtractDestination(cout.tx->vout[cout.i].scriptPubKey, address))
             continue;
-        mapCoins[QString::fromStdString(CbuntucoinAddress(address).ToString())].push_back(out);
+        mapCoins[QString::fromStdString(CsafemasternodecoinAddress(address).ToString())].push_back(out);
     }
 }
 

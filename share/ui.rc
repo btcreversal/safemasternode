@@ -1,4 +1,4 @@
-buntu               ICON    "pixmaps/buntu.ico"
+safemasternode               ICON    "pixmaps/safemasternode.ico"
 
 #include "wx/msw/wx.rc"
 

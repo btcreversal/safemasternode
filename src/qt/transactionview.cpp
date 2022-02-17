@@ -1,7 +1,7 @@
 #include "transactionview.h"
 
 #include "addresstablemodel.h"
-#include "buntuunits.h"
+#include "safemasternodeunits.h"
 #include "csvmodelwriter.h"
 #include "editaddressdialog.h"
 #include "guiutil.h"
@@ -327,11 +327,11 @@ void TransactionView::changedAmount(const QString &amount)
         return;
     CAmount amount_parsed = 0;
 
-    // Replace "," by "." so BuntuUnits::parse will not fail for users entering "," as decimal separator
+    // Replace "," by "." so safemasternodeUnits::parse will not fail for users entering "," as decimal separator
     QString newAmount = amount;
     newAmount.replace(QString(","), QString("."));
 
-    if(BuntuUnits::parse(model->getOptionsModel()->getDisplayUnit(), newAmount, &amount_parsed))
+    if(safemasternodeUnits::parse(model->getOptionsModel()->getDisplayUnit(), newAmount, &amount_parsed))
     {
         transactionProxyModel->setMinAmount(amount_parsed);
     }
@@ -362,7 +362,7 @@ void TransactionView::exportClicked()
     writer.addColumn(tr("Type"), TransactionTableModel::Type, Qt::EditRole);
     writer.addColumn(tr("Label"), 0, TransactionTableModel::LabelRole);
     writer.addColumn(tr("Address"), 0, TransactionTableModel::AddressRole);
-    writer.addColumn(BuntuUnits::getAmountColumnTitle(model->getOptionsModel()->getDisplayUnit()), 0, TransactionTableModel::FormattedAmountRole);
+    writer.addColumn(safemasternodeUnits::getAmountColumnTitle(model->getOptionsModel()->getDisplayUnit()), 0, TransactionTableModel::FormattedAmountRole);
     writer.addColumn(tr("ID"), 0, TransactionTableModel::TxIDRole);
 
     if(!writer.write()) {
@@ -474,7 +474,7 @@ void TransactionView::computeSum()
     foreach (QModelIndex index, selection){
         amount += index.data(TransactionTableModel::AmountRole).toLongLong();
     }
-    QString strAmount(BuntuUnits::formatWithUnit(nDisplayUnit, amount, true, BuntuUnits::separatorAlways));
+    QString strAmount(safemasternodeUnits::formatWithUnit(nDisplayUnit, amount, true, safemasternodeUnits::separatorAlways));
     if (amount < 0) strAmount = "<span style='color:red;'>" + strAmount + "</span>";
     emit trxAmount(strAmount);
 }

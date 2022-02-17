@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -164,10 +164,10 @@ Value checkkernel(const Array& params, bool fHelp)
     bool fCreateBlockTemplate = params.size() > 1 ? params[1].get_bool() : false;
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "buntu is not connected!");
+        throw JSONRPCError(-9, "safemasternode is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "buntu is downloading blocks...");
+        throw JSONRPCError(-10, "safemasternode is downloading blocks...");
 
     COutPoint kernel;
     CBlockIndex* pindexPrev = pindexBest;
@@ -245,10 +245,10 @@ Value getworkex(const Array& params, bool fHelp)
         );
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "buntu is not connected!");
+        throw JSONRPCError(-9, "safemasternode is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "buntu is downloading blocks...");
+        throw JSONRPCError(-10, "safemasternode is downloading blocks...");
 
     if (pindexBest->nHeight >= Params().LastPOWBlock())
         throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
@@ -379,10 +379,10 @@ Value getwork(const Array& params, bool fHelp)
             "If [data] is specified, tries to solve the block and returns true if it was successful.");
 
     if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "buntu is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "safemasternode is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "buntu is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "safemasternode is downloading blocks...");
 
     if (pindexBest->nHeight >= Params().LastPOWBlock())
         throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
@@ -510,7 +510,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
             "  ],\n"
             "  \"masternode_payments\" : true|false,         (boolean) true, if masternode payments are enabled"
             "  \"enforce_masternode_payments\" : true|false  (boolean) true, if masternode payments are enforced"
-            "See https://en.buntu.it/wiki/BIP_0022 for full specification.");
+            "See https://en.safemasternode.it/wiki/BIP_0022 for full specification.");
 
     std::string strMode = "template";
     if (params.size() > 0)
@@ -531,10 +531,10 @@ Value getblocktemplate(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
     if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "buntu is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "safemasternode is not connected!");
 
     //if (IsInitialBlockDownload())
-    //    throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "buntu is downloading blocks...");
+    //    throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "safemasternode is downloading blocks...");
 
     if (pindexBest->nHeight >= Params().LastPOWBlock())
         throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
@@ -655,7 +655,7 @@ Value submitblock(const Array& params, bool fHelp)
             "submitblock <hex data> [optional-params-obj]\n"
             "[optional-params-obj] parameter is currently ignored.\n"
             "Attempts to submit new block to network.\n"
-            "See https://en.buntu.it/wiki/BIP_0022 for full specification.");
+            "See https://en.safemasternode.it/wiki/BIP_0022 for full specification.");
 
     vector<unsigned char> blockData(ParseHex(params[0].get_str()));
     CDataStream ssBlock(blockData, SER_NETWORK, PROTOCOL_VERSION);

@@ -76,7 +76,7 @@ OBJS= \
     obj/pubkey.o \
     obj/ecwrapper.o \
     obj/init.o \
-    obj/buntud.o \
+    obj/safemasternoded.o \
     obj/keystore.o \
     obj/core.o \
     obj/main.o \
@@ -130,7 +130,7 @@ ifeq (${USE_WALLET}, 1)
         obj/walletdb.o
 endif
 
-all: buntud.exe
+all: safemasternoded.exe
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += -I"$(CURDIR)/leveldb/include"
@@ -143,13 +143,13 @@ obj/txdb-leveldb.o: leveldb/libleveldb.a
 obj/%.o: %.cpp $(HEADERS)
 	$(CXX) -c $(CFLAGS) -o $@ $<
 
-buntud.exe: $(OBJS:obj/%=obj/%)
+safemasternoded.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) -lshlwapi
-	$(STRIP) buntud.exe
+	$(STRIP) safemasternoded.exe
 
 clean:
 	-rm -f obj/*.o
-	-rm -f buntud.exe
+	-rm -f safemasternoded.exe
 	-rm -f obj/build.h
 	cd leveldb && TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) clean && cd ..
 

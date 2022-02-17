@@ -1,4 +1,4 @@
-buntu-qt: Qt5 GUI for buntu
+safemasternode-qt: Qt5 GUI for safemasternode
 ===============================
 
 Build instructions
@@ -8,7 +8,7 @@ Debian
 -------
 
 First, make sure that the required packages for Qt5 development of your
-distribution are installed, for Debian and Ubuntu these are:
+distribution are installed, for Debian and Usafemasternode these are:
 
 ::
 
@@ -24,9 +24,9 @@ then execute the following:
     qmake
     make
 
-Alternatively, install Qt Creator and open the `buntu-qt.pro` file.
+Alternatively, install Qt Creator and open the `safemasternode-qt.pro` file.
 
-An executable named `buntu-qt` will be built.
+An executable named `safemasternode-qt` will be built.
 
 
 Windows
@@ -69,7 +69,7 @@ Build configuration options
 UPNnP port forwarding
 ---------------------
 
-To use UPnP for port forwarding behind a NAT router (recommended, as more connections overall allow for a faster and more stable buntu experience), pass the following argument to qmake:
+To use UPnP for port forwarding behind a NAT router (recommended, as more connections overall allow for a faster and more stable safemasternode experience), pass the following argument to qmake:
 
 ::
 
@@ -90,10 +90,10 @@ Set USE_UPNP to a different value to control this:
 | USE_UPNP=1 | build with UPnP support turned on by default at runtime.                 |
 +------------+--------------------------------------------------------------------------+
 
-Notification support for recent (k)ubuntu versions
+Notification support for recent (k)usafemasternode versions
 ---------------------------------------------------
 
-To see desktop notifications on (k)ubuntu versions starting from 10.04, enable usage of the
+To see desktop notifications on (k)usafemasternode versions starting from 10.04, enable usage of the
 FreeDesktop notification interface through DBUS using the following qmake option:
 
 ::
@@ -117,9 +117,9 @@ flag to qmake to control this:
 Berkely DB version warning
 ==========================
 
-A warning for people using the *static binary* version of buntu on a Linux/UNIX-ish system (tl;dr: **Berkely DB databases are not forward compatible**).
+A warning for people using the *static binary* version of safemasternode on a Linux/UNIX-ish system (tl;dr: **Berkely DB databases are not forward compatible**).
 
-The static binary version of buntu is linked against libdb 5.0 (see also `this Debian issue`_).
+The static binary version of safemasternode is linked against libdb 5.0 (see also `this Debian issue`_).
 
 Now the nasty thing is that databases from 5.X are not compatible with 4.X.
 
@@ -130,11 +130,11 @@ significant hassle!
 
 .. _`this Debian issue`: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=621425
 
-Ubuntu 11.10 warning
+Usafemasternode 11.10 warning
 ====================
 
-Ubuntu 11.10 has a package called 'qt-at-spi' installed by default.  At the time of writing, having that package
-installed causes buntu-qt to crash intermittently.  The issue has been reported as `launchpad bug 857790`_, but
+Usafemasternode 11.10 has a package called 'qt-at-spi' installed by default.  At the time of writing, having that package
+installed causes safemasternode-qt to crash intermittently.  The issue has been reported as `launchpad bug 857790`_, but
 isn't yet fixed.
 
 Until the bug is fixed, you can remove the qt-at-spi package to work around the problem, though this will presumably
@@ -144,4 +144,4 @@ disable screen reader functionality for Qt apps:
 
     sudo apt-get remove qt-at-spi
 
-.. _`launchpad bug 857790`: https://bugs.launchpad.net/ubuntu/+source/qt-at-spi/+bug/857790
+.. _`launchpad bug 857790`: https://bugs.launchpad.net/usafemasternode/+source/qt-at-spi/+bug/857790

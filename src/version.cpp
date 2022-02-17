@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Buntu developers
+// Copyright (c) 2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include <string>
@@ -6,9 +6,9 @@
 #include "version.h"
 
 // Name of client reported in the 'version' message. Report the same name
-// for both buntud and buntu-qt, to make it harder for attackers to
+// for both safemasternoded and safemasternode-qt, to make it harder for attackers to
 // target servers or GUI users specifically.
-const std::string CLIENT_NAME("buntu");
+const std::string CLIENT_NAME("safemasternode");
 
 // Client version number
 #define CLIENT_VERSION_SUFFIX   ""

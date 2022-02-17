@@ -1,9 +1,9 @@
-// Copyright (c) 2012 The Buntu developers
+// Copyright (c) 2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BUNTU_LIMITEDMAP_H
-#define BUNTU_LIMITEDMAP_H
+#ifndef safemasternode_LIMITEDMAP_H
+#define safemasternode_LIMITEDMAP_H
 
 #include <assert.h> // TODO: remove
 #include <map>

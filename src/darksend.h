@@ -17,7 +17,7 @@ class CTxIn;
 class CDarksendPool;
 class CDarkSendSigner;
 class CMasterNodeVote;
-class CbuntucoinAddress;
+class CsafemasternodecoinAddress;
 class CDarksendQueue;
 class CDarksendBroadcastTx;
 class CActiveMasternode;
@@ -240,7 +240,7 @@ public:
 class CDarkSendSigner
 {
 public:
-    /// Is the inputs associated with this public key? (and there is 500000 BNTU - checking if valid masternode)
+    /// Is the inputs associated with this public key? (and there is 500000 SMTN - checking if valid masternode)
     bool IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey);
     /// Set the private/public key values, returns true if successful
     bool SetKey(std::string strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey);
@@ -505,7 +505,7 @@ public:
 };
 
 /** Implementation of BIP69
-* https://github.com/buntu/bips/blob/master/bip-0069.mediawiki
+* https://github.com/safemasternode/bips/blob/master/bip-0069.mediawiki
 */
 struct CompareInputBIP69
 {

@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2013 The Buntu developers
+// Copyright (c) 2009-2013 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef _BUNTURPC_CLIENT_H_
-#define _BUNTURPC_CLIENT_H_ 1
+#ifndef _safemasternodeRPC_CLIENT_H_
+#define _safemasternodeRPC_CLIENT_H_ 1
 
 #include "json/json_spirit_reader_template.h"
 #include "json/json_spirit_utils.h"

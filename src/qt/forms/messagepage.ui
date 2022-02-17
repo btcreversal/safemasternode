@@ -86,7 +86,7 @@
              <string>&amp;Back</string>
             </property>
             <property name="icon">
-             <iconset resource="../buntu.qrc">
+             <iconset resource="../safemasternode.qrc">
               <normaloff>:/icons/quit</normaloff>:/icons/quit</iconset>
             </property>
            </widget>
@@ -151,7 +151,7 @@
           <string>&amp;Conversation</string>
          </property>
          <property name="icon">
-          <iconset resource="../buntu.qrc">
+          <iconset resource="../safemasternode.qrc">
            <normaloff>:/icons/add</normaloff>:/icons/add</iconset>
          </property>
         </widget>
@@ -159,13 +159,13 @@
        <item>
         <widget class="QPushButton" name="sendButton">
          <property name="toolTip">
-          <string>Sign a message to prove you own a buntu address</string>
+          <string>Sign a message to prove you own a safemasternode address</string>
          </property>
          <property name="text">
           <string>&amp;Send</string>
          </property>
          <property name="icon">
-          <iconset resource="../buntu.qrc">
+          <iconset resource="../safemasternode.qrc">
            <normaloff>:/icons/send</normaloff>:/icons/send</iconset>
          </property>
         </widget>
@@ -179,7 +179,7 @@
           <string>&amp;Copy From Address</string>
          </property>
          <property name="icon">
-          <iconset resource="../buntu.qrc">
+          <iconset resource="../safemasternode.qrc">
            <normaloff>:/icons/editcopy</normaloff>:/icons/editcopy</iconset>
          </property>
         </widget>
@@ -193,7 +193,7 @@
           <string>Copy To &amp;Address</string>
          </property>
          <property name="icon">
-          <iconset resource="../buntu.qrc">
+          <iconset resource="../safemasternode.qrc">
            <normaloff>:/icons/editcopy</normaloff>:/icons/editcopy</iconset>
          </property>
         </widget>
@@ -207,7 +207,7 @@
           <string>&amp;Delete</string>
          </property>
          <property name="icon">
-          <iconset resource="../buntu.qrc">
+          <iconset resource="../safemasternode.qrc">
            <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
          </property>
         </widget>
@@ -240,7 +240,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../buntu.qrc"/>
+  <include location="../safemasternode.qrc"/>
  </resources>
  <connections/>
 </ui>

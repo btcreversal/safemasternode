@@ -166,7 +166,7 @@ public:
 
 
 // -- get at the data
-class CbuntucoinAddress_B : public CbuntucoinAddress
+class CsafemasternodecoinAddress_B : public CsafemasternodecoinAddress
 {
 public:
     uint8_t getVersion()

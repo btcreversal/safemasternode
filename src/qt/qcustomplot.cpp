@@ -10,7 +10,7 @@
 **                                                                        **
 **  This program is distributed in the hope that it will be useful,       **
 **  but WITHOUT ANY WARRANTY; without even the implied warranty of        **
-**  MERCHANTABILITY or FITNESS BNTU A PARTICULAR PURPOSE.  See the         **
+**  MERCHANTABILITY or FITNESS SMTN A PARTICULAR PURPOSE.  See the         **
 **  GNU General Public License for more details.                          **
 **                                                                        **
 **  You should have received a copy of the GNU General Public License     **
@@ -9351,7 +9351,7 @@ QCustomPlot::QCustomPlot(QWidget *parent) :
   mBackgroundScaled(true),
   mBackgroundScaledMode(Qt::KeepAspectRatioByExpanding),
   mCurrentLayer(0),
-  mPlottingHints(QCP::phCacheLabels|QCP::phbuntuRepaint),
+  mPlottingHints(QCP::phCacheLabels|QCP::phsafemasternodeRepaint),
   mMultiSelectModifier(Qt::ControlModifier),
   mPaintBuffer(size()),
   mMouseEventElement(0),
@@ -10702,7 +10702,7 @@ void QCustomPlot::replot(QCustomPlot::RefreshPriority refreshPriority)
       painter.fillRect(mViewport, mBackgroundBrush);
     draw(&painter);
     painter.end();
-    if ((refreshPriority == rpHint && mPlottingHints.testFlag(QCP::phbuntuRepaint)) || refreshPriority==rpImmediate)
+    if ((refreshPriority == rpHint && mPlottingHints.testFlag(QCP::phsafemasternodeRepaint)) || refreshPriority==rpImmediate)
       repaint();
     else
       update();

@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2013 The Buntu developers
+// Copyright (c) 2011-2013 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BUNTU_QT_WALLETMODELTRANSACTION_H
-#define BUNTU_QT_WALLETMODELTRANSACTION_H
+#ifndef safemasternode_QT_WALLETMODELTRANSACTION_H
+#define safemasternode_QT_WALLETMODELTRANSACTION_H
 
 #include "walletmodel.h"
 #include "util.h"
@@ -43,4 +43,4 @@ private:
     CAmount fee;
 };
 
-#endif // BUNTU_QT_WALLETMODELTRANSACTION_H
+#endif // safemasternode_QT_WALLETMODELTRANSACTION_H

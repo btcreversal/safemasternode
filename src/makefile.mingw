@@ -10,15 +10,15 @@ BOOST_SUFFIX?=-mgw49-mt-s-1_57
 
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
- -I"d:/project/buntu/include/boost-1_57" \
- -I"d:/project/buntu/include/miniupnpc" \
- -I"d:/project/buntu/include" \
- -I"d:/project/buntu"
+ -I"d:/project/safemasternode/include/boost-1_57" \
+ -I"d:/project/safemasternode/include/miniupnpc" \
+ -I"d:/project/safemasternode/include" \
+ -I"d:/project/safemasternode"
 
 LIBPATHS= \
  -L"$(CURDIR)/leveldb" \
- -L"d:/project/buntu/lib" \
- -L"d:/project/buntu"
+ -L"d:/project/safemasternode/lib" \
+ -L"d:/project/safemasternode"
 
 LIBS= \
  -l leveldb \
@@ -71,7 +71,7 @@ OBJS= \
     obj/pubkey.o \
     obj/ecwrapper.o \
     obj/init.o \
-    obj/buntud.o \
+    obj/safemasternoded.o \
     obj/keystore.o \
     obj/core.o \
     obj/main.o \
@@ -126,7 +126,7 @@ ifeq (${USE_WALLET}, 1)
         obj/walletdb.o
 endif
 
-all: buntud.exe
+all: safemasternoded.exe
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a -l shlwapi
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)
@@ -142,12 +142,12 @@ obj/%.o: %.cpp $(HEADERS)
 obj/%.o: %.c $(HEADERS)
 	$(CXX) -c $(CFLAGS) -fpermissive -o $@ $<
 
-buntud.exe: $(OBJS:obj/%=obj/%)
+safemasternoded.exe: $(OBJS:obj/%=obj/%)
 	g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 clean:
 	-rm -f obj/*.o
-	-rm -f buntud.exe
+	-rm -f safemasternoded.exe
 	-rm -f obj/build.h
 	cd leveldb && TARGET_OS=NATIVE_WINDOWS $(MAKE) clean && cd ..
 

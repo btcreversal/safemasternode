@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Buntu developers
+// Copyright (c) 2009-2012 The safemasternode developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef H_BUNTU_SCRIPT
-#define H_BUNTU_SCRIPT
+#ifndef H_safemasternode_SCRIPT
+#define H_safemasternode_SCRIPT
 
 #include <string>
 #include <vector>
@@ -189,7 +189,7 @@ public:
  *  * CNoDestination: no destination set
  *  * CKeyID: TX_PUBKEYHASH destination
  *  * CScriptID: TX_SCRIPTHASH destination
- *  A CTxDestination is the internal data type encoded in a CbuntucoinAddress
+ *  A CTxDestination is the internal data type encoded in a CsafemasternodecoinAddress
  */
 typedef boost::variant<CNoDestination, CKeyID, CScriptID, CStealthAddress> CTxDestination;
 
@@ -818,7 +818,7 @@ public:
         return nFound;
     }
 
-    // Pre-version-0.6, Buntu always counted CHECKMULTISIGs
+    // Pre-version-0.6, safemasternode always counted CHECKMULTISIGs
     // as 20 sigops. With pay-to-script-hash, that changed:
     // CHECKMULTISIGs serialized in scriptSigs are
     // counted more accurately, assuming they are of the form

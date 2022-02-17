@@ -69,10 +69,10 @@ class SpecialEnv : public EnvWrapper {
   // Simulate non-writable file system while this pointer is non-NULL
   port::AtomicPointer non_writable_;
 
-  // buntu sync of manifest files to fail while this pointer is non-NULL
+  // safemasternode sync of manifest files to fail while this pointer is non-NULL
   port::AtomicPointer manifest_sync_error_;
 
-  // buntu write to manifest files to fail while this pointer is non-NULL
+  // safemasternode write to manifest files to fail while this pointer is non-NULL
   port::AtomicPointer manifest_write_error_;
 
   bool count_random_reads_;
@@ -1532,7 +1532,7 @@ TEST(DBTest, NoSpace) {
   ASSERT_EQ("v1", Get("foo"));
   Compact("a", "z");
   const int num_files = CountFiles();
-  env_->no_space_.Release_Store(env_);   // buntu out-of-space errors
+  env_->no_space_.Release_Store(env_);   // safemasternode out-of-space errors
   for (int i = 0; i < 10; i++) {
     for (int level = 0; level < config::kNumLevels-1; level++) {
       dbfull()->TEST_CompactRange(level, NULL, NULL);
@@ -1548,7 +1548,7 @@ TEST(DBTest, NonWritableFileSystem) {
   options.env = env_;
   Reopen(&options);
   ASSERT_OK(Put("foo", "v1"));
-  env_->non_writable_.Release_Store(env_);  // buntu errors for new files
+  env_->non_writable_.Release_Store(env_);  // safemasternode errors for new files
   std::string big(100000, 'x');
   int errors = 0;
   for (int i = 0; i < 20; i++) {

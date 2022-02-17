@@ -2,8 +2,8 @@
 
 #include "guiutil.h"
 
-#include "buntuaddressvalidator.h"
-#include "buntuunits.h"
+#include "safemasternodeaddressvalidator.h"
+#include "safemasternodeunits.h"
 #include "walletmodel.h"
 
 #include "init.h"
@@ -78,7 +78,7 @@ QString dateTimeStr(qint64 nTime)
     return dateTimeStr(QDateTime::fromTime_t((qint32)nTime));
 }
 
-QFont buntuAddressFont()
+QFont safemasternodeAddressFont()
 {
     QFont font("Monospace");
 #if QT_VERSION >= 0x040800
@@ -91,9 +91,9 @@ QFont buntuAddressFont()
 
 void setupAddressWidget(QLineEdit *widget, QWidget *parent)
 {
-    widget->setMaxLength(BuntuAddressValidator::MaxAddressLength);
-    widget->setValidator(new BuntuAddressValidator(parent));
-    widget->setFont(buntuAddressFont());
+    widget->setMaxLength(safemasternodeAddressValidator::MaxAddressLength);
+    widget->setValidator(new safemasternodeAddressValidator(parent));
+    widget->setFont(safemasternodeAddressFont());
 }
 
 void setupAmountWidget(QLineEdit *widget, QWidget *parent)
@@ -105,10 +105,10 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
     widget->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
 }
 
-bool parseBuntuURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parsesafemasternodeURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // NovaCoin: check prefix
-    if(uri.scheme() != QString("buntu"))
+    if(uri.scheme() != QString("safemasternode"))
         return false;
 
     SendCoinsRecipient rv;
@@ -138,7 +138,7 @@ bool parseBuntuURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!BuntuUnits::parse(BuntuUnits::BTC, i->second, &rv.amount))
+                if(!safemasternodeUnits::parse(safemasternodeUnits::BTC, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -156,18 +156,18 @@ bool parseBuntuURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseBuntuURI(QString uri, SendCoinsRecipient *out)
+bool parsesafemasternodeURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert buntu:// to buntu:
+    // Convert safemasternode:// to safemasternode:
     //
-    //    Cannot handle this later, because buntu:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because safemasternode:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("buntu://", Qt::CaseInsensitive))
+    if(uri.startsWith("safemasternode://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 11, "buntu:");
+        uri.replace(0, 11, "safemasternode:");
     }
     QUrl uriInstance(uri);
-    return parseBuntuURI(uriInstance, out);
+    return parsesafemasternodeURI(uriInstance, out);
 }
 
 QString HtmlEscape(const QString& str, bool fMultiLine)
@@ -492,12 +492,12 @@ TableViewLastColumnResizingFixer::TableViewLastColumnResizingFixer(QTableView* t
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "buntu.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "safemasternode.lnk";
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for buntu.lnk
+    // check for safemasternode.lnk
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -574,7 +574,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "buntu.desktop";
+    return GetAutostartDir() / "safemasternode.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -612,10 +612,10 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         boost::filesystem::ofstream optionFile(GetAutostartFilePath(), std::ios_base::out|std::ios_base::trunc);
         if (!optionFile.good())
             return false;
-        // Write a buntu.desktop file to the autostart directory:
+        // Write a safemasternode.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=buntu\n";
+        optionFile << "Name=safemasternode\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -634,7 +634,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl);
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl)
 {
-    // loop through the list of startup items and try to find the buntu app
+    // loop through the list of startup items and try to find the safemasternode app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
@@ -655,21 +655,21 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
 
 bool GetStartOnSystemStartup()
 {
-    CFURLRef buntuAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    CFURLRef safemasternodeAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
     LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, buntuAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, safemasternodeAppUrl);
     return !!foundItem; // return boolified object
 }
 
 bool SetStartOnSystemStartup(bool fAutoStart)
 {
-    CFURLRef buntuAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    CFURLRef safemasternodeAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
     LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, buntuAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, safemasternodeAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add buntu app to startup item list
-        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, buntuAppUrl, NULL, NULL);
+        // add safemasternode app to startup item list
+        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, safemasternodeAppUrl, NULL, NULL);
     }
     else if(!fAutoStart && foundItem) {
         // remove item
@@ -687,10 +687,10 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
-    header = tr("buntu-Qt") + " " + tr("version") + " " +
+    header = tr("safemasternode-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  buntu-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  safemasternode-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -699,7 +699,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
-    setWindowTitle(tr("buntu-Qt"));
+    setWindowTitle(tr("safemasternode-Qt"));
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in non-breaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));
